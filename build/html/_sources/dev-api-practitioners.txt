@@ -300,7 +300,7 @@ Call
 +----------------------+-----------------------------------+--------+----------+
 
 
-.. note:: hash = pbdkdf2_sha512(base64(sha512(utf8(SALT) + utf8(PASSWORD))))
+.. note:: hash = pbdkdf2_sha512( base64( sha512( utf8(SALT) + utf8(PASSWORD) ) ) )
 
 Response
 --------
