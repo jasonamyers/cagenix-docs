@@ -1,0 +1,59 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Bid Overview}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Backend}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Frontend}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Developer Overview}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Libraries}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}General Application Setup (\_\_init\_\_.py)}{5}{section.2.2}
+\contentsline {chapter}{\numberline {3}Models Overview}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Activation Model}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Advertisement Model}{7}{section.3.2}
+\contentsline {section}{\numberline {3.3}Evaluation Model}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}Patient Model}{8}{section.3.4}
+\contentsline {section}{\numberline {3.5}PatientEvaluationAnswer Model}{8}{section.3.5}
+\contentsline {section}{\numberline {3.6}Practice Model}{9}{section.3.6}
+\contentsline {section}{\numberline {3.7}Role Model}{9}{section.3.7}
+\contentsline {section}{\numberline {3.8}User Model}{10}{section.3.8}
+\contentsline {chapter}{\numberline {4}API Overview}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Base URL, HTTPS, and Versioning}{11}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Base URI}{11}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}HTTP and HTTPS}{11}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Versioning}{11}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Message Body}{11}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Credentials}{11}{section.4.2}
+\contentsline {section}{\numberline {4.3}GET Requests}{12}{section.4.3}
+\contentsline {section}{\numberline {4.4}Headers}{12}{section.4.4}
+\contentsline {section}{\numberline {4.5}Header Formulas}{13}{section.4.5}
+\contentsline {section}{\numberline {4.6}Response Codes}{13}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}GET Request Response Codes}{13}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}POST/PUT Request Response Codes}{13}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}DELETE Request Response Codes}{13}{subsection.4.6.3}
+\contentsline {chapter}{\numberline {5}Patients API}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}Create a patient}{15}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Call}{15}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Response}{15}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Retrieve Patient details}{16}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Response}{16}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Update a patient}{17}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Call}{17}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Response}{18}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Delete a patient}{18}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Response}{18}{subsection.5.4.1}
+\contentsline {chapter}{\numberline {6}Evaluations API}{19}{chapter.6}
+\contentsline {section}{\numberline {6.1}Create an Evaluation}{19}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Call}{19}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Response}{19}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Retrieve Evaluation details}{20}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Response}{20}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Update an Evaluation}{21}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Call}{21}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Response}{21}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Delete a patient}{22}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Response}{22}{subsection.6.4.1}
+\contentsline {chapter}{\numberline {7}Users Blueprint Overview}{23}{chapter.7}
+\contentsline {section}{\numberline {7.1}Users Models}{23}{section.7.1}
+\contentsline {chapter}{\numberline {8}Patients Blueprint Overview}{25}{chapter.8}
+\contentsline {section}{\numberline {8.1}Patients Models}{25}{section.8.1}
+\contentsline {chapter}{\numberline {9}Indices and tables}{27}{chapter.9}
+\contentsline {chapter}{Python Module Index}{29}{section*.20}
+\contentsline {chapter}{Index}{31}{section*.21}

@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API Overview &mdash; Cagenix-Web 0.1a1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'0.1a1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
+        <link rel="next" title="Patients API" href="dev-api-patients.html"/>
+        <link rel="prev" title="Models Overview" href="dev-models.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Cagenix-Web</a>
+        <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev-bid.html">Bid Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#backend">Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#frontend">Frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Developer Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#activation-model">Activation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#evaluation-model">Evaluation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patient-model">Patient Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#role-model">Role Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#user-model">User Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">API Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-url-https-and-versioning">Base URL, HTTPS, and Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-requests">GET Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#headers">Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#header-formulas">Header Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#response-codes">Response Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Cagenix-Web</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">API Overview</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="api-overview">
+<h1>API Overview<a class="headerlink" href="#api-overview" title="Permalink to this headline">¶</a></h1>
+<p>The following document will walk you through using the Cagenix API
+within your application.</p>
+<div class="section" id="base-url-https-and-versioning">
+<h2>Base URL, HTTPS, and Versioning<a class="headerlink" href="#base-url-https-and-versioning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-uri">
+<h3>Base URI<a class="headerlink" href="#base-uri" title="Permalink to this headline">¶</a></h3>
+<p>The Cagenix API root is located at:
+<a class="reference external" href="https://cagenix-web.herokuapp.com/api/v1/">https://cagenix-web.herokuapp.com/api/v1/</a></p>
+</div>
+<div class="section" id="http-and-https">
+<h3>HTTP and HTTPS<a class="headerlink" href="#http-and-https" title="Permalink to this headline">¶</a></h3>
+<p>The Cagenix API is served over HTTP and HTTPS during testing. The final
+deployment will be HTTPS only, prefer to testing that method.</p>
+</div>
+<div class="section" id="versioning">
+<h3>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h3>
+<p>Currently the Cagenix API does not require any type of versioning in the
+requests as it is in the URI.</p>
+</div>
+<div class="section" id="message-body">
+<h3>Message Body<a class="headerlink" href="#message-body" title="Permalink to this headline">¶</a></h3>
+<p>When submitting a request to the Cagenix API with a message body, the
+variables within that body should be UTF8 encoded and within a JSON object.</p>
+</div>
+</div>
+<div class="section" id="credentials">
+<h2>Credentials<a class="headerlink" href="#credentials" title="Permalink to this headline">¶</a></h2>
+<p>In order to access the Cagenix API each developer/user must request a key and
+a secret from the application admins. These two keys will be used in the
+following formulas which will provide the properly formatted header values
+required for all POST, PUT, PATCH, and DELETE requests. All GET requests require
+the key, timestamp, and signature url parameters.</p>
+</div>
+<div class="section" id="get-requests">
+<h2>GET Requests<a class="headerlink" href="#get-requests" title="Permalink to this headline">¶</a></h2>
+<p>A properly formed GET request includes the key timestamp, and signature url
+parameters. The key is the key provided by the application admins.  The
+signature is made of the HTTP-VERB + SECRET + Canonicalized Resource encoded to
+UTF8 hashed via sha256 and base 64 encoded.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL Param</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>key</td>
+<td>This is the key provided by the application admins.</td>
+</tr>
+<tr class="row-odd"><td>timestamp</td>
+<td>This is the date and time, ISO format, used in your
+header formulas. An example is 2012-10-29T01:30:20Z.
+Notice the T and Z, with the T separating the date and
+time and Z ending the string.</td>
+</tr>
+<tr class="row-even"><td>signature</td>
+<td>The header signature is a string that combines the body
+hash, date and time, along with your secret, encoded to
+UTF8 and hashed using sha256.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Signature = URLEncode(Base64( SHA-256( UTF-8-Encoding-Of( &#8216;GET&#8217; + SECRET + URI ) ) ) ) )</p>
+</div>
+<p>Signature Example</p>
+<div class="highlight-python"><pre>base64(sha256(utf8('GET'+'d59b8a775f0dcfd985edff5b5106e2a3'+'/api/v1/patients/1')))
+would result in
+PHNoYTI1NiBIQVNIIG9iamVjdCBAIDB4MTAzNDhhYTcwPg==</pre>
+</div>
+<p>URL Example</p>
+<div class="highlight-python"><pre>/api/v1/patients/1?signature=PHNoYTI1NiBIQVNIIG9iamVjdCBAIDB4MTAzNDhhYTcwPg==&amp;timestamp=2014-01-26T00%3A26%3A49.000Z&amp;key=d36a3127fc9f5fa169e911b9ab5b46eb
+
+This assumes:
+    Key is d36a3127fc9f5fa169e911b9ab5b46eb
+    Secret is d59b8a775f0dcfd985edff5b5106e2a3
+    Time is 00:26:49 on 1/26/2014</pre>
+</div>
+</div>
+<div class="section" id="headers">
+<h2>Headers<a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h2>
+<p>When interacting with the Cagenix web-service, the following headers are
+required to be submitted with each request.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header Element</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Content-Type</td>
+<td>application/json
+Currently XML and other formats are not available.</td>
+</tr>
+<tr class="row-odd"><td>key</td>
+<td>This is the key provided by the application admins.</td>
+</tr>
+<tr class="row-even"><td>datetime</td>
+<td>This is the date and time, ISO format, used in your
+header formulas. An example is 2012-10-29T01:30:20Z.
+Notice the T and Z, with the T separating the date and
+time and Z ending the string.</td>
+</tr>
+<tr class="row-odd"><td>body_hash</td>
+<td>This is the encoding of the body contents through the
+following formula. If there are no body contents to be
+sent, encode and send an empty body array.</td>
+</tr>
+<tr class="row-even"><td>signature</td>
+<td>The header signature is a string that combines the body
+hash, date and time, along with your secret, encoded to
+UTF8 and hashed using sha256.</td>
+</tr>
+<tr class="row-odd"><td>lang</td>
+<td>The language of the request content. Example is &#8216;en&#8217;.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="header-formulas">
+<h2>Header Formulas<a class="headerlink" href="#header-formulas" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header Element</th>
+<th class="head">Formula</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>datetime</td>
+<td>The date and time is a simple formatting:
+yyyy-mm-ddThh:mm:ssZ</td>
+</tr>
+<tr class="row-odd"><td>body_hash</td>
+<td>json body content UTF8 encoded, then sha256 hashed.</td>
+</tr>
+<tr class="row-even"><td>signature</td>
+<td>body_hash added to datetime added to secret key, encoded
+to UTF8 then sha256 hashed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="response-codes">
+<h2>Response Codes<a class="headerlink" href="#response-codes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-request-response-codes">
+<h3>GET Request Response Codes<a class="headerlink" href="#get-request-response-codes" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="28%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">CODE</th>
+<th class="head">Response</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>The request was successful and the body contains
+what you asked for.</td>
+</tr>
+<tr class="row-odd"><td>401</td>
+<td>Unauthorized</td>
+<td>Your credentials do not authorize you to access
+the requested info.</td>
+</tr>
+<tr class="row-even"><td>404</td>
+<td>Not Found</td>
+<td>The service you requested was not found on our
+server.</td>
+</tr>
+<tr class="row-odd"><td>500</td>
+<td>Server Error</td>
+<td>There was an internal error, if it continues,
+please contact us.</td>
+</tr>
+<tr class="row-even"><td>503</td>
+<td>Service Unavailable</td>
+<td>The service requested is temporarily down. Try
+again later.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="post-put-request-response-codes">
+<h3>POST/PUT Request Response Codes<a class="headerlink" href="#post-put-request-response-codes" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="28%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">CODE</th>
+<th class="head">Response</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>OK</td>
+<td>The request was successful and the body contains
+what you asked for.</td>
+</tr>
+<tr class="row-odd"><td>201</td>
+<td>Created</td>
+<td>The resource you requested by create was
+successfully created.</td>
+</tr>
+<tr class="row-even"><td>400</td>
+<td>Bad Request</td>
+<td>Something was wrong in your request, check the
+message for details.</td>
+</tr>
+<tr class="row-odd"><td>401</td>
+<td>Unauthorized</td>
+<td>Your credentials do not authorize you to access
+the requested info.</td>
+</tr>
+<tr class="row-even"><td>404</td>
+<td>Not Found</td>
+<td>The service you requested was not found on our
+server.</td>
+</tr>
+<tr class="row-odd"><td>405</td>
+<td>Method Not Allowed</td>
+<td>You tried POSTing or PUTting to a service that
+can’t accept data.</td>
+</tr>
+<tr class="row-even"><td>500</td>
+<td>Server Error</td>
+<td>There was an internal error, if it continues,
+please contact us.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="delete-request-response-codes">
+<h3>DELETE Request Response Codes<a class="headerlink" href="#delete-request-response-codes" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="28%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">CODE</th>
+<th class="head">Response</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>204</td>
+<td>OK</td>
+<td>The request was successfully deleted.</td>
+</tr>
+<tr class="row-odd"><td>400</td>
+<td>Bad Request</td>
+<td>Something was wrong in your request, check the
+message for details.</td>
+</tr>
+<tr class="row-even"><td>401</td>
+<td>Unauthorized</td>
+<td>Your credentials do not authorize you to access
+the requested info.</td>
+</tr>
+<tr class="row-odd"><td>404</td>
+<td>Not Found</td>
+<td>The service you requested was not found on our
+server.</td>
+</tr>
+<tr class="row-even"><td>405</td>
+<td>Method Not Allowed</td>
+<td>You tried POSTing or PUTting to a service that
+can’t accept data.</td>
+</tr>
+<tr class="row-odd"><td>500</td>
+<td>Server Error</td>
+<td>There was an internal error, if it continues,
+please contact us.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="dev-api-patients.html" class="btn btn-neutral float-right" title="Patients API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="dev-models.html" class="btn btn-neutral" title="Models Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Jason Myers for Prime Notion Technologies.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

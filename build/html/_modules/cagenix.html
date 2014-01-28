@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cagenix &mdash; Cagenix-Web 0.1a1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'0.1a1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Cagenix-Web</a>
+        <form class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev-bid.html">Bid Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-bid.html#backend">Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-bid.html#frontend">Frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-overview.html">Developer Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-overview.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-models.html">Models Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-models.html#activation-model">Activation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-models.html#evaluation-model">Evaluation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-models.html#patient-model">Patient Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-models.html#role-model">Role Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-models.html#user-model">User Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-api-overview.html">API Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-overview.html#base-url-https-and-versioning">Base URL, HTTPS, and Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-overview.html#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-overview.html#get-requests">GET Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-overview.html#headers">Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-overview.html#header-formulas">Header Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-overview.html#response-codes">Response Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-users.html#module-cagenix.users.models">Users Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Cagenix-Web</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">cagenix</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <h1>Source code for cagenix</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This file contains the application setup for</span>
+<span class="sd">SSLify, Flask-SQLAlchemy, and Flask-Security.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span>
+<span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+<span class="kn">from</span> <span class="nn">flask.ext.security</span> <span class="kn">import</span> <span class="n">Security</span><span class="p">,</span> <span class="n">SQLAlchemyUserDatastore</span><span class="p">,</span> <span class="n">login_required</span><span class="p">,</span> <span class="n">current_user</span>
+<span class="kn">from</span> <span class="nn">flask.ext.security.utils</span> <span class="kn">import</span> <span class="n">encrypt_password</span><span class="p">,</span> <span class="n">logout_user</span>
+<span class="kn">from</span> <span class="nn">raven.contrib.flask</span> <span class="kn">import</span> <span class="n">Sentry</span>
+<span class="kn">from</span> <span class="nn">flask_mail</span> <span class="kn">import</span> <span class="n">Mail</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">from_object</span><span class="p">(</span><span class="s">&#39;config&#39;</span><span class="p">)</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">cagenix.users.models</span> <span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">Role</span>
+<span class="n">user_datastore</span> <span class="o">=</span> <span class="n">SQLAlchemyUserDatastore</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">User</span><span class="p">,</span> <span class="n">Role</span><span class="p">)</span>
+<span class="n">security</span> <span class="o">=</span> <span class="n">Security</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">user_datastore</span><span class="p">)</span>
+<span class="n">mail</span> <span class="o">=</span> <span class="n">Mail</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c"># Sentry</span>
+<span class="c">#sentry = Sentry(app)</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/TBAekZPEaCC58w&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="create_user"><a class="viewcode-back" href="../dev-overview.html#cagenix.create_user">[docs]</a><span class="k">def</span> <span class="nf">create_user</span><span class="p">():</span>
+    <span class="n">user_datastore</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="s">&#39;admin@cagenix.com&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">encrypt_password</span><span class="p">(</span><span class="s">&#39;tester&#39;</span><span class="p">))</span>
+    <span class="n">user_datastore</span><span class="o">.</span><span class="n">create_role</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;PNT-Admin&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s">&#39;Master Cagenix Admin&#39;</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">user_datastore</span><span class="o">.</span><span class="n">find_user</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="s">&#39;admin@cagenix.com&#39;</span><span class="p">)</span>
+    <span class="n">role</span> <span class="o">=</span> <span class="n">user_datastore</span><span class="o">.</span><span class="n">find_role</span><span class="p">(</span><span class="s">&#39;PNT-Admin&#39;</span><span class="p">)</span>
+    <span class="n">user_datastore</span><span class="o">.</span><span class="n">add_role_to_user</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">role</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="p">])</span>
+<span class="nd">@login_required</span>
+<div class="viewcode-block" id="handle_splash"><a class="viewcode-back" href="../dev-overview.html#cagenix.handle_splash">[docs]</a><span class="k">def</span> <span class="nf">handle_splash</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">&#39;/dashboard&#39;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@app.errorhandler</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+<div class="viewcode-block" id="not_found"><a class="viewcode-back" href="../dev-overview.html#cagenix.not_found">[docs]</a><span class="k">def</span> <span class="nf">not_found</span><span class="p">(</span><span class="n">error</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;returns a the 404.html template on any 404 error with in the app.</span>
+
+<span class="sd">    :param error: The error details</span>
+<span class="sd">    :type value: object, dict</span>
+<span class="sd">    :returns: 404.html</span>
+<span class="sd">    :rtype: template</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;404.html&#39;</span><span class="p">),</span> <span class="mi">404</span>
+
+</div>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/logout&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="logout"><a class="viewcode-back" href="../dev-overview.html#cagenix.logout">[docs]</a><span class="k">def</span> <span class="nf">logout</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This handles the logout for flask_security and redirects to login</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logout_user</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s">&#39;home&#39;</span><span class="p">))</span>
+
+<span class="c"># Blueprints</span></div>
+<span class="kn">from</span> <span class="nn">cagenix.users.views</span> <span class="kn">import</span> <span class="n">mod</span> <span class="k">as</span> <span class="n">usersModule</span>
+<span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">usersModule</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">cagenix.patients.views</span> <span class="kn">import</span> <span class="n">mod</span> <span class="k">as</span> <span class="n">patientsModule</span>
+<span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">patientsModule</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">cagenix.dashboard.views</span> <span class="kn">import</span> <span class="n">mod</span> <span class="k">as</span> <span class="n">dashboardModule</span>
+<span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">dashboardModule</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">cagenix.practices.views</span> <span class="kn">import</span> <span class="n">mod</span> <span class="k">as</span> <span class="n">practicesModule</span>
+<span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">practicesModule</span><span class="p">)</span>
+</pre></div>
+
+          <footer>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Jason Myers for Prime Notion Technologies.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

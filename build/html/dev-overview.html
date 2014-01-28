@@ -1,0 +1,245 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Developer Overview &mdash; Cagenix-Web 0.1a1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'0.1a1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
+        <link rel="next" title="Models Overview" href="dev-models.html"/>
+        <link rel="prev" title="Bid Overview" href="dev-bid.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Cagenix-Web</a>
+        <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev-bid.html">Bid Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#backend">Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#frontend">Frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Developer Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix">General Application Setup (__init__.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#activation-model">Activation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#evaluation-model">Evaluation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patient-model">Patient Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#role-model">Role Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#user-model">User Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-overview.html">API Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#base-url-https-and-versioning">Base URL, HTTPS, and Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#get-requests">GET Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#headers">Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#header-formulas">Header Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#response-codes">Response Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Cagenix-Web</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Developer Overview</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="developer-overview">
+<h1>Developer Overview<a class="headerlink" href="#developer-overview" title="Permalink to this headline">¶</a></h1>
+<p>The following document covers the internals of the Cagenix-Web
+application.  Below is a list of libraries used in the application,
+and the general application settings.</p>
+<div class="section" id="libraries">
+<h2>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Flask - Web Framework <a class="reference external" href="http://flask.pocoo.org/">Documentation</a></li>
+<li>Flask-SQLAlchemy - Simplifies the usage of SQLAlchemy within the Flask framework.
+Check out the <a class="reference external" href="http://packages.python.org/Flask-SQLAlchemy/quickstart.html#road-to-enlightenment">Road to Enlightenment</a>
+for more details.  <a class="reference external" href="http://docs.sqlalchemy.org/en/rel_0_8/">SQLAlchemy Docs</a></li>
+<li>WTForms - Provides a flexible way of handling forms <a class="reference external" href="(http://wtforms.simplecodes.com/docs/1.0.3/">Documentation</a></li>
+<li>Flask-WTF - Provides a simple integration with WTForms <a class="reference external" href="(http://packages.python.org/Flask-WTF/">Documentation</a></li>
+<li>Jinja2 - The prefered templating language for Flask <a class="reference external" href="http://jinja.pocoo.org/docs/">Documentation</a></li>
+<li>Flask-Security - A very powerful collection of User Authentication/Authorization/Accounting
+<a class="reference external" href="http://flask-security.readthedocs.org/en/latest/index.html">Documentation</a></li>
+<li>Passlib - A stong password hashing utility <a class="reference external" href="http://packages.python.org/passlib/new_app_quickstart.html#pbkdf2">Documentation</a></li>
+<li>Unicodecsv - Used to handle csv files that contain unicode characters <a class="reference external" href="https://github.com/jdunck/python-unicodecsv">Documentation</a></li>
+</ul>
+<p>It&#8217;s built using the <a class="reference external" href="https://github.com/mitsuhiko/flask/wiki/Large-app-how-to)">Flask Large App How To</a> and <a class="reference external" href="http://mattupstate.com/python/2013/06/26/how-i-structure-my-flask-applications.html?utm_medium=referral&amp;utm_source=pulsenews#s2c">Matt Wright&#8217;s Guide</a></p>
+</div>
+<div class="section" id="module-cagenix">
+<span id="general-application-setup-init-py"></span><h2>General Application Setup (__init__.py)<a class="headerlink" href="#module-cagenix" title="Permalink to this headline">¶</a></h2>
+<p>This file contains the application setup for
+SSLify, Flask-SQLAlchemy, and Flask-Security.</p>
+<dl class="function">
+<dt id="cagenix.create_user">
+<tt class="descclassname">cagenix.</tt><tt class="descname">create_user</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/cagenix.html#create_user"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.create_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cagenix.handle_splash">
+<tt class="descclassname">cagenix.</tt><tt class="descname">handle_splash</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix.html#handle_splash"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.handle_splash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cagenix.logout">
+<tt class="descclassname">cagenix.</tt><tt class="descname">logout</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/cagenix.html#logout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.logout" title="Permalink to this definition">¶</a></dt>
+<dd><p>This handles the logout for flask_security and redirects to login</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.not_found">
+<tt class="descclassname">cagenix.</tt><tt class="descname">not_found</tt><big>(</big><em>error</em><big>)</big><a class="reference internal" href="_modules/cagenix.html#not_found"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.not_found" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a the 404.html template on any 404 error with in the app.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>error</strong> &#8211; The error details</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">404.html</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="dev-models.html" class="btn btn-neutral float-right" title="Models Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="dev-bid.html" class="btn btn-neutral" title="Bid Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Jason Myers for Prime Notion Technologies.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

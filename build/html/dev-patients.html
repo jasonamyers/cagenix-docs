@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Patients Blueprint Overview &mdash; Cagenix-Web 0.1a1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'0.1a1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
+        <link rel="prev" title="Users Blueprint Overview" href="dev-users.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Cagenix-Web</a>
+        <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev-bid.html">Bid Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#backend">Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#frontend">Frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Developer Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#activation-model">Activation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#evaluation-model">Evaluation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patient-model">Patient Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#role-model">Role Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#user-model">User Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-overview.html">API Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#base-url-https-and-versioning">Base URL, HTTPS, and Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#get-requests">GET Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#headers">Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#header-formulas">Header Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#response-codes">Response Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Cagenix-Web</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Patients Blueprint Overview</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="patients-blueprint-overview">
+<h1>Patients Blueprint Overview<a class="headerlink" href="#patients-blueprint-overview" title="Permalink to this headline">¶</a></h1>
+<p>The following document covers the internals of the Cagenix-Web Patients
+Blueprint.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#patients-models-label"><em>Patients Models</em></a></li>
+<li><em class="xref std std-ref">patients-forms-label</em></li>
+<li><em class="xref std std-ref">patients-views-label</em></li>
+</ul>
+<div class="section" id="module-cagenix.patients.models">
+<span id="patients-models"></span><span id="patients-models-label"></span><h2>Patients Models<a class="headerlink" href="#module-cagenix.patients.models" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.users.models</p>
+<p>This file is used to define all the models used by the Users blueprint</p>
+<dl class="class">
+<dt id="cagenix.patients.models.Patient">
+<em class="property">class </em><tt class="descclassname">cagenix.patients.models.</tt><tt class="descname">Patient</tt><big>(</big><em>first_name=None</em>, <em>last_name=None</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient" title="Permalink to this definition">¶</a></dt>
+<dd><p>The User model defines the authentication users used by Flask-Security</p>
+<p>This Role class defines the model attributes, a classmethod to make finding
+the users easier. It also contains several fields unexposed by the UI. Those
+fields are used to track user logins and access IPs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>db.Model</strong> (<em>object</em>) &#8211; The SQLAlchemy base database model</li>
+<li><strong>UserMixin</strong> (<em>object</em>) &#8211; The UserMixin base provided by Flask-Security</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="cagenix.patients.models.Patient.by_email">
+<em class="property">classmethod </em><tt class="descname">by_email</tt><big>(</big><em>email</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.by_email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.by_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>by_email returns a User object given an email address.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
+<li><strong>email</strong> (<em>string</em>) &#8211; The email of the user being searched for</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="cagenix.patients.models.Patient.by_id">
+<em class="property">classmethod </em><tt class="descname">by_id</tt><big>(</big><em>user_id</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>by_id returns a User object given a user_id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
+<li><strong>user_id</strong> (<em>int</em>) &#8211; The id of the user being searched for</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="cagenix.patients.models.Patient.by_phone">
+<em class="property">classmethod </em><tt class="descname">by_phone</tt><big>(</big><em>phone</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.by_phone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.by_phone" title="Permalink to this definition">¶</a></dt>
+<dd><p>by_phone returns a User object given a phone number</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
+<li><strong>phone</strong> (<em>string</em>) &#8211; The phone number of the user being searched for</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+      
+        <a href="dev-users.html" class="btn btn-neutral" title="Users Blueprint Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Jason Myers for Prime Notion Technologies.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

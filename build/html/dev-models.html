@@ -1,0 +1,749 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Models Overview &mdash; Cagenix-Web 0.1a1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'0.1a1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
+        <link rel="next" title="API Overview" href="dev-api-overview.html"/>
+        <link rel="prev" title="Developer Overview" href="dev-overview.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Cagenix-Web</a>
+        <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev-bid.html">Bid Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#backend">Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#frontend">Frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Developer Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Models Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#activation-model">Activation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#evaluation-model">Evaluation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#patient-model">Patient Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#role-model">Role Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-model">User Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-overview.html">API Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#base-url-https-and-versioning">Base URL, HTTPS, and Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#get-requests">GET Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#headers">Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#header-formulas">Header Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#response-codes">Response Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Cagenix-Web</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Models Overview</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="models-overview">
+<h1>Models Overview<a class="headerlink" href="#models-overview" title="Permalink to this headline">¶</a></h1>
+<p>The following document covers the models used in the Cagenix-Web application.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#activation-model-label"><em>Activation Model</em></a></li>
+<li><a class="reference internal" href="#advertisement-model-label"><em>Advertisement Model</em></a></li>
+<li><a class="reference internal" href="#evaluation-model-label"><em>Evaluation Model</em></a></li>
+<li><a class="reference internal" href="#patient-model-label"><em>Patient Model</em></a></li>
+<li><a class="reference internal" href="#patientevaluationanswer-model-label"><em>PatientEvaluationAnswer Model</em></a></li>
+<li><a class="reference internal" href="#practice-model-label"><em>Practice Model</em></a></li>
+<li><a class="reference internal" href="#role-model-label"><em>Role Model</em></a></li>
+<li><a class="reference internal" href="#user-model-label"><em>User Model</em></a></li>
+</ul>
+<div class="section" id="activation-model">
+<span id="activation-model-label"></span><h2>Activation Model<a class="headerlink" href="#activation-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>code</td>
+<td>String(255)</td>
+<td>Activiation Code</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtuals</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>practitioner</td>
+<td>One2One</td>
+<td>Virtual to User/practitioner</td>
+</tr>
+<tr class="row-odd"><td>practice</td>
+<td>Many2One</td>
+<td>Virtual to Practice</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="advertisement-model">
+<span id="advertisement-model-label"></span><h2>Advertisement Model<a class="headerlink" href="#advertisement-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>String(80)</td>
+<td>Banner Name</td>
+</tr>
+<tr class="row-even"><td>asset_location</td>
+<td>String(80)</td>
+<td>Location of asset or resource name</td>
+</tr>
+<tr class="row-odd"><td>position</td>
+<td>String(80)</td>
+<td>Screen Position</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="evaluation-model">
+<span id="evaluation-model-label"></span><h2>Evaluation Model<a class="headerlink" href="#evaluation-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>evaluation_id</td>
+<td>UUID</td>
+<td>Used to group questions into a single
+evaulation.</td>
+</tr>
+<tr class="row-even"><td>question_order</td>
+<td>Integer</td>
+<td>Position of question within an
+Evaulation</td>
+</tr>
+<tr class="row-odd"><td>question_text</td>
+<td>Text</td>
+<td>Text of the question</td>
+</tr>
+<tr class="row-even"><td>answer_one</td>
+<td>String(255)</td>
+<td>First answer choice</td>
+</tr>
+<tr class="row-odd"><td>answer_two</td>
+<td>String(255)</td>
+<td>Second answer choice</td>
+</tr>
+<tr class="row-even"><td>answer_three</td>
+<td>String(255)</td>
+<td>Second answer choice</td>
+</tr>
+<tr class="row-odd"><td>answer_four</td>
+<td>String(255)</td>
+<td>Second answer choice</td>
+</tr>
+<tr class="row-even"><td>answer_custom</td>
+<td>Text</td>
+<td>Free for all answer</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="patient-model">
+<span id="patient-model-label"></span><h2>Patient Model<a class="headerlink" href="#patient-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>first_name</td>
+<td>String(80)</td>
+<td>First Name</td>
+</tr>
+<tr class="row-even"><td>last_name</td>
+<td>String(80)</td>
+<td>Last Name</td>
+</tr>
+<tr class="row-odd"><td>address_one</td>
+<td>String(255)</td>
+<td>First address line</td>
+</tr>
+<tr class="row-even"><td>address_two</td>
+<td>String(255)</td>
+<td>Second address line</td>
+</tr>
+<tr class="row-odd"><td>city</td>
+<td>String(255)</td>
+<td>City</td>
+</tr>
+<tr class="row-even"><td>state</td>
+<td>String(255)</td>
+<td>State</td>
+</tr>
+<tr class="row-odd"><td>zip_code</td>
+<td>String(10)</td>
+<td>ZIP Code in 5-4 format</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>String(255)</td>
+<td>email address</td>
+</tr>
+<tr class="row-odd"><td>active</td>
+<td>Boolean</td>
+<td>Active Flag for archiving</td>
+</tr>
+<tr class="row-even"><td>choice_one</td>
+<td>String(255)</td>
+<td>The &#8220;best&#8221; choice</td>
+</tr>
+<tr class="row-odd"><td>choice_two</td>
+<td>String(255)</td>
+<td>The &#8220;better&#8221; choice</td>
+</tr>
+<tr class="row-even"><td>choice_three</td>
+<td>String(255)</td>
+<td>The &#8220;good&#8221; choice</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtuals</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="21%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>practitioner</td>
+<td>Many2One</td>
+<td>Virtual to User assigned as dentist</td>
+</tr>
+<tr class="row-odd"><td>practice</td>
+<td>Many2One</td>
+<td>Virtual to Practice</td>
+</tr>
+<tr class="row-even"><td>evaulation_answer</td>
+<td>Many2One</td>
+<td>Virtual to PatientEvaulationAnswer</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="patientevaluationanswer-model">
+<span id="patientevaluationanswer-model-label"></span><h2>PatientEvaluationAnswer Model<a class="headerlink" href="#patientevaluationanswer-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>evaluation_id</td>
+<td>UUID</td>
+<td>Used to group answers into a single
+evaulation.</td>
+</tr>
+<tr class="row-even"><td>answer</td>
+<td>String(255)</td>
+<td>Answer to question</td>
+</tr>
+<tr class="row-odd"><td>active</td>
+<td>Boolean</td>
+<td>Active Flag for archiving</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtuals</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>question</td>
+<td>Many2One</td>
+<td>Question Asked</td>
+</tr>
+<tr class="row-odd"><td>patient</td>
+<td>Many2One</td>
+<td>User Answering Question</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="practice-model">
+<span id="practice-model-label"></span><h2>Practice Model<a class="headerlink" href="#practice-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>practice_name</td>
+<td>String(255)</td>
+<td>Practice Name</td>
+</tr>
+<tr class="row-even"><td>address_one</td>
+<td>String(255)</td>
+<td>First address line</td>
+</tr>
+<tr class="row-odd"><td>address_two</td>
+<td>String(255)</td>
+<td>Second address line</td>
+</tr>
+<tr class="row-even"><td>city</td>
+<td>String(255)</td>
+<td>City</td>
+</tr>
+<tr class="row-odd"><td>state</td>
+<td>String(255)</td>
+<td>State</td>
+</tr>
+<tr class="row-even"><td>zip_code</td>
+<td>String(10)</td>
+<td>ZIP Code in 5-4 format</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>String(255)</td>
+<td>Web Address</td>
+</tr>
+<tr class="row-even"><td>primary_color</td>
+<td>String(255)</td>
+<td>Primary Branding Color</td>
+</tr>
+<tr class="row-odd"><td>secondary_color</td>
+<td>String(255)</td>
+<td>Secondary Branding Color</td>
+</tr>
+<tr class="row-even"><td>phone</td>
+<td>String(12)</td>
+<td>Phone</td>
+</tr>
+<tr class="row-odd"><td>active</td>
+<td>Boolean</td>
+<td>Active Flag for archiving</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtuals</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>practitioner</td>
+<td>One2Many</td>
+<td>Virtual to User</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="role-model">
+<span id="role-model-label"></span><h2>Role Model<a class="headerlink" href="#role-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>String(80)</td>
+<td>Name</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>String(255)</td>
+<td>Short description of the Role&#8217;s purpose</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtuals</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>practitioner</td>
+<td>One2Many</td>
+<td>Virtual to User</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="user-model">
+<span id="user-model-label"></span><h2>User Model<a class="headerlink" href="#user-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>first_name</td>
+<td>String(80)</td>
+<td>First Name</td>
+</tr>
+<tr class="row-even"><td>last_name</td>
+<td>String(80)</td>
+<td>Last Name</td>
+</tr>
+<tr class="row-odd"><td>address_one</td>
+<td>String(255)</td>
+<td>First address line</td>
+</tr>
+<tr class="row-even"><td>address_two</td>
+<td>String(255)</td>
+<td>Second address line</td>
+</tr>
+<tr class="row-odd"><td>city</td>
+<td>String(255)</td>
+<td>City</td>
+</tr>
+<tr class="row-even"><td>state</td>
+<td>String(255)</td>
+<td>State</td>
+</tr>
+<tr class="row-odd"><td>zip_code</td>
+<td>String(10)</td>
+<td>ZIP Code in 5-4 format</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>String(255)</td>
+<td>email address</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>String(255)</td>
+<td>encrypted password string</td>
+</tr>
+<tr class="row-even"><td>secret</td>
+<td>String(255)</td>
+<td>Secret key used for API</td>
+</tr>
+<tr class="row-odd"><td>activation_code</td>
+<td>String(255)</td>
+<td>Code used for initial account setup</td>
+</tr>
+<tr class="row-even"><td>active</td>
+<td>Boolean</td>
+<td>Active Flag for archiving</td>
+</tr>
+<tr class="row-odd"><td>confirmed_at</td>
+<td>DateTime</td>
+<td>UTC DateTime when user confirmed
+their account.</td>
+</tr>
+<tr class="row-even"><td>last_login_at</td>
+<td>DateTime</td>
+<td>UTC DateTime of last login</td>
+</tr>
+<tr class="row-odd"><td>current_login_at</td>
+<td>DateTime</td>
+<td>UTC DateTime of current login if active</td>
+</tr>
+<tr class="row-even"><td>last_login_ip</td>
+<td>String(255)</td>
+<td>Last IP accessed from</td>
+</tr>
+<tr class="row-odd"><td>current_login_ip</td>
+<td>String(255)</td>
+<td>Current IP accessed from</td>
+</tr>
+<tr class="row-even"><td>login_count</td>
+<td>Integer</td>
+<td>Number of Logins</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtuals</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>patients</td>
+<td>One2Many</td>
+<td>Virtual to Patient</td>
+</tr>
+<tr class="row-odd"><td>roles</td>
+<td>One2Many</td>
+<td>Virtual to Role</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="dev-api-overview.html" class="btn btn-neutral float-right" title="API Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="dev-overview.html" class="btn btn-neutral" title="Developer Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Jason Myers for Prime Notion Technologies.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>
