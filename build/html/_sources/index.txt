@@ -16,6 +16,7 @@ Contents:
    dev-models
    dev-api-overview
    dev-api-patients
+   dev-api-practitioners
    dev-api-evaluations
    dev-users
    dev-patients

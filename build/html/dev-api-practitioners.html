@@ -1,0 +1,725 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Practitioners API &mdash; Cagenix-Web 0.1a1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'0.1a1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
+        <link rel="next" title="Evaluations API" href="dev-api-evaluations.html"/>
+        <link rel="prev" title="Patients API" href="dev-api-patients.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Cagenix-Web</a>
+        <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev-bid.html">Bid Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#backend">Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#frontend">Frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Developer Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#activation-model">Activation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#evaluation-model">Evaluation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patient-model">Patient Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#role-model">Role Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#user-model">User Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-overview.html">API Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#base-url-https-and-versioning">Base URL, HTTPS, and Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#get-requests">GET Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#headers">Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#header-formulas">Header Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#response-codes">Response Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Practitioners API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-practitioner">Create a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#retrieve-practitioner-details">Retrieve Practitioner details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-a-practitioner">Update a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-a-practitioner">Delete a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Cagenix-Web</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Practitioners API</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="practitioners-api">
+<h1>Practitioners API<a class="headerlink" href="#practitioners-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="create-a-practitioner">
+<h2>Create a Practitioner<a class="headerlink" href="#create-a-practitioner" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint is used to create a practitioner in the Cagenix API.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>POST</strong> /api/v1/practitioners/create</p>
+</div>
+<div class="section" id="call">
+<h3>Call<a class="headerlink" href="#call" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;first_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;last_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;address_one&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;address_two&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;city&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;state&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;activation_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="47%" />
+<col width="11%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>first_name</td>
+<td>First Name</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>last_name</td>
+<td>Last Name</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-even"><td>address_one</td>
+<td>First address line</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>address_two</td>
+<td>Second address line</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>city</td>
+<td>City</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>state</td>
+<td>State</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-even"><td>zip_code</td>
+<td>ZIP Code in 5-4 format</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>email address</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-even"><td>activation_code</td>
+<td>Code used for initial account
+setup</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>practice</td>
+<td>ID of the Practice</td>
+<td>Integer</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="response">
+<h3>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;request&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;first_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;last_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;address_one&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;address_two&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;city&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;state&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;activation_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;response&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;practitioner_id&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="54%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>request</td>
+<td>Object containing the original
+request data</td>
+<td>Object</td>
+</tr>
+<tr class="row-odd"><td>response</td>
+<td>Object containing the Practitioner
+ID</td>
+<td>Object</td>
+</tr>
+<tr class="row-even"><td>practitioner_id</td>
+<td>A unique ID for the Partitioner
+record</td>
+<td>Integer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="retrieve-practitioner-details">
+<h2>Retrieve Practitioner details<a class="headerlink" href="#retrieve-practitioner-details" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint is used to retrieve most details of a Practitioner.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>GET</strong> /api/v1/practitioners/&lt;ID&gt;</p>
+</div>
+<div class="section" id="id1">
+<h3>Response<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;request&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;practitioner_id&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;response&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;active&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;first_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;last_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;address_one&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;address_two&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;city&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;state&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;activation_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="54%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>active</td>
+<td>Active Flag for Archiving</td>
+<td>String</td>
+</tr>
+<tr class="row-odd"><td>first_name</td>
+<td>First Name</td>
+<td>String</td>
+</tr>
+<tr class="row-even"><td>last_name</td>
+<td>Last Name</td>
+<td>String</td>
+</tr>
+<tr class="row-odd"><td>address_one</td>
+<td>First address line</td>
+<td>String</td>
+</tr>
+<tr class="row-even"><td>address_two</td>
+<td>Second address line</td>
+<td>String</td>
+</tr>
+<tr class="row-odd"><td>city</td>
+<td>City</td>
+<td>String</td>
+</tr>
+<tr class="row-even"><td>state</td>
+<td>State</td>
+<td>String</td>
+</tr>
+<tr class="row-odd"><td>zip_code</td>
+<td>ZIP Code in 5-4 format</td>
+<td>String</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>email address</td>
+<td>String</td>
+</tr>
+<tr class="row-odd"><td>activation_code</td>
+<td>Code used for initial account
+setup</td>
+<td>String</td>
+</tr>
+<tr class="row-even"><td>practice</td>
+<td>ID of the Practice</td>
+<td>Integer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="update-a-practitioner">
+<h2>Update a Practitioner<a class="headerlink" href="#update-a-practitioner" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint is used to update a practitioner in the Cagenix API.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>PUT</strong> /api/v1/practitioners/&lt;id&gt;</p>
+</div>
+<div class="section" id="id2">
+<h3>Call<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;first_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;last_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;address_one&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;address_two&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;city&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;state&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;active&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="47%" />
+<col width="11%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>active</td>
+<td>Active Flag for Archiving</td>
+<td>Boolean</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>first_name</td>
+<td>First Name</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>last_name</td>
+<td>Last Name</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>address_one</td>
+<td>First address line</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>address_two</td>
+<td>Second address line</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>city</td>
+<td>City</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>state</td>
+<td>State</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>zip_code</td>
+<td>ZIP Code in 5-4 format</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>email address</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>active</td>
+<td>Active Flag for Archiving</td>
+<td>Boolean</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>practice</td>
+<td>ID of the Practice</td>
+<td>Integer</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h3>Response<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;request&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;first_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;last_name&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;address_one&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;address_two&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;city&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;state&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;response&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;practitioner_id&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="54%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>request</td>
+<td>Object containing the original
+request data</td>
+<td>Object</td>
+</tr>
+<tr class="row-odd"><td>response</td>
+<td>Object containing the Practitioner
+ID</td>
+<td>Object</td>
+</tr>
+<tr class="row-even"><td>practitioner_id</td>
+<td>A unique ID for the Partitioner
+record</td>
+<td>Integer</td>
+</tr>
+<tr class="row-odd"><td>active</td>
+<td>Active Flag for Archiving</td>
+<td>Boolean</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="delete-a-practitioner">
+<h2>Delete a Practitioner<a class="headerlink" href="#delete-a-practitioner" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint is used to Delete a practitioner in the Cagenix API.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>DELETE</strong> /api/v1/practitioners/&lt;id&gt;</p>
+</div>
+<div class="section" id="id4">
+<h3>Response<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;request&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;practitioner_id&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;response&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;status&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="54%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>request</td>
+<td>Object containing the original
+request data</td>
+<td>Object</td>
+</tr>
+<tr class="row-odd"><td>response</td>
+<td>Object containing the Practitioner
+ID</td>
+<td>Object</td>
+</tr>
+<tr class="row-even"><td>status</td>
+<td>The result of the DELETE
+opperation (EX: Success, Failed)</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="authenticate-a-practitioner">
+<h2>Authenticate a Practitioner<a class="headerlink" href="#authenticate-a-practitioner" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint is used to get the secret key for a practitioner in the Cagenix API.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>POST</strong> /api/v1/practitioners/login</p>
+</div>
+<div class="section" id="id5">
+<h3>Call<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;hash&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="47%" />
+<col width="11%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>email</td>
+<td>email address</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>hash</td>
+<td>Base64 encoded HMAC+SHA512 of
+the password signed with the
+salt encypted with
+pbkdf2_sha512</td>
+<td>String</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h3>Response<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;request&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;hash&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;response&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;secret&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="54%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>request</td>
+<td>Object containing the original
+request data</td>
+<td>Object</td>
+</tr>
+<tr class="row-odd"><td>response</td>
+<td>Object containing the secret for
+API access</td>
+<td>Object</td>
+</tr>
+<tr class="row-even"><td>secret</td>
+<td>The secret for API Access</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="dev-api-evaluations.html" class="btn btn-neutral float-right" title="Evaluations API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="dev-api-patients.html" class="btn btn-neutral" title="Patients API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Jason Myers for Prime Notion Technologies.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>
