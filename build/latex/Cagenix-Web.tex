@@ -14,7 +14,7 @@
 
 
 \title{Cagenix-Web Documentation}
-\date{January 27, 2014}
+\date{January 28, 2014}
 \release{0.1a1}
 \author{Jason Myers for Prime Notion Technologies}
 \newcommand{\sphinxlogo}{}
@@ -2006,6 +2006,671 @@ status
  & 
 The result of the DELETE
 opperation (EX: Success, Failed)
+ & 
+String
+\\
+\hline\end{tabulary}
+
+
+
+\chapter{Practitioners API}
+\label{dev-api-practitioners::doc}\label{dev-api-practitioners:practitioners-api}
+
+\section{Create a Practitioner}
+\label{dev-api-practitioners:create-a-practitioner}
+This endpoint is used to create a practitioner in the Cagenix API.
+
+\begin{notice}{note}{Note:}
+\textbf{POST} /api/v1/practitioners/create
+\end{notice}
+
+
+\subsection{Call}
+\label{dev-api-practitioners:call}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}first\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}last\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}one\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}two\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}city\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}state\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}activation\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+} & \textsf{\relax 
+Required
+}\\
+\hline
+first\_name
+ & 
+First Name
+ & 
+String
+ & 
+X
+\\
+
+last\_name
+ & 
+Last Name
+ & 
+String
+ & 
+X
+\\
+
+address\_one
+ & 
+First address line
+ & 
+String
+ & 
+X
+\\
+
+address\_two
+ & 
+Second address line
+ & 
+String
+ & \\
+
+city
+ & 
+City
+ & 
+String
+ & 
+X
+\\
+
+state
+ & 
+State
+ & 
+String
+ & 
+X
+\\
+
+zip\_code
+ & 
+ZIP Code in 5-4 format
+ & 
+String
+ & 
+X
+\\
+
+email
+ & 
+email address
+ & 
+String
+ & 
+X
+\\
+
+activation\_code
+ & 
+Code used for initial account
+setup
+ & 
+String
+ & 
+X
+\\
+
+practice
+ & 
+ID of the Practice
+ & 
+Integer
+ & \\
+\hline\end{tabulary}
+
+
+
+\subsection{Response}
+\label{dev-api-practitioners:response}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}request\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}first\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}last\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}one\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}two\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}city\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}state\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}activation\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}practitioner\PYGZus{}id\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+request
+ & 
+Object containing the original
+request data
+ & 
+Object
+\\
+
+response
+ & 
+Object containing the Practitioner
+ID
+ & 
+Object
+\\
+
+practitioner\_id
+ & 
+A unique ID for the Partitioner
+record
+ & 
+Integer
+\\
+\hline\end{tabulary}
+
+
+
+\section{Retrieve Practitioner details}
+\label{dev-api-practitioners:retrieve-practitioner-details}
+This endpoint is used to retrieve most details of a Practitioner.
+
+\begin{notice}{note}{Note:}
+\textbf{GET} /api/v1/practitioners/\textless{}ID\textgreater{}
+\end{notice}
+
+
+\subsection{Response}
+\label{dev-api-practitioners:id1}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}request\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}practitioner\PYGZus{}id\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}first\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}last\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}one\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}two\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}city\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}state\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}activation\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+active
+ & 
+Active Flag for Archiving
+ & 
+String
+\\
+
+first\_name
+ & 
+First Name
+ & 
+String
+\\
+
+last\_name
+ & 
+Last Name
+ & 
+String
+\\
+
+address\_one
+ & 
+First address line
+ & 
+String
+\\
+
+address\_two
+ & 
+Second address line
+ & 
+String
+\\
+
+city
+ & 
+City
+ & 
+String
+\\
+
+state
+ & 
+State
+ & 
+String
+\\
+
+zip\_code
+ & 
+ZIP Code in 5-4 format
+ & 
+String
+\\
+
+email
+ & 
+email address
+ & 
+String
+\\
+
+activation\_code
+ & 
+Code used for initial account
+setup
+ & 
+String
+\\
+
+practice
+ & 
+ID of the Practice
+ & 
+Integer
+\\
+\hline\end{tabulary}
+
+
+
+\section{Update a Practitioner}
+\label{dev-api-practitioners:update-a-practitioner}
+This endpoint is used to update a practitioner in the Cagenix API.
+
+\begin{notice}{note}{Note:}
+\textbf{PUT} /api/v1/practitioners/\textless{}id\textgreater{}
+\end{notice}
+
+
+\subsection{Call}
+\label{dev-api-practitioners:id2}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}first\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}last\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}one\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}two\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}city\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}state\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+} & \textsf{\relax 
+Required
+}\\
+\hline
+active
+ & 
+Active Flag for Archiving
+ & 
+Boolean
+ & \\
+
+first\_name
+ & 
+First Name
+ & 
+String
+ & \\
+
+last\_name
+ & 
+Last Name
+ & 
+String
+ & \\
+
+address\_one
+ & 
+First address line
+ & 
+String
+ & \\
+
+address\_two
+ & 
+Second address line
+ & 
+String
+ & \\
+
+city
+ & 
+City
+ & 
+String
+ & \\
+
+state
+ & 
+State
+ & 
+String
+ & \\
+
+zip\_code
+ & 
+ZIP Code in 5-4 format
+ & 
+String
+ & \\
+
+email
+ & 
+email address
+ & 
+String
+ & \\
+
+active
+ & 
+Active Flag for Archiving
+ & 
+Boolean
+ & \\
+
+practice
+ & 
+ID of the Practice
+ & 
+Integer
+ & \\
+\hline\end{tabulary}
+
+
+
+\subsection{Response}
+\label{dev-api-practitioners:id3}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}request\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}first\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}last\PYGZus{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}one\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}address\PYGZus{}two\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}city\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}state\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}practitioner\PYGZus{}id\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+request
+ & 
+Object containing the original
+request data
+ & 
+Object
+\\
+
+response
+ & 
+Object containing the Practitioner
+ID
+ & 
+Object
+\\
+
+practitioner\_id
+ & 
+A unique ID for the Partitioner
+record
+ & 
+Integer
+\\
+
+active
+ & 
+Active Flag for Archiving
+ & 
+Boolean
+\\
+\hline\end{tabulary}
+
+
+
+\section{Delete a Practitioner}
+\label{dev-api-practitioners:delete-a-practitioner}
+This endpoint is used to Delete a practitioner in the Cagenix API.
+
+\begin{notice}{note}{Note:}
+\textbf{DELETE} /api/v1/practitioners/\textless{}id\textgreater{}
+\end{notice}
+
+
+\subsection{Response}
+\label{dev-api-practitioners:id4}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}request\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}practitioner\PYGZus{}id\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}status\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+request
+ & 
+Object containing the original
+request data
+ & 
+Object
+\\
+
+response
+ & 
+Object containing the Practitioner
+ID
+ & 
+Object
+\\
+
+status
+ & 
+The result of the DELETE
+opperation (EX: Success, Failed)
+ & 
+String
+\\
+\hline\end{tabulary}
+
+
+
+\section{Authenticate a Practitioner}
+\label{dev-api-practitioners:authenticate-a-practitioner}
+This endpoint is used to get the secret key for a practitioner in the Cagenix API.
+
+\begin{notice}{note}{Note:}
+\textbf{POST} /api/v1/practitioners/login
+\end{notice}
+
+
+\subsection{Call}
+\label{dev-api-practitioners:id5}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}hash\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+} & \textsf{\relax 
+Required
+}\\
+\hline
+email
+ & 
+email address
+ & 
+String
+ & 
+X
+\\
+
+hash
+ & 
+Base64 encoded HMAC+SHA512 of
+the password signed with the
+salt encypted with
+pbkdf2\_sha512
+ & 
+String
+ & 
+X
+\\
+\hline\end{tabulary}
+
+
+\begin{notice}{note}{Note:}
+hash = pbdkdf2\_sha512(base64(sha512(utf8(SALT) + utf8(PASSWORD))))
+\end{notice}
+
+
+\subsection{Response}
+\label{dev-api-practitioners:id6}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}request\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}hash\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}secret\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+request
+ & 
+Object containing the original
+request data
+ & 
+Object
+\\
+
+response
+ & 
+Object containing the secret for
+API access
+ & 
+Object
+\\
+
+secret
+ & 
+The secret for API Access
  & 
 String
 \\

@@ -3,18 +3,18 @@
 \indexentry{handle\_splash() (in module cagenix)|hyperpage}{5}
 \indexentry{logout() (in module cagenix)|hyperpage}{5}
 \indexentry{not\_found() (in module cagenix)|hyperpage}{5}
-\indexentry{cagenix.users.models (module)|hyperpage}{23}
-\indexentry{Role (class in cagenix.users.models)|hyperpage}{23}
-\indexentry{by\_id() (cagenix.users.models.Role class method)|hyperpage}{23}
-\indexentry{by\_name() (cagenix.users.models.Role class method)|hyperpage}{23}
-\indexentry{get\_roles() (cagenix.users.models.Role class method)|hyperpage}{23}
-\indexentry{User (class in cagenix.users.models)|hyperpage}{23}
-\indexentry{by\_email() (cagenix.users.models.User class method)|hyperpage}{24}
-\indexentry{by\_id() (cagenix.users.models.User class method)|hyperpage}{24}
-\indexentry{by\_phone() (cagenix.users.models.User class method)|hyperpage}{24}
-\indexentry{by\_username() (cagenix.users.models.User class method)|hyperpage}{24}
-\indexentry{cagenix.patients.models (module)|hyperpage}{25}
-\indexentry{Patient (class in cagenix.patients.models)|hyperpage}{25}
-\indexentry{by\_email() (cagenix.patients.models.Patient class method)|hyperpage}{25}
-\indexentry{by\_id() (cagenix.patients.models.Patient class method)|hyperpage}{25}
-\indexentry{by\_phone() (cagenix.patients.models.Patient class method)|hyperpage}{25}
+\indexentry{cagenix.users.models (module)|hyperpage}{29}
+\indexentry{Role (class in cagenix.users.models)|hyperpage}{29}
+\indexentry{by\_id() (cagenix.users.models.Role class method)|hyperpage}{29}
+\indexentry{by\_name() (cagenix.users.models.Role class method)|hyperpage}{29}
+\indexentry{get\_roles() (cagenix.users.models.Role class method)|hyperpage}{29}
+\indexentry{User (class in cagenix.users.models)|hyperpage}{29}
+\indexentry{by\_email() (cagenix.users.models.User class method)|hyperpage}{30}
+\indexentry{by\_id() (cagenix.users.models.User class method)|hyperpage}{30}
+\indexentry{by\_phone() (cagenix.users.models.User class method)|hyperpage}{30}
+\indexentry{by\_username() (cagenix.users.models.User class method)|hyperpage}{30}
+\indexentry{cagenix.patients.models (module)|hyperpage}{31}
+\indexentry{Patient (class in cagenix.patients.models)|hyperpage}{31}
+\indexentry{by\_email() (cagenix.patients.models.Patient class method)|hyperpage}{31}
+\indexentry{by\_id() (cagenix.patients.models.Patient class method)|hyperpage}{31}
+\indexentry{by\_phone() (cagenix.patients.models.Patient class method)|hyperpage}{31}

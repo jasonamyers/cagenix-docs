@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  27 JAN 2014 21:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  28 JAN 2014 15:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,12 +897,12 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 55.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 62.
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.55 ...atients Blueprint Overview}{25}{chapter.8}
+l.62 ...7.3}Update an Evaluation}{27}{section.7.3}
                                                    [1
 
 ])
@@ -959,23 +959,42 @@ Chapter 6.
 [19
 
 ] [20] [21] [22]
+Overfull \hbox (1.02316pt too wide) in paragraph at lines 2623--2623
+[]\T1/phv/m/n/10 Type|  
+ []
+
+
+Overfull \hbox (4.44293pt too wide) in paragraph at lines 2623--2623
+[]\T1/ptm/m/n/10 String|  
+ []
+
+
+Overfull \hbox (4.44293pt too wide) in paragraph at lines 2623--2623
+[]\T1/ptm/m/n/10 String|  
+ []
+
+[23] [24
+
+]
 Chapter 7.
-[23
-
-] [24]
+[25] [26] [27] [28]
 Chapter 8.
-[25
+[29
 
-] [26]
+] [30]
 Chapter 9.
-[27
+[31
 
-] [28
+] [32]
+Chapter 10.
+[33
 
-] [29
+] [34
+
+] [35
 
 
-] (./Cagenix-Web.ind [30
+] (./Cagenix-Web.ind [36
 
 
 ]
@@ -993,28 +1012,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 []\T1/ptm/m/n/10 by_username() (ca-genix.users.models.User class
  []
 
-[31
+[37
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2825.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2825.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3490.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3490.
  (./Cagenix-Web.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2825.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2825.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3490.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3490.
 
 Package rerunfilecheck Info: File `Cagenix-Web.out' has not changed.
-(rerunfilecheck)             Checksum: 1171BDEC44816C13B1442A94EE9253BF;2360.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2825.
+(rerunfilecheck)             Checksum: 855E76DE954723C81ECF871FEAF1628A;2768.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3490.
  ) 
 Here is how much of TeX's memory you used:
- 9289 strings out of 493315
- 130811 string characters out of 6137904
- 240913 words of memory out of 5000000
- 12382 multiletter control sequences out of 15000+600000
+ 9330 strings out of 493315
+ 131653 string characters out of 6137904
+ 241588 words of memory out of 5000000
+ 12403 multiletter control sequences out of 15000+600000
  61377 words of font info for 67 fonts, out of 8000000 for 9000
  958 hyphenation exceptions out of 8191
- 36i,12n,49p,359b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,51p,359b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2013/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2
 013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2013/texm
@@ -1024,10 +1043,10 @@ type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on Cagenix-Web.pdf (35 pages, 153888 bytes).
+Output written on Cagenix-Web.pdf (41 pages, 164176 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
- 441 compressed objects within 5 object streams
- 111 named destinations out of 1000 (max. 500000)
- 333 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 565 PDF objects out of 1000 (max. 8388607)
+ 503 compressed objects within 6 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 381 words of extra memory for PDF output out of 10000 (max. 10000000)
 
