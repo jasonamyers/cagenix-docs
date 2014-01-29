@@ -28,46 +28,51 @@
 \contentsline {subsection}{\numberline {4.6.1}GET Request Response Codes}{13}{subsection.4.6.1}
 \contentsline {subsection}{\numberline {4.6.2}POST/PUT Request Response Codes}{13}{subsection.4.6.2}
 \contentsline {subsection}{\numberline {4.6.3}DELETE Request Response Codes}{13}{subsection.4.6.3}
-\contentsline {chapter}{\numberline {5}Patients API}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}Create a patient}{15}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Call}{15}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Response}{15}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Retrieve Patient details}{16}{section.5.2}
+\contentsline {chapter}{\numberline {5}Advertisements API}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}Retrieve Advertisement details}{15}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Response}{15}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Retrieve Advertisement details}{15}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Response}{16}{subsection.5.2.1}
-\contentsline {section}{\numberline {5.3}Update a patient}{17}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Call}{17}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Response}{18}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}Delete a patient}{18}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Response}{18}{subsection.5.4.1}
-\contentsline {chapter}{\numberline {6}Practitioners API}{19}{chapter.6}
-\contentsline {section}{\numberline {6.1}Create a Practitioner}{19}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Call}{19}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Response}{19}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Retrieve Practitioner details}{20}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Response}{20}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Update a Practitioner}{21}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Call}{21}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Response}{21}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}Delete a Practitioner}{22}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Response}{22}{subsection.6.4.1}
-\contentsline {section}{\numberline {6.5}Authenticate a Practitioner}{22}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Call}{23}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Response}{23}{subsection.6.5.2}
-\contentsline {chapter}{\numberline {7}Evaluations API}{25}{chapter.7}
-\contentsline {section}{\numberline {7.1}Create an Evaluation}{25}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Call}{25}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Response}{25}{subsection.7.1.2}
-\contentsline {section}{\numberline {7.2}Retrieve Evaluation details}{26}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Response}{26}{subsection.7.2.1}
-\contentsline {section}{\numberline {7.3}Update an Evaluation}{27}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Call}{27}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Response}{27}{subsection.7.3.2}
-\contentsline {section}{\numberline {7.4}Delete a patient}{28}{section.7.4}
-\contentsline {subsection}{\numberline {7.4.1}Response}{28}{subsection.7.4.1}
-\contentsline {chapter}{\numberline {8}Users Blueprint Overview}{29}{chapter.8}
-\contentsline {section}{\numberline {8.1}Users Models}{29}{section.8.1}
-\contentsline {chapter}{\numberline {9}Patients Blueprint Overview}{31}{chapter.9}
-\contentsline {section}{\numberline {9.1}Patients Models}{31}{section.9.1}
-\contentsline {chapter}{\numberline {10}Indices and tables}{33}{chapter.10}
-\contentsline {chapter}{Python Module Index}{35}{section*.20}
-\contentsline {chapter}{Index}{37}{section*.21}
+\contentsline {chapter}{\numberline {6}Evaluations API}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}Create an Evaluation}{17}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Call}{17}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Response}{17}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Retrieve Evaluation details}{18}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Response}{18}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Update an Evaluation}{19}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Call}{19}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Response}{19}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Delete a patient}{20}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Response}{20}{subsection.6.4.1}
+\contentsline {chapter}{\numberline {7}Patients API}{21}{chapter.7}
+\contentsline {section}{\numberline {7.1}Create a patient}{21}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Call}{21}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Response}{21}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}Retrieve Patient details}{22}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Response}{22}{subsection.7.2.1}
+\contentsline {section}{\numberline {7.3}Update a patient}{23}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Call}{23}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Response}{24}{subsection.7.3.2}
+\contentsline {section}{\numberline {7.4}Delete a patient}{24}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Response}{24}{subsection.7.4.1}
+\contentsline {chapter}{\numberline {8}Practitioners API}{25}{chapter.8}
+\contentsline {section}{\numberline {8.1}Create a Practitioner}{25}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Call}{25}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Response}{26}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.2}Retrieve Practitioner details}{26}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Response}{26}{subsection.8.2.1}
+\contentsline {section}{\numberline {8.3}Update a Practitioner}{27}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Call}{27}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Response}{28}{subsection.8.3.2}
+\contentsline {section}{\numberline {8.4}Delete a Practitioner}{28}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Response}{29}{subsection.8.4.1}
+\contentsline {section}{\numberline {8.5}Authenticate a Practitioner}{29}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}Call}{29}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.2}Response}{29}{subsection.8.5.2}
+\contentsline {chapter}{\numberline {9}Users Blueprint Overview}{31}{chapter.9}
+\contentsline {section}{\numberline {9.1}Users Models}{31}{section.9.1}
+\contentsline {chapter}{\numberline {10}Patients Blueprint Overview}{33}{chapter.10}
+\contentsline {section}{\numberline {10.1}Patients Models}{33}{section.10.1}
+\contentsline {chapter}{\numberline {11}Indices and tables}{35}{chapter.11}
+\contentsline {chapter}{Python Module Index}{37}{section*.20}
+\contentsline {chapter}{Index}{39}{section*.21}

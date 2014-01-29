@@ -2,26 +2,26 @@
 \def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
 
   \bigletter B
-  \item by\_email() (cagenix.patients.models.Patient class method), \hyperpage{31}
-  \item by\_email() (cagenix.users.models.User class method), \hyperpage{30}
-  \item by\_id() (cagenix.patients.models.Patient class method), \hyperpage{31}
-  \item by\_id() (cagenix.users.models.Role class method), \hyperpage{29}
-  \item by\_id() (cagenix.users.models.User class method), \hyperpage{30}
-  \item by\_name() (cagenix.users.models.Role class method), \hyperpage{29}
-  \item by\_phone() (cagenix.patients.models.Patient class method), \hyperpage{31}
-  \item by\_phone() (cagenix.users.models.User class method), \hyperpage{30}
-  \item by\_username() (cagenix.users.models.User class method), \hyperpage{30}
+  \item by\_email() (cagenix.patients.models.Patient class method), \hyperpage{33}
+  \item by\_email() (cagenix.users.models.User class method), \hyperpage{32}
+  \item by\_id() (cagenix.patients.models.Patient class method), \hyperpage{33}
+  \item by\_id() (cagenix.users.models.Role class method), \hyperpage{31}
+  \item by\_id() (cagenix.users.models.User class method), \hyperpage{32}
+  \item by\_name() (cagenix.users.models.Role class method), \hyperpage{31}
+  \item by\_phone() (cagenix.patients.models.Patient class method), \hyperpage{33}
+  \item by\_phone() (cagenix.users.models.User class method), \hyperpage{32}
+  \item by\_username() (cagenix.users.models.User class method), \hyperpage{32}
 
   \indexspace
   \bigletter C
   \item cagenix (module), \hyperpage{5}
-  \item cagenix.patients.models (module), \hyperpage{31}
-  \item cagenix.users.models (module), \hyperpage{29}
+  \item cagenix.patients.models (module), \hyperpage{33}
+  \item cagenix.users.models (module), \hyperpage{31}
   \item create\_user() (in module cagenix), \hyperpage{5}
 
   \indexspace
   \bigletter G
-  \item get\_roles() (cagenix.users.models.Role class method), \hyperpage{29}
+  \item get\_roles() (cagenix.users.models.Role class method), \hyperpage{31}
 
   \indexspace
   \bigletter H
@@ -37,14 +37,14 @@
 
   \indexspace
   \bigletter P
-  \item Patient (class in cagenix.patients.models), \hyperpage{31}
+  \item Patient (class in cagenix.patients.models), \hyperpage{33}
 
   \indexspace
   \bigletter R
-  \item Role (class in cagenix.users.models), \hyperpage{29}
+  \item Role (class in cagenix.users.models), \hyperpage{31}
 
   \indexspace
   \bigletter U
-  \item User (class in cagenix.users.models), \hyperpage{29}
+  \item User (class in cagenix.users.models), \hyperpage{31}
 
 \end{theindex}

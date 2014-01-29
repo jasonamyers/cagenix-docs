@@ -15,9 +15,10 @@ Contents:
    dev-overview
    dev-models
    dev-api-overview
+   dev-api-advertisements
+   dev-api-evaluations
    dev-api-patients
    dev-api-practitioners
-   dev-api-evaluations
    dev-users
    dev-patients
 

@@ -391,6 +391,13 @@ String(80)
  & 
 Screen Position
 \\
+
+active
+ & 
+Boolean
+ & 
+Active Flag for archiving
+\\
 \hline\end{tabulary}
 
 
@@ -961,6 +968,20 @@ String(255)
 Code used for initial account setup
 \\
 
+primary\_color
+ & 
+String(255)
+ & 
+Primary Branding Color
+\\
+
+secondary\_color
+ & 
+String(255)
+ & 
+Secondary Branding Color
+\\
+
 active
  & 
 Boolean
@@ -1415,6 +1436,634 @@ Server Error
  & 
 There was an internal error, if it continues,
 please contact us.
+\\
+\hline\end{tabulary}
+
+
+
+\chapter{Advertisements API}
+\label{dev-api-advertisements:advertisements-api}\label{dev-api-advertisements::doc}
+
+\section{Retrieve Advertisement details}
+\label{dev-api-advertisements:retrieve-advertisement-details}
+This endpoint is used to retrieve most details of an Advertisement.
+
+\begin{notice}{note}{Note:}
+\textbf{GET} /api/v1/advertisements
+\end{notice}
+
+
+\subsection{Response}
+\label{dev-api-advertisements:response}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZob{}
+    'request': \PYGZob{}
+    \PYGZcb{},
+    'response': \PYGZob{}
+        'advertisements': [
+            \PYGZob{}
+                'id': '',
+                'name': '',
+                'asset\_location': '',
+                'position': '',
+                'position': '',
+            \PYGZcb{} \#...
+        ]
+    \PYGZcb{}
+\PYGZcb{}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+advertisements
+ & 
+A collection of Ad objects
+ & 
+List
+\\
+
+id
+ & 
+ID of the Advertisement
+ & 
+String
+\\
+
+name
+ & 
+Banner Name
+ & 
+String
+\\
+
+asset\_location
+ & 
+Location of asset or resource name
+ & 
+String
+\\
+
+position
+ & 
+Screen Position
+ & 
+String
+\\
+\hline\end{tabulary}
+
+
+
+\section{Retrieve Advertisement details}
+\label{dev-api-advertisements:id1}
+This endpoint is used to retrieve most details of an Advertisement.
+
+\begin{notice}{note}{Note:}
+\textbf{GET} /api/v1/advertisements/\textless{}ID\textgreater{}
+\end{notice}
+
+
+\subsection{Response}
+\label{dev-api-advertisements:id2}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}request\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}advertisement\PYGZus{}id\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}name\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}asset\PYGZus{}location\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}position\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+name
+ & 
+Banner Name
+ & 
+String
+\\
+
+asset\_location
+ & 
+Location of asset or resource name
+ & 
+String
+\\
+
+position
+ & 
+Screen Position
+ & 
+String
+\\
+
+active
+ & 
+Active Flag for Archiving
+ & 
+String
+\\
+\hline\end{tabulary}
+
+
+
+\chapter{Evaluations API}
+\label{dev-api-evaluations::doc}\label{dev-api-evaluations:evaluations-api}
+
+\section{Create an Evaluation}
+\label{dev-api-evaluations:create-an-evaluation}
+This endpoint is used to create an evaluation in the Cagenix API.
+
+\begin{notice}{note}{Note:}
+\textbf{POST} /api/v1/evaluations/create
+\end{notice}
+
+
+\subsection{Call}
+\label{dev-api-evaluations:call}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZob{}
+    'practice': '',
+    'practitioner': '',
+    'patient': '',
+    'answers': [
+        \PYGZob{}
+            'question\_id': '',
+            'patient\_answer': '',
+        \PYGZcb{}, \#...
+    ]
+\PYGZcb{}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+} & \textsf{\relax 
+Required
+}\\
+\hline
+practice
+ & 
+ID of the Practice
+ & 
+Integer
+ & \\
+
+practitioner
+ & 
+ID of the Practitioner
+ & 
+Integer
+ & \\
+
+patient
+ & 
+ID of the Patient
+ & 
+Integer
+ & 
+X
+\\
+
+answers
+ & 
+A collection of Answers objects
+ & 
+List
+ & 
+X
+\\
+
+question\_id
+ & 
+ID of the Evaluation Question
+ & 
+Integer
+ & 
+X
+\\
+
+patient\_answer
+ & 
+Patient's response to the question
+ & 
+String
+ & 
+X
+\\
+\hline\end{tabulary}
+
+
+
+\subsection{Response}
+\label{dev-api-evaluations:response}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZob{}
+    'request': \PYGZob{}
+        'practice': '',
+        'practitioner': '',
+        'patient': '',
+        'answers': [
+            \PYGZob{}
+                'question\_id': '',
+                'patient\_answer': '',
+            \PYGZcb{}, \#...
+        ]
+    \PYGZcb{},
+    'response': \PYGZob{}
+        'evaluation\_uuid': '',
+    \PYGZcb{},
+\PYGZcb{}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+request
+ & 
+Object containing the original
+request data
+ & 
+Object
+\\
+
+response
+ & 
+Object containing the Eval ID
+ & 
+Object
+\\
+
+evaluation\_uuid
+ & 
+A unique UUID for the evaulation
+records
+ & 
+String
+\\
+\hline\end{tabulary}
+
+
+
+\section{Retrieve Evaluation details}
+\label{dev-api-evaluations:retrieve-evaluation-details}
+This endpoint is used to retrieve all the details of an Evaluation.
+
+\begin{notice}{note}{Note:}
+\textbf{GET} /api/v1/evaluations/\textless{}UUID\textgreater{}
+\end{notice}
+
+
+\subsection{Response}
+\label{dev-api-evaluations:id1}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZob{}
+    'request': \PYGZob{}
+        'evaluation\_uuid': '',
+    \PYGZcb{},
+    'response': \PYGZob{}
+        'evaluation\_uuid': '',
+        'practice': '',
+        'practitioner': '',
+        'patient': '',
+        'answers': [
+            \PYGZob{}
+                'question\_id': '',
+                'patient\_answer': '',
+            \PYGZcb{}, \#...
+        ]
+        'active': '',
+    \PYGZcb{}
+\PYGZcb{}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+evaluation\_uuid
+ & 
+A unique UUID for the evaulation
+records
+ & 
+String
+\\
+
+practice
+ & 
+ID of the Practice
+ & 
+Integer
+\\
+
+practitioner
+ & 
+ID of the Practitioner
+ & 
+Integer
+\\
+
+patient
+ & 
+ID of the Patient
+ & 
+Integer
+\\
+
+answers
+ & 
+A collection of Answers objects
+ & 
+List
+\\
+
+question\_id
+ & 
+ID of the Evaluation Question
+ & 
+Integer
+\\
+
+patient\_answer
+ & 
+Patient's response to the question
+ & 
+String
+\\
+\hline\end{tabulary}
+
+
+
+\section{Update an Evaluation}
+\label{dev-api-evaluations:update-an-evaluation}
+This endpoint is used to update an evaluation in the Cagenix API. You must
+resubmit all answer objects again.  So if an evaulation had 20 questions, all of
+those answers must be resubmitted for an update.
+
+\begin{notice}{note}{Note:}
+\textbf{PUT} /api/v1/evaluations/\textless{}uuid\textgreater{}
+\end{notice}
+
+
+\subsection{Call}
+\label{dev-api-evaluations:id2}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZob{}
+    'evaluation\_uuid': '',
+    'practice': '',
+    'practitioner': '',
+    'patient': '',
+    'answers': [
+        \PYGZob{}
+            'question\_id': '',
+            'patient\_answer': '',
+        \PYGZcb{}, \#...
+    ]
+    'active': '',
+\PYGZcb{}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+} & \textsf{\relax 
+Required
+}\\
+\hline
+evaluation\_uuid
+ & 
+A unique UUID for the evaulation
+records
+ & 
+String
+ & 
+X
+\\
+
+practice
+ & 
+ID of the Practice
+ & 
+Integer
+ & \\
+
+practitioner
+ & 
+ID of the Practitioner
+ & 
+Integer
+ & \\
+
+patient
+ & 
+ID of the Patient
+ & 
+Integer
+ & \\
+
+answers
+ & 
+A collection of Answers objects
+ & 
+List
+ & 
+X
+\\
+
+question\_id
+ & 
+ID of the Evaluation Question
+ & 
+Integer
+ & 
+X
+\\
+
+patient\_answer
+ & 
+Patient's response to the question
+ & 
+String
+ & 
+X
+\\
+\hline\end{tabulary}
+
+
+
+\subsection{Response}
+\label{dev-api-evaluations:id3}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZob{}
+    'request': \PYGZob{}
+        'evaluation\_uuid': '',
+        'practice': '',
+        'practitioner': '',
+        'patient': '',
+        'answers': [
+            \PYGZob{}
+                'question\_id': '',
+                'patient\_answer': '',
+            \PYGZcb{}, \#...
+        ]
+        'active': '',
+    \PYGZcb{},
+    'response': \PYGZob{}
+        'evaluation\_uuid': '',
+        'status': '',
+        'active': '',
+    \PYGZcb{},
+\PYGZcb{}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+request
+ & 
+Object containing the original
+request data
+ & 
+Object
+\\
+
+response
+ & 
+Object containing the Patient ID
+ & 
+Object
+\\
+
+evaluation\_uuid
+ & 
+A unique UUID for the evaulation
+records
+ & 
+String
+\\
+
+status
+ & 
+The result of the PUT opperation
+(EX: Success, Failed)
+ & 
+String
+\\
+
+active
+ & 
+Active Flag for Archiving
+ & 
+Boolean
+\\
+\hline\end{tabulary}
+
+
+
+\section{Delete a patient}
+\label{dev-api-evaluations:delete-a-patient}
+This endpoint is used to delete an evaluation in the Cagenix API.
+
+\begin{notice}{note}{Note:}
+\textbf{DELETE} /api/v1/evaluations/\textless{}uuid\textgreater{}
+\end{notice}
+
+
+\subsection{Response}
+\label{dev-api-evaluations:id4}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s1}{\PYGZsq{}request\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}evaluation\PYGZus{}uuid\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s1}{\PYGZsq{}status\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Property
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+Type
+}\\
+\hline
+request
+ & 
+Object containing the original
+request data
+ & 
+Object
+\\
+
+response
+ & 
+Object containing the Evaluation
+UUID
+ & 
+Object
+\\
+
+status
+ & 
+The result of the DELETE
+opperation (EX: Success, Failed)
+ & 
+String
 \\
 \hline\end{tabulary}
 
@@ -2038,6 +2687,8 @@ This endpoint is used to create a practitioner in the Cagenix API.
     \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}activation\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}primary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}secondary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
@@ -2134,6 +2785,20 @@ String
 X
 \\
 
+primary\_color
+ & 
+Primary Branding Color
+ & 
+String
+ & \\
+
+secondary\_color
+ & 
+Secondary Branding Color
+ & 
+String
+ & \\
+
 practice
  & 
 ID of the Practice
@@ -2158,6 +2823,8 @@ Integer
         \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}activation\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}primary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}secondary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{p}{\PYGZcb{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
@@ -2230,6 +2897,8 @@ This endpoint is used to retrieve most details of a Practitioner.
         \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}activation\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}primary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}secondary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
@@ -2316,6 +2985,20 @@ setup
 String
 \\
 
+primary\_color
+ & 
+Primary Branding Color
+ & 
+String
+\\
+
+secondary\_color
+ & 
+Secondary Branding Color
+ & 
+String
+\\
+
 practice
  & 
 ID of the Practice
@@ -2348,6 +3031,8 @@ This endpoint is used to update a practitioner in the Cagenix API.
     \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}primary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}secondary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}
@@ -2434,6 +3119,20 @@ Active Flag for Archiving
 Boolean
  & \\
 
+primary\_color
+ & 
+Primary Branding Color
+ & 
+String
+ & \\
+
+secondary\_color
+ & 
+Secondary Branding Color
+ & 
+String
+ & \\
+
 practice
  & 
 ID of the Practice
@@ -2458,6 +3157,8 @@ Integer
         \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}active\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}primary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}secondary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}practice\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{p}{\PYGZcb{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
@@ -2573,6 +3274,8 @@ String
 \section{Authenticate a Practitioner}
 \label{dev-api-practitioners:authenticate-a-practitioner}
 This endpoint is used to get the secret key for a practitioner in the Cagenix API.
+This POST request will be made over SSL and will be protected from outside
+attack via that encryption.
 
 \begin{notice}{note}{Note:}
 \textbf{POST} /api/v1/practitioners/login
@@ -2611,10 +3314,7 @@ X
 
 hash
  & 
-Base64 encoded HMAC+SHA512 of
-the password signed with the
-salt encypted with
-pbkdf2\_sha512
+Password
  & 
 String
  & 
@@ -2623,10 +3323,6 @@ X
 \hline\end{tabulary}
 
 
-\begin{notice}{note}{Note:}
-hash = pbdkdf2\_sha512(base64(sha512(utf8(SALT) + utf8(PASSWORD))))
-\end{notice}
-
 
 \subsection{Response}
 \label{dev-api-practitioners:id6}
@@ -2634,7 +3330,6 @@ hash = pbdkdf2\_sha512(base64(sha512(utf8(SALT) + utf8(PASSWORD))))
 \PYG{p}{\PYGZob{}}
     \PYG{l+s+s1}{\PYGZsq{}request\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
         \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
-        \PYG{l+s+s1}{\PYGZsq{}hash\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{p}{\PYGZcb{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
         \PYG{l+s+s1}{\PYGZsq{}secret\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
@@ -2671,488 +3366,6 @@ Object
 secret
  & 
 The secret for API Access
- & 
-String
-\\
-\hline\end{tabulary}
-
-
-
-\chapter{Evaluations API}
-\label{dev-api-evaluations::doc}\label{dev-api-evaluations:evaluations-api}
-
-\section{Create an Evaluation}
-\label{dev-api-evaluations:create-an-evaluation}
-This endpoint is used to create an evaluation in the Cagenix API.
-
-\begin{notice}{note}{Note:}
-\textbf{POST} /api/v1/evaluations/create
-\end{notice}
-
-
-\subsection{Call}
-\label{dev-api-evaluations:call}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYGZob{}
-    'practice': '',
-    'practitioner': '',
-    'patient': '',
-    'answers': [
-        \PYGZob{}
-            'question\_id': '',
-            'patient\_answer': '',
-        \PYGZcb{}, \#...
-    ]
-\PYGZcb{}
-\end{Verbatim}
-
-\begin{tabulary}{\linewidth}{|L|L|L|L|}
-\hline
-\textsf{\relax 
-Property
-} & \textsf{\relax 
-Description
-} & \textsf{\relax 
-Type
-} & \textsf{\relax 
-Required
-}\\
-\hline
-practice
- & 
-ID of the Practice
- & 
-Integer
- & \\
-
-practitioner
- & 
-ID of the Practitioner
- & 
-Integer
- & \\
-
-patient
- & 
-ID of the Patient
- & 
-Integer
- & 
-X
-\\
-
-answers
- & 
-A collection of Answers objects
- & 
-List
- & 
-X
-\\
-
-question\_id
- & 
-ID of the Evaluation Question
- & 
-Integer
- & 
-X
-\\
-
-patient\_answer
- & 
-Patient's response to the question
- & 
-String
- & 
-X
-\\
-\hline\end{tabulary}
-
-
-
-\subsection{Response}
-\label{dev-api-evaluations:response}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYGZob{}
-    'request': \PYGZob{}
-        'practice': '',
-        'practitioner': '',
-        'patient': '',
-        'answers': [
-            \PYGZob{}
-                'question\_id': '',
-                'patient\_answer': '',
-            \PYGZcb{}, \#...
-        ]
-    \PYGZcb{},
-    'response': \PYGZob{}
-        'evaluation\_uuid': '',
-    \PYGZcb{},
-\PYGZcb{}
-\end{Verbatim}
-
-\begin{tabulary}{\linewidth}{|L|L|L|}
-\hline
-\textsf{\relax 
-Property
-} & \textsf{\relax 
-Description
-} & \textsf{\relax 
-Type
-}\\
-\hline
-request
- & 
-Object containing the original
-request data
- & 
-Object
-\\
-
-response
- & 
-Object containing the Eval ID
- & 
-Object
-\\
-
-evaluation\_uuid
- & 
-A unique UUID for the evaulation
-records
- & 
-String
-\\
-\hline\end{tabulary}
-
-
-
-\section{Retrieve Evaluation details}
-\label{dev-api-evaluations:retrieve-evaluation-details}
-This endpoint is used to retrieve all the details of an Evaluation.
-
-\begin{notice}{note}{Note:}
-\textbf{GET} /api/v1/evaluations/\textless{}UUID\textgreater{}
-\end{notice}
-
-
-\subsection{Response}
-\label{dev-api-evaluations:id1}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYGZob{}
-    'request': \PYGZob{}
-        'evaluation\_uuid': '',
-    \PYGZcb{},
-    'response': \PYGZob{}
-        'evaluation\_uuid': '',
-        'practice': '',
-        'practitioner': '',
-        'patient': '',
-        'answers': [
-            \PYGZob{}
-                'question\_id': '',
-                'patient\_answer': '',
-            \PYGZcb{}, \#...
-        ]
-        'active': '',
-    \PYGZcb{}
-\PYGZcb{}
-\end{Verbatim}
-
-\begin{tabulary}{\linewidth}{|L|L|L|}
-\hline
-\textsf{\relax 
-Property
-} & \textsf{\relax 
-Description
-} & \textsf{\relax 
-Type
-}\\
-\hline
-evaluation\_uuid
- & 
-A unique UUID for the evaulation
-records
- & 
-String
-\\
-
-practice
- & 
-ID of the Practice
- & 
-Integer
-\\
-
-practitioner
- & 
-ID of the Practitioner
- & 
-Integer
-\\
-
-patient
- & 
-ID of the Patient
- & 
-Integer
-\\
-
-answers
- & 
-A collection of Answers objects
- & 
-List
-\\
-
-question\_id
- & 
-ID of the Evaluation Question
- & 
-Integer
-\\
-
-patient\_answer
- & 
-Patient's response to the question
- & 
-String
-\\
-\hline\end{tabulary}
-
-
-
-\section{Update an Evaluation}
-\label{dev-api-evaluations:update-an-evaluation}
-This endpoint is used to update an evaluation in the Cagenix API. You must
-resubmit all answer objects again.  So if an evaulation had 20 questions, all of
-those answers must be resubmitted for an update.
-
-\begin{notice}{note}{Note:}
-\textbf{PUT} /api/v1/evaluations/\textless{}uuid\textgreater{}
-\end{notice}
-
-
-\subsection{Call}
-\label{dev-api-evaluations:id2}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYGZob{}
-    'evaluation\_uuid': '',
-    'practice': '',
-    'practitioner': '',
-    'patient': '',
-    'answers': [
-        \PYGZob{}
-            'question\_id': '',
-            'patient\_answer': '',
-        \PYGZcb{}, \#...
-    ]
-    'active': '',
-\PYGZcb{}
-\end{Verbatim}
-
-\begin{tabulary}{\linewidth}{|L|L|L|L|}
-\hline
-\textsf{\relax 
-Property
-} & \textsf{\relax 
-Description
-} & \textsf{\relax 
-Type
-} & \textsf{\relax 
-Required
-}\\
-\hline
-evaluation\_uuid
- & 
-A unique UUID for the evaulation
-records
- & 
-String
- & 
-X
-\\
-
-practice
- & 
-ID of the Practice
- & 
-Integer
- & \\
-
-practitioner
- & 
-ID of the Practitioner
- & 
-Integer
- & \\
-
-patient
- & 
-ID of the Patient
- & 
-Integer
- & \\
-
-answers
- & 
-A collection of Answers objects
- & 
-List
- & 
-X
-\\
-
-question\_id
- & 
-ID of the Evaluation Question
- & 
-Integer
- & 
-X
-\\
-
-patient\_answer
- & 
-Patient's response to the question
- & 
-String
- & 
-X
-\\
-\hline\end{tabulary}
-
-
-
-\subsection{Response}
-\label{dev-api-evaluations:id3}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYGZob{}
-    'request': \PYGZob{}
-        'evaluation\_uuid': '',
-        'practice': '',
-        'practitioner': '',
-        'patient': '',
-        'answers': [
-            \PYGZob{}
-                'question\_id': '',
-                'patient\_answer': '',
-            \PYGZcb{}, \#...
-        ]
-        'active': '',
-    \PYGZcb{},
-    'response': \PYGZob{}
-        'evaluation\_uuid': '',
-        'status': '',
-        'active': '',
-    \PYGZcb{},
-\PYGZcb{}
-\end{Verbatim}
-
-\begin{tabulary}{\linewidth}{|L|L|L|}
-\hline
-\textsf{\relax 
-Property
-} & \textsf{\relax 
-Description
-} & \textsf{\relax 
-Type
-}\\
-\hline
-request
- & 
-Object containing the original
-request data
- & 
-Object
-\\
-
-response
- & 
-Object containing the Patient ID
- & 
-Object
-\\
-
-evaluation\_uuid
- & 
-A unique UUID for the evaulation
-records
- & 
-String
-\\
-
-status
- & 
-The result of the PUT opperation
-(EX: Success, Failed)
- & 
-String
-\\
-
-active
- & 
-Active Flag for Archiving
- & 
-Boolean
-\\
-\hline\end{tabulary}
-
-
-
-\section{Delete a patient}
-\label{dev-api-evaluations:delete-a-patient}
-This endpoint is used to delete an evaluation in the Cagenix API.
-
-\begin{notice}{note}{Note:}
-\textbf{DELETE} /api/v1/evaluations/\textless{}uuid\textgreater{}
-\end{notice}
-
-
-\subsection{Response}
-\label{dev-api-evaluations:id4}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{p}{\PYGZob{}}
-    \PYG{l+s+s1}{\PYGZsq{}request\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
-        \PYG{l+s+s1}{\PYGZsq{}evaluation\PYGZus{}uuid\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
-    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
-    \PYG{l+s+s1}{\PYGZsq{}response\PYGZsq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
-        \PYG{l+s+s1}{\PYGZsq{}status\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
-    \PYG{p}{\PYGZcb{}}\PYG{p}{,}
-\PYG{p}{\PYGZcb{}}
-\end{Verbatim}
-
-\begin{tabulary}{\linewidth}{|L|L|L|}
-\hline
-\textsf{\relax 
-Property
-} & \textsf{\relax 
-Description
-} & \textsf{\relax 
-Type
-}\\
-\hline
-request
- & 
-Object containing the original
-request data
- & 
-Object
-\\
-
-response
- & 
-Object containing the Evaluation
-UUID
- & 
-Object
-\\
-
-status
- & 
-The result of the DELETE
-opperation (EX: Success, Failed)
  & 
 String
 \\

@@ -24,6 +24,8 @@ Call
         'zip_code': '',
         'email': '',
         'activation_code': '',
+        'primary_color': '',
+        'secondary_color': '',
         'practice': '',
     }
 
@@ -49,6 +51,10 @@ Call
 +----------------------+-----------------------------------+--------+----------+
 | activation_code      | Code used for initial account     | String |    X     |
 |                      | setup                             |        |          |
++----------------------+-----------------------------------+--------+----------+
+| primary_color        | Primary Branding Color            | String |          |
++----------------------+-----------------------------------+--------+----------+
+| secondary_color      | Secondary Branding Color          | String |          |
 +----------------------+-----------------------------------+--------+----------+
 | practice             | ID of the Practice                | Integer|          |
 +----------------------+-----------------------------------+--------+----------+
@@ -274,6 +280,8 @@ Response
 Authenticate a Practitioner
 ===========================
 This endpoint is used to get the secret key for a practitioner in the Cagenix API.
+This POST request will be made over SSL and will be protected from outside
+attack via that encryption.
 
 .. note:: **POST** /api/v1/practitioners/login
 
@@ -293,14 +301,8 @@ Call
 +======================+===================================+========+==========+
 | email                | email address                     | String |    X     |
 +----------------------+-----------------------------------+--------+----------+
-| hash                 | Base64 encoded HMAC+SHA512 of     | String |    X     |
-|                      | the password signed with the      |        |          |
-|                      | salt encypted with                |        |          |
-|                      | pbkdf2_sha512                     |        |          |
+| hash                 | Password                          | String |    X     |
 +----------------------+-----------------------------------+--------+----------+
-
-
-.. note:: hash = pbdkdf2_sha512( base64( sha512( utf8(SALT) + utf8(PASSWORD) ) ) )
 
 Response
 --------

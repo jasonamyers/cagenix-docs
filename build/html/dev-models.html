@@ -100,11 +100,9 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#response-codes">Response Codes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-advertisements.html">Advertisements API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#retrieve-advertisement-details">Retrieve Advertisement details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#id1">Retrieve Advertisement details</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
@@ -112,6 +110,21 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-practitioners.html">Practitioners API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#create-a-practitioner">Create a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#retrieve-practitioner-details">Retrieve Practitioner details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#update-a-practitioner">Update a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#delete-a-practitioner">Delete a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
@@ -242,6 +255,10 @@
 <tr class="row-odd"><td>position</td>
 <td>String(80)</td>
 <td>Screen Position</td>
+</tr>
+<tr class="row-even"><td>active</td>
+<td>Boolean</td>
+<td>Active Flag for archiving</td>
 </tr>
 </tbody>
 </table>
@@ -657,6 +674,14 @@ evaulation.</td>
 <tr class="row-odd"><td>activation_code</td>
 <td>String(255)</td>
 <td>Code used for initial account setup</td>
+</tr>
+<tr class="row-even"><td>primary_color</td>
+<td>String(255)</td>
+<td>Primary Branding Color</td>
+</tr>
+<tr class="row-odd"><td>secondary_color</td>
+<td>String(255)</td>
+<td>Secondary Branding Color</td>
 </tr>
 <tr class="row-even"><td>active</td>
 <td>Boolean</td>

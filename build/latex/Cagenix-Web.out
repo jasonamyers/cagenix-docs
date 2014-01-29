@@ -20,26 +20,29 @@
 \BOOKMARK [1][-]{section.4.4}{Headers}{chapter.4}% 20
 \BOOKMARK [1][-]{section.4.5}{Header Formulas}{chapter.4}% 21
 \BOOKMARK [1][-]{section.4.6}{Response Codes}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Patients API}{}% 23
-\BOOKMARK [1][-]{section.5.1}{Create a patient}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.2}{Retrieve Patient details}{chapter.5}% 25
-\BOOKMARK [1][-]{section.5.3}{Update a patient}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.4}{Delete a patient}{chapter.5}% 27
-\BOOKMARK [0][-]{chapter.6}{Practitioners API}{}% 28
-\BOOKMARK [1][-]{section.6.1}{Create a Practitioner}{chapter.6}% 29
-\BOOKMARK [1][-]{section.6.2}{Retrieve Practitioner details}{chapter.6}% 30
-\BOOKMARK [1][-]{section.6.3}{Update a Practitioner}{chapter.6}% 31
-\BOOKMARK [1][-]{section.6.4}{Delete a Practitioner}{chapter.6}% 32
-\BOOKMARK [1][-]{section.6.5}{Authenticate a Practitioner}{chapter.6}% 33
-\BOOKMARK [0][-]{chapter.7}{Evaluations API}{}% 34
-\BOOKMARK [1][-]{section.7.1}{Create an Evaluation}{chapter.7}% 35
-\BOOKMARK [1][-]{section.7.2}{Retrieve Evaluation details}{chapter.7}% 36
-\BOOKMARK [1][-]{section.7.3}{Update an Evaluation}{chapter.7}% 37
-\BOOKMARK [1][-]{section.7.4}{Delete a patient}{chapter.7}% 38
-\BOOKMARK [0][-]{chapter.8}{Users Blueprint Overview}{}% 39
-\BOOKMARK [1][-]{section.8.1}{Users Models}{chapter.8}% 40
-\BOOKMARK [0][-]{chapter.9}{Patients Blueprint Overview}{}% 41
-\BOOKMARK [1][-]{section.9.1}{Patients Models}{chapter.9}% 42
-\BOOKMARK [0][-]{chapter.10}{Indices and tables}{}% 43
-\BOOKMARK [0][-]{section*.20}{Python Module Index}{}% 44
-\BOOKMARK [0][-]{section*.21}{Index}{}% 45
+\BOOKMARK [0][-]{chapter.5}{Advertisements API}{}% 23
+\BOOKMARK [1][-]{section.5.1}{Retrieve Advertisement details}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{Retrieve Advertisement details}{chapter.5}% 25
+\BOOKMARK [0][-]{chapter.6}{Evaluations API}{}% 26
+\BOOKMARK [1][-]{section.6.1}{Create an Evaluation}{chapter.6}% 27
+\BOOKMARK [1][-]{section.6.2}{Retrieve Evaluation details}{chapter.6}% 28
+\BOOKMARK [1][-]{section.6.3}{Update an Evaluation}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.4}{Delete a patient}{chapter.6}% 30
+\BOOKMARK [0][-]{chapter.7}{Patients API}{}% 31
+\BOOKMARK [1][-]{section.7.1}{Create a patient}{chapter.7}% 32
+\BOOKMARK [1][-]{section.7.2}{Retrieve Patient details}{chapter.7}% 33
+\BOOKMARK [1][-]{section.7.3}{Update a patient}{chapter.7}% 34
+\BOOKMARK [1][-]{section.7.4}{Delete a patient}{chapter.7}% 35
+\BOOKMARK [0][-]{chapter.8}{Practitioners API}{}% 36
+\BOOKMARK [1][-]{section.8.1}{Create a Practitioner}{chapter.8}% 37
+\BOOKMARK [1][-]{section.8.2}{Retrieve Practitioner details}{chapter.8}% 38
+\BOOKMARK [1][-]{section.8.3}{Update a Practitioner}{chapter.8}% 39
+\BOOKMARK [1][-]{section.8.4}{Delete a Practitioner}{chapter.8}% 40
+\BOOKMARK [1][-]{section.8.5}{Authenticate a Practitioner}{chapter.8}% 41
+\BOOKMARK [0][-]{chapter.9}{Users Blueprint Overview}{}% 42
+\BOOKMARK [1][-]{section.9.1}{Users Models}{chapter.9}% 43
+\BOOKMARK [0][-]{chapter.10}{Patients Blueprint Overview}{}% 44
+\BOOKMARK [1][-]{section.10.1}{Patients Models}{chapter.10}% 45
+\BOOKMARK [0][-]{chapter.11}{Indices and tables}{}% 46
+\BOOKMARK [0][-]{section*.20}{Python Module Index}{}% 47
+\BOOKMARK [0][-]{section*.21}{Index}{}% 48

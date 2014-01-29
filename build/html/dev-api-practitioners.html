@@ -44,7 +44,7 @@
 
   
     <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
-        <link rel="next" title="Evaluations API" href="dev-api-evaluations.html"/>
+        <link rel="next" title="Users Blueprint Overview" href="dev-users.html"/>
         <link rel="prev" title="Patients API" href="dev-api-patients.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -100,6 +100,18 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#response-codes">Response Codes</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-advertisements.html">Advertisements API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#retrieve-advertisement-details">Retrieve Advertisement details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#id1">Retrieve Advertisement details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
@@ -113,13 +125,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#update-a-practitioner">Update a Practitioner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#delete-a-practitioner">Delete a Practitioner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
@@ -178,6 +183,8 @@
     <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;activation_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;primary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;secondary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
@@ -242,6 +249,16 @@
 setup</td>
 <td>String</td>
 <td>X</td>
+</tr>
+<tr class="row-odd"><td>primary_color</td>
+<td>Primary Branding Color</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>secondary_color</td>
+<td>Secondary Branding Color</td>
+<td>String</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>practice</td>
 <td>ID of the Practice</td>
@@ -602,7 +619,9 @@ opperation (EX: Success, Failed)</td>
 </div>
 <div class="section" id="authenticate-a-practitioner">
 <h2>Authenticate a Practitioner<a class="headerlink" href="#authenticate-a-practitioner" title="Permalink to this headline">¶</a></h2>
-<p>This endpoint is used to get the secret key for a practitioner in the Cagenix API.</p>
+<p>This endpoint is used to get the secret key for a practitioner in the Cagenix API.
+This POST request will be made over SSL and will be protected from outside
+attack via that encryption.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>POST</strong> /api/v1/practitioners/login</p>
@@ -636,19 +655,12 @@ opperation (EX: Success, Failed)</td>
 <td>X</td>
 </tr>
 <tr class="row-odd"><td>hash</td>
-<td>Base64 encoded HMAC+SHA512 of
-the password signed with the
-salt encypted with
-pbkdf2_sha512</td>
+<td>Password</td>
 <td>String</td>
 <td>X</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">hash = pbdkdf2_sha512( base64( sha512( utf8(SALT) + utf8(PASSWORD) ) ) )</p>
-</div>
 </div>
 <div class="section" id="id6">
 <h3>Response<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
@@ -701,7 +713,7 @@ API access</td>
   
     <div class="rst-footer-buttons">
       
-        <a href="dev-api-evaluations.html" class="btn btn-neutral float-right" title="Evaluations API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="dev-users.html" class="btn btn-neutral float-right" title="Users Blueprint Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="dev-api-patients.html" class="btn btn-neutral" title="Patients API"><span class="icon icon-circle-arrow-left"></span> Previous</a>

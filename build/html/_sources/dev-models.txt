@@ -52,6 +52,8 @@ Advertisement Model
 +-----------------+---------------+----------------------------------------+
 | position        | String(80)    | Screen Position                        |
 +-----------------+---------------+----------------------------------------+
+| active          | Boolean       | Active Flag for archiving              |
++-----------------+---------------+----------------------------------------+
 
 .. _evaluation-model-label:
 
@@ -253,6 +255,10 @@ User Model
 | secret          | String(255)   | Secret key used for API                |
 +-----------------+---------------+----------------------------------------+
 | activation_code | String(255)   | Code used for initial account setup    |
++-----------------+---------------+----------------------------------------+
+| primary_color   | String(255)   | Primary Branding Color                 |
++-----------------+---------------+----------------------------------------+
+| secondary_color | String(255)   | Secondary Branding Color               |
 +-----------------+---------------+----------------------------------------+
 | active          | Boolean       | Active Flag for archiving              |
 +-----------------+---------------+----------------------------------------+
