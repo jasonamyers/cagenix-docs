@@ -14,7 +14,7 @@
 
 
 \title{Cagenix-Web Documentation}
-\date{January 28, 2014}
+\date{January 30, 2014}
 \release{0.1a1}
 \author{Jason Myers for Prime Notion Technologies}
 \newcommand{\sphinxlogo}{}
@@ -2686,6 +2686,7 @@ This endpoint is used to create a practitioner in the Cagenix API.
     \PYG{l+s+s1}{\PYGZsq{}state\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+    \PYG{l+s+s1}{\PYGZsq{}password\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}activation\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}primary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
     \PYG{l+s+s1}{\PYGZsq{}secondary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
@@ -2768,7 +2769,16 @@ X
 
 email
  & 
-email address
+Email address
+ & 
+String
+ & 
+X
+\\
+
+password
+ & 
+Password
  & 
 String
  & 
@@ -2822,6 +2832,7 @@ Integer
         \PYG{l+s+s1}{\PYGZsq{}state\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}zip\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}email\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
+        \PYG{l+s+s1}{\PYGZsq{}password\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}XXX\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}activation\PYGZus{}code\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}primary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
         \PYG{l+s+s1}{\PYGZsq{}secondary\PYGZus{}color\PYGZsq{}}\PYG{o}{:} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{,}
@@ -3563,6 +3574,20 @@ by\_username returns a User object given a username
 \end{itemize}
 
 \end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{map\_data() (cagenix.users.models.User method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.models.User.map_data}\pysiglinewithargsret{\bfcode{map\_data}}{\emph{data}}{}
+map\_data takes a dict as an argument. It then iterates
+over each key field in the fields list, if a key is
+in the supplied dict, it will then update the attribute of
+this object to reflect the value of that key in the dict.
+
+The User implementation of map\_data skips password to avoid plaintext
+compromises and security issues.
 
 \end{fulllineitems}
 

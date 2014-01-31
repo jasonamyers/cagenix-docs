@@ -32,6 +32,10 @@
   \item logout() (in module cagenix), \hyperpage{5}
 
   \indexspace
+  \bigletter M
+  \item map\_data() (cagenix.users.models.User method), \hyperpage{32}
+
+  \indexspace
   \bigletter N
   \item not\_found() (in module cagenix), \hyperpage{5}
 

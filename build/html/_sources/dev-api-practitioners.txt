@@ -23,6 +23,7 @@ Call
         'state': '',
         'zip_code': '',
         'email': '',
+        'password': '',
         'activation_code': '',
         'primary_color': '',
         'secondary_color': '',
@@ -47,7 +48,9 @@ Call
 +----------------------+-----------------------------------+--------+----------+
 | zip_code             | ZIP Code in 5-4 format            | String |    X     |
 +----------------------+-----------------------------------+--------+----------+
-| email                | email address                     | String |    X     |
+| email                | Email address                     | String |    X     |
++----------------------+-----------------------------------+--------+----------+
+| password             | Password                          | String |    X     |
 +----------------------+-----------------------------------+--------+----------+
 | activation_code      | Code used for initial account     | String |    X     |
 |                      | setup                             |        |          |
@@ -74,7 +77,10 @@ Response
             'state': '',
             'zip_code': '',
             'email': '',
+            'password': 'XXX',
             'activation_code': '',
+            'primary_color': '',
+            'secondary_color': '',
             'practice': '',
         },
         'response': {
@@ -121,6 +127,8 @@ Response
             'zip_code': '',
             'email': '',
             'activation_code': '',
+            'primary_color': '',
+            'secondary_color': '',
             'practice': '',
         }
     }
@@ -149,6 +157,10 @@ Response
 | activation_code      | Code used for initial account     | String |
 |                      | setup                             |        |
 +----------------------+-----------------------------------+--------+
+| primary_color        | Primary Branding Color            | String |
++----------------------+-----------------------------------+--------+
+| secondary_color      | Secondary Branding Color          | String |
++----------------------+-----------------------------------+--------+
 | practice             | ID of the Practice                | Integer|
 +----------------------+-----------------------------------+--------+
 
@@ -173,6 +185,8 @@ Call
         'zip_code': '',
         'email': '',
         'active': '',
+        'primary_color': '',
+        'secondary_color': '',
         'practice': '',
     }
 
@@ -200,6 +214,10 @@ Call
 +----------------------+-----------------------------------+--------+----------+
 | active               | Active Flag for Archiving         | Boolean|          |
 +----------------------+-----------------------------------+--------+----------+
+| primary_color        | Primary Branding Color            | String |          |
++----------------------+-----------------------------------+--------+----------+
+| secondary_color      | Secondary Branding Color          | String |          |
++----------------------+-----------------------------------+--------+----------+
 | practice             | ID of the Practice                | Integer|          |
 +----------------------+-----------------------------------+--------+----------+
 
@@ -219,6 +237,8 @@ Response
             'zip_code': '',
             'email': '',
             'active': '',
+            'primary_color': '',
+            'secondary_color': '',
             'practice': '',
         },
         'response': {
@@ -312,7 +332,6 @@ Response
     {
         'request': {
             'email': '',
-            'hash': '',
         },
         'response': {
             'secret': '',

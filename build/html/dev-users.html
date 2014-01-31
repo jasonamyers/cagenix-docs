@@ -45,7 +45,7 @@
   
     <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
         <link rel="next" title="Patients Blueprint Overview" href="dev-patients.html"/>
-        <link rel="prev" title="Evaluations API" href="dev-api-evaluations.html"/> 
+        <link rel="prev" title="Practitioners API" href="dev-api-practitioners.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -100,11 +100,9 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#response-codes">Response Codes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-advertisements.html">Advertisements API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#retrieve-advertisement-details">Retrieve Advertisement details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#id1">Retrieve Advertisement details</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
@@ -112,6 +110,21 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-practitioners.html">Practitioners API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#create-a-practitioner">Create a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#retrieve-practitioner-details">Retrieve Practitioner details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#update-a-practitioner">Update a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#delete-a-practitioner">Delete a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Users Blueprint Overview</a><ul>
@@ -324,6 +337,17 @@ fields are used to track user logins and access IPs.</p>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="cagenix.users.models.User.map_data">
+<tt class="descname">map_data</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#cagenix.users.models.User.map_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>map_data takes a dict as an argument. It then iterates
+over each key field in the fields list, if a key is
+in the supplied dict, it will then update the attribute of
+this object to reflect the value of that key in the dict.</p>
+<p>The User implementation of map_data skips password to avoid plaintext
+compromises and security issues.</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -337,7 +361,7 @@ fields are used to track user logins and access IPs.</p>
         <a href="dev-patients.html" class="btn btn-neutral float-right" title="Patients Blueprint Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="dev-api-evaluations.html" class="btn btn-neutral" title="Evaluations API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="dev-api-practitioners.html" class="btn btn-neutral" title="Practitioners API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

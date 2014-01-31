@@ -13,6 +13,7 @@
 \indexentry{by\_id() (cagenix.users.models.User class method)|hyperpage}{32}
 \indexentry{by\_phone() (cagenix.users.models.User class method)|hyperpage}{32}
 \indexentry{by\_username() (cagenix.users.models.User class method)|hyperpage}{32}
+\indexentry{map\_data() (cagenix.users.models.User method)|hyperpage}{32}
 \indexentry{cagenix.patients.models (module)|hyperpage}{33}
 \indexentry{Patient (class in cagenix.patients.models)|hyperpage}{33}
 \indexentry{by\_email() (cagenix.patients.models.Patient class method)|hyperpage}{33}

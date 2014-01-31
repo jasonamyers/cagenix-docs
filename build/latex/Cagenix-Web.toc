@@ -74,5 +74,5 @@
 \contentsline {chapter}{\numberline {10}Patients Blueprint Overview}{33}{chapter.10}
 \contentsline {section}{\numberline {10.1}Patients Models}{33}{section.10.1}
 \contentsline {chapter}{\numberline {11}Indices and tables}{35}{chapter.11}
-\contentsline {chapter}{Python Module Index}{37}{section*.20}
-\contentsline {chapter}{Index}{39}{section*.21}
+\contentsline {chapter}{Python Module Index}{37}{section*.21}
+\contentsline {chapter}{Index}{39}{section*.22}

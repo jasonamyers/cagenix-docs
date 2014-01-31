@@ -77,7 +77,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Developer Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-overview.html#libraries">Libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#general-application-setup-init-py">General Application Setup (__init__.py)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
@@ -128,7 +128,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#users-models">Users Models</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
@@ -182,6 +182,7 @@
     <span class="s1">&#39;state&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;activation_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;primary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;secondary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
@@ -240,27 +241,32 @@
 <td>X</td>
 </tr>
 <tr class="row-odd"><td>email</td>
-<td>email address</td>
+<td>Email address</td>
 <td>String</td>
 <td>X</td>
 </tr>
-<tr class="row-even"><td>activation_code</td>
+<tr class="row-even"><td>password</td>
+<td>Password</td>
+<td>String</td>
+<td>X</td>
+</tr>
+<tr class="row-odd"><td>activation_code</td>
 <td>Code used for initial account
 setup</td>
 <td>String</td>
 <td>X</td>
 </tr>
-<tr class="row-odd"><td>primary_color</td>
+<tr class="row-even"><td>primary_color</td>
 <td>Primary Branding Color</td>
 <td>String</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>secondary_color</td>
+<tr class="row-odd"><td>secondary_color</td>
 <td>Secondary Branding Color</td>
 <td>String</td>
 <td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>practice</td>
+<tr class="row-even"><td>practice</td>
 <td>ID of the Practice</td>
 <td>Integer</td>
 <td>&nbsp;</td>
@@ -280,7 +286,10 @@ setup</td>
         <span class="s1">&#39;state&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span><span class="o">:</span> <span class="s1">&#39;XXX&#39;</span><span class="p">,</span>
         <span class="s1">&#39;activation_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;primary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;secondary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s1">&#39;response&#39;</span><span class="o">:</span> <span class="p">{</span>
@@ -345,6 +354,8 @@ record</td>
         <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;activation_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;primary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;secondary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -404,6 +415,14 @@ record</td>
 setup</td>
 <td>String</td>
 </tr>
+<tr class="row-even"><td>primary_color</td>
+<td>Primary Branding Color</td>
+<td>String</td>
+</tr>
+<tr class="row-odd"><td>secondary_color</td>
+<td>Secondary Branding Color</td>
+<td>String</td>
+</tr>
 <tr class="row-even"><td>practice</td>
 <td>ID of the Practice</td>
 <td>Integer</td>
@@ -431,6 +450,8 @@ setup</td>
     <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;active&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;primary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;secondary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
@@ -500,6 +521,16 @@ setup</td>
 <td>Boolean</td>
 <td>&nbsp;</td>
 </tr>
+<tr class="row-even"><td>primary_color</td>
+<td>Primary Branding Color</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>secondary_color</td>
+<td>Secondary Branding Color</td>
+<td>String</td>
+<td>&nbsp;</td>
+</tr>
 <tr class="row-even"><td>practice</td>
 <td>ID of the Practice</td>
 <td>Integer</td>
@@ -521,6 +552,8 @@ setup</td>
         <span class="s1">&#39;zip_code&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;active&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;primary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;secondary_color&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="s1">&#39;practice&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s1">&#39;response&#39;</span><span class="o">:</span> <span class="p">{</span>
@@ -667,7 +700,6 @@ attack via that encryption.</p>
 <div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
     <span class="s1">&#39;request&#39;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;hash&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="p">},</span>
     <span class="s1">&#39;response&#39;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s1">&#39;secret&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
