@@ -21,6 +21,7 @@
 
   \indexspace
   \bigletter G
+  \item gen\_secret() (cagenix.users.models.User method), \hyperpage{32}
   \item get\_roles() (cagenix.users.models.Role class method), \hyperpage{31}
 
   \indexspace

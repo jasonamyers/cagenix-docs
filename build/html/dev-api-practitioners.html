@@ -77,7 +77,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Developer Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-overview.html#libraries">Libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#general-application-setup-init-py">General Application Setup (__init__.py)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
@@ -128,7 +128,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-users.html#users-models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
@@ -170,6 +170,12 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>POST</strong> /api/v1/practitioners/create</p>
+</div>
+<p>** This endpoint is open, and only requires the following headers:**</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;content-type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 <div class="section" id="call">
 <h3>Call<a class="headerlink" href="#call" title="Permalink to this headline">¶</a></h3>
@@ -659,11 +665,17 @@ attack via that encryption.</p>
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>POST</strong> /api/v1/practitioners/login</p>
 </div>
+<p>** This endpoint is open, and only requires the following headers:**</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s1">&#39;content-type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="section" id="id5">
 <h3>Call<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
     <span class="s1">&#39;email&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;hash&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;password&#39;</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -687,7 +699,7 @@ attack via that encryption.</p>
 <td>String</td>
 <td>X</td>
 </tr>
-<tr class="row-odd"><td>hash</td>
+<tr class="row-odd"><td>password</td>
 <td>Password</td>
 <td>String</td>
 <td>X</td>

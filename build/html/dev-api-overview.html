@@ -44,7 +44,7 @@
 
   
     <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
-        <link rel="next" title="Patients API" href="dev-api-patients.html"/>
+        <link rel="next" title="Advertisements API" href="dev-api-advertisements.html"/>
         <link rel="prev" title="Models Overview" href="dev-models.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -100,11 +100,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#response-codes">Response Codes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-advertisements.html">Advertisements API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#retrieve-advertisement-details">Retrieve Advertisement details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#id1">Retrieve Advertisement details</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
@@ -112,6 +110,21 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-practitioners.html">Practitioners API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#create-a-practitioner">Create a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#retrieve-practitioner-details">Retrieve Practitioner details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#update-a-practitioner">Update a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#delete-a-practitioner">Delete a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
@@ -186,10 +199,10 @@ the key, timestamp, and signature url parameters.</p>
 </div>
 <div class="section" id="get-requests">
 <h2>GET Requests<a class="headerlink" href="#get-requests" title="Permalink to this headline">¶</a></h2>
-<p>A properly formed GET request includes the key timestamp, and signature url
-parameters. The key is the key provided by the application admins.  The
-signature is made of the HTTP-VERB + SECRET + Canonicalized Resource encoded to
-UTF8 hashed via sha256 and base 64 encoded.</p>
+<p>A properly formed GET request includes the email, timestamp, and signature url
+parameters. The email is the email provided by the application admins.  The
+signature is made of the hmac digest of the SECRET, QueryString(email and timestamp) encoded to
+UTF8 hashed via sha512 and base 64 encoded.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="23%" />
@@ -201,8 +214,8 @@ UTF8 hashed via sha256 and base 64 encoded.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>key</td>
-<td>This is the key provided by the application admins.</td>
+<tr class="row-even"><td>email</td>
+<td>The Practitioners/Users email address</td>
 </tr>
 <tr class="row-odd"><td>timestamp</td>
 <td>This is the date and time, ISO format, used in your
@@ -219,20 +232,26 @@ UTF8 and hashed using sha256.</td>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Signature = URLEncode(Base64( SHA-256( UTF-8-Encoding-Of( &#8216;GET&#8217; + SECRET + URI ) ) ) ) )</p>
+<p class="last">Signature = Base64( hmac_digest( Secret, UTF-8-Encoding-Of( QueryString ), sha512 ) ) ) )</p>
 </div>
 <p>Signature Example</p>
-<div class="highlight-python"><pre>base64(sha256(utf8('GET'+'d59b8a775f0dcfd985edff5b5106e2a3'+'/api/v1/patients/1')))
+<div class="highlight-python"><pre>Base64( hmac_digest( secret, UTF-8-Encoding-Of('email=jason%40mailthemyers.com&amp;timestamp=2014-02-01T03%3A49%3A38.000Z'), sha512 ) ) ) )
 would result in
-PHNoYTI1NiBIQVNIIG9iamVjdCBAIDB4MTAzNDhhYTcwPg==</pre>
-</div>
-<p>URL Example</p>
-<div class="highlight-python"><pre>/api/v1/patients/1?signature=PHNoYTI1NiBIQVNIIG9iamVjdCBAIDB4MTAzNDhhYTcwPg==&amp;timestamp=2014-01-26T00%3A26%3A49.000Z&amp;key=d36a3127fc9f5fa169e911b9ab5b46eb
+qs81oYv+HsgF4s/2FHb/OBrs8Y3elMWIOweD+ZUUvroAkJsen1Mfo8UR72ywulMCUwRLKPUwZj2qcMAc6tQpiA==
+
 
 This assumes:
-    Key is d36a3127fc9f5fa169e911b9ab5b46eb
-    Secret is d59b8a775f0dcfd985edff5b5106e2a3
-    Time is 00:26:49 on 1/26/2014</pre>
+    email is jason@mailthemyers.com
+    Secret is cf741fa70d20938f003677a24d73cbcb
+    Time is 3:39:38 on 2/01/2014</pre>
+</div>
+<p>URL Example</p>
+<div class="highlight-python"><pre>/api/v1/practitioners/2?code=qs81oYv+HsgF4s/2FHb/OBrs8Y3elMWIOweD+ZUUvroAkJsen1Mfo8UR72ywulMCUwRLKPUwZj2qcMAc6tQpiA==&amp;email=jason%40mailthemyers.com&amp;timestamp=2014-02-01T03%3A49%3A38.000Z
+
+This assumes:
+    email is jason@mailthemyers.com
+    Secret is cf741fa70d20938f003677a24d73cbcb
+    Time is 3:39:38 on 2/01/2014</pre>
 </div>
 </div>
 <div class="section" id="headers">
@@ -254,8 +273,8 @@ required to be submitted with each request.</p>
 <td>application/json
 Currently XML and other formats are not available.</td>
 </tr>
-<tr class="row-odd"><td>key</td>
-<td>This is the key provided by the application admins.</td>
+<tr class="row-odd"><td>email</td>
+<td>The Practitioners/Users email address</td>
 </tr>
 <tr class="row-even"><td>datetime</td>
 <td>This is the date and time, ISO format, used in your
@@ -459,7 +478,7 @@ please contact us.</td>
   
     <div class="rst-footer-buttons">
       
-        <a href="dev-api-patients.html" class="btn btn-neutral float-right" title="Patients API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="dev-api-advertisements.html" class="btn btn-neutral float-right" title="Advertisements API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="dev-models.html" class="btn btn-neutral" title="Models Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>

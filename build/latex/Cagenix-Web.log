@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  30 JAN 2014 20:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  31 JAN 2014 22:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -966,11 +966,11 @@ Chapter 7.
 Chapter 8.
 [25
 
-] [26] [27] [28] [29] [30
-
-]
+] [26] [27] [28] [29] [30]
 Chapter 9.
-[31] [32]
+[31
+
+] [32]
 Chapter 10.
 [33
 
@@ -1004,21 +1004,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 [39
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3728.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3728.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3758.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3758.
  (./Cagenix-Web.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3728.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3728.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3758.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3758.
 
 Package rerunfilecheck Info: File `Cagenix-Web.out' has not changed.
-(rerunfilecheck)             Checksum: 5AFEBB84FC317D0045987DA897DF4A25;2979.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3728.
+(rerunfilecheck)             Checksum: 169E7C386BA41B5861EF0FCB53BCF9BA;2979.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3758.
  ) 
 Here is how much of TeX's memory you used:
- 9348 strings out of 493315
- 132044 string characters out of 6137904
- 242928 words of memory out of 5000000
- 12413 multiletter control sequences out of 15000+600000
+ 9350 strings out of 493315
+ 132103 string characters out of 6137904
+ 242968 words of memory out of 5000000
+ 12414 multiletter control sequences out of 15000+600000
  61377 words of font info for 67 fonts, out of 8000000 for 9000
  958 hyphenation exceptions out of 8191
  36i,12n,49p,359b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1031,10 +1031,10 @@ type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on Cagenix-Web.pdf (43 pages, 167940 bytes).
+Output written on Cagenix-Web.pdf (43 pages, 169458 bytes).
 PDF statistics:
- 595 PDF objects out of 1000 (max. 8388607)
- 531 compressed objects within 6 object streams
- 139 named destinations out of 1000 (max. 500000)
+ 597 PDF objects out of 1000 (max. 8388607)
+ 533 compressed objects within 6 object streams
+ 140 named destinations out of 1000 (max. 500000)
  405 words of extra memory for PDF output out of 10000 (max. 10000000)
 

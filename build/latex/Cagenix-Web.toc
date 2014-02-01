@@ -60,11 +60,11 @@
 \contentsline {subsection}{\numberline {8.1.1}Call}{25}{subsection.8.1.1}
 \contentsline {subsection}{\numberline {8.1.2}Response}{26}{subsection.8.1.2}
 \contentsline {section}{\numberline {8.2}Retrieve Practitioner details}{26}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Response}{26}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.1}Response}{27}{subsection.8.2.1}
 \contentsline {section}{\numberline {8.3}Update a Practitioner}{27}{section.8.3}
 \contentsline {subsection}{\numberline {8.3.1}Call}{27}{subsection.8.3.1}
 \contentsline {subsection}{\numberline {8.3.2}Response}{28}{subsection.8.3.2}
-\contentsline {section}{\numberline {8.4}Delete a Practitioner}{28}{section.8.4}
+\contentsline {section}{\numberline {8.4}Delete a Practitioner}{29}{section.8.4}
 \contentsline {subsection}{\numberline {8.4.1}Response}{29}{subsection.8.4.1}
 \contentsline {section}{\numberline {8.5}Authenticate a Practitioner}{29}{section.8.5}
 \contentsline {subsection}{\numberline {8.5.1}Call}{29}{subsection.8.5.1}
@@ -74,5 +74,5 @@
 \contentsline {chapter}{\numberline {10}Patients Blueprint Overview}{33}{chapter.10}
 \contentsline {section}{\numberline {10.1}Patients Models}{33}{section.10.1}
 \contentsline {chapter}{\numberline {11}Indices and tables}{35}{chapter.11}
-\contentsline {chapter}{Python Module Index}{37}{section*.21}
-\contentsline {chapter}{Index}{39}{section*.22}
+\contentsline {chapter}{Python Module Index}{37}{section*.22}
+\contentsline {chapter}{Index}{39}{section*.23}

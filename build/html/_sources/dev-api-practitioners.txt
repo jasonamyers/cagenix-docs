@@ -9,6 +9,15 @@ This endpoint is used to create a practitioner in the Cagenix API.
 
 .. note:: **POST** /api/v1/practitioners/create
 
+** This endpoint is open, and only requires the following headers:**
+
+.. code-block:: js
+
+    {
+        'content-type': 'application/json'
+    }
+
+
 Call
 ----
 
@@ -305,6 +314,15 @@ attack via that encryption.
 
 .. note:: **POST** /api/v1/practitioners/login
 
+** This endpoint is open, and only requires the following headers:**
+
+.. code-block:: js
+
+    {
+        'content-type': 'application/json'
+    }
+
+
 Call
 ----
 
@@ -312,7 +330,7 @@ Call
 
     {
         'email': '',
-        'hash': '',
+        'password': '',
     }
 
 
@@ -321,7 +339,7 @@ Call
 +======================+===================================+========+==========+
 | email                | email address                     | String |    X     |
 +----------------------+-----------------------------------+--------+----------+
-| hash                 | Password                          | String |    X     |
+| password             | Password                          | String |    X     |
 +----------------------+-----------------------------------+--------+----------+
 
 Response
