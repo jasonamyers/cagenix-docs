@@ -8,12 +8,14 @@
 \contentsline {chapter}{\numberline {3}Models Overview}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Activation Model}{7}{section.3.1}
 \contentsline {section}{\numberline {3.2}Advertisement Model}{7}{section.3.2}
-\contentsline {section}{\numberline {3.3}Evaluation Model}{8}{section.3.3}
-\contentsline {section}{\numberline {3.4}Patient Model}{8}{section.3.4}
-\contentsline {section}{\numberline {3.5}PatientEvaluationAnswer Model}{8}{section.3.5}
-\contentsline {section}{\numberline {3.6}Practice Model}{9}{section.3.6}
-\contentsline {section}{\numberline {3.7}Role Model}{9}{section.3.7}
-\contentsline {section}{\numberline {3.8}User Model}{10}{section.3.8}
+\contentsline {section}{\numberline {3.3}Answer Model}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}Evaluation Model}{8}{section.3.4}
+\contentsline {section}{\numberline {3.5}Patient Model}{8}{section.3.5}
+\contentsline {section}{\numberline {3.6}PatientEvaluationAnswer Model}{9}{section.3.6}
+\contentsline {section}{\numberline {3.7}Practice Model}{9}{section.3.7}
+\contentsline {section}{\numberline {3.8}Question Model}{9}{section.3.8}
+\contentsline {section}{\numberline {3.9}Role Model}{10}{section.3.9}
+\contentsline {section}{\numberline {3.10}User Model}{10}{section.3.10}
 \contentsline {chapter}{\numberline {4}API Overview}{11}{chapter.4}
 \contentsline {section}{\numberline {4.1}Base URL, HTTPS, and Versioning}{11}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Base URI}{11}{subsection.4.1.1}
@@ -69,10 +71,24 @@
 \contentsline {section}{\numberline {8.5}Authenticate a Practitioner}{29}{section.8.5}
 \contentsline {subsection}{\numberline {8.5.1}Call}{29}{subsection.8.5.1}
 \contentsline {subsection}{\numberline {8.5.2}Response}{29}{subsection.8.5.2}
-\contentsline {chapter}{\numberline {9}Users Blueprint Overview}{31}{chapter.9}
-\contentsline {section}{\numberline {9.1}Users Models}{31}{section.9.1}
-\contentsline {chapter}{\numberline {10}Patients Blueprint Overview}{33}{chapter.10}
-\contentsline {section}{\numberline {10.1}Patients Models}{33}{section.10.1}
-\contentsline {chapter}{\numberline {11}Indices and tables}{35}{chapter.11}
-\contentsline {chapter}{Python Module Index}{37}{section*.22}
-\contentsline {chapter}{Index}{39}{section*.23}
+\contentsline {chapter}{\numberline {9}Advertisements Blueprint Overview}{31}{chapter.9}
+\contentsline {section}{\numberline {9.1}Advertisements Models}{31}{section.9.1}
+\contentsline {section}{\numberline {9.2}Advertisements Forms}{31}{section.9.2}
+\contentsline {section}{\numberline {9.3}Advertisements Views}{32}{section.9.3}
+\contentsline {chapter}{\numberline {10}Evaluations Blueprint Overview}{35}{chapter.10}
+\contentsline {section}{\numberline {10.1}Evaluations Models}{35}{section.10.1}
+\contentsline {section}{\numberline {10.2}Evaluations Forms}{36}{section.10.2}
+\contentsline {section}{\numberline {10.3}Evaluations Views}{36}{section.10.3}
+\contentsline {chapter}{\numberline {11}Patients Blueprint Overview}{39}{chapter.11}
+\contentsline {section}{\numberline {11.1}Patients Models}{39}{section.11.1}
+\contentsline {chapter}{\numberline {12}Practices Blueprint Overview}{41}{chapter.12}
+\contentsline {section}{\numberline {12.1}Practices Models}{41}{section.12.1}
+\contentsline {section}{\numberline {12.2}Practices Forms}{41}{section.12.2}
+\contentsline {section}{\numberline {12.3}Practices Views}{42}{section.12.3}
+\contentsline {chapter}{\numberline {13}Users Blueprint Overview}{43}{chapter.13}
+\contentsline {section}{\numberline {13.1}Users Models}{43}{section.13.1}
+\contentsline {section}{\numberline {13.2}Users Forms}{44}{section.13.2}
+\contentsline {section}{\numberline {13.3}Users Views}{46}{section.13.3}
+\contentsline {chapter}{\numberline {14}Indices and tables}{49}{chapter.14}
+\contentsline {chapter}{Python Module Index}{51}{section*.65}
+\contentsline {chapter}{Index}{53}{section*.66}

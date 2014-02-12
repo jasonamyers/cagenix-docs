@@ -83,10 +83,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">Models Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#activation-model">Activation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#answer-model">Answer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#evaluation-model">Evaluation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#patient-model">Patient Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#question-model">Question Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#role-model">Role Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#user-model">User Model</a></li>
 </ul>
@@ -127,12 +129,32 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-advertisements.html">Advertisements Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.models">Advertisements Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.views">Advertisements Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-evaluations.html">Evaluations Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.models">Evaluations Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.forms">Evaluations Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.views">Evaluations Views</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-practices.html">Practices Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.models">Practices Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.forms">Practices Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.views">Practices Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.forms">Users Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.views">Users Views</a></li>
 </ul>
 </li>
 </ul>
@@ -168,10 +190,12 @@
 <ul class="simple">
 <li><a class="reference internal" href="#activation-model-label"><em>Activation Model</em></a></li>
 <li><a class="reference internal" href="#advertisement-model-label"><em>Advertisement Model</em></a></li>
+<li><a class="reference internal" href="#answer-model-label"><em>Answer Model</em></a></li>
 <li><a class="reference internal" href="#evaluation-model-label"><em>Evaluation Model</em></a></li>
 <li><a class="reference internal" href="#patient-model-label"><em>Patient Model</em></a></li>
 <li><a class="reference internal" href="#patientevaluationanswer-model-label"><em>PatientEvaluationAnswer Model</em></a></li>
 <li><a class="reference internal" href="#practice-model-label"><em>Practice Model</em></a></li>
+<li><em class="xref std std-ref">question-model-label</em></li>
 <li><a class="reference internal" href="#role-model-label"><em>Role Model</em></a></li>
 <li><a class="reference internal" href="#user-model-label"><em>User Model</em></a></li>
 </ul>
@@ -263,6 +287,61 @@
 </tbody>
 </table>
 </div>
+<div class="section" id="answer-model">
+<span id="answer-model-label"></span><h2>Answer Model<a class="headerlink" href="#answer-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>text</td>
+<td>String</td>
+<td>The text of the Question</td>
+</tr>
+<tr class="row-even"><td>order</td>
+<td>Integer</td>
+<td>The order of the Question in the
+Evaluation.</td>
+</tr>
+<tr class="row-odd"><td>active</td>
+<td>Boolean</td>
+<td>Active Flag for archiving</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtuals</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>question</td>
+<td>Many2One</td>
+<td>Virtual to question</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="evaluation-model">
 <span id="evaluation-model-label"></span><h2>Evaluation Model<a class="headerlink" href="#evaluation-model" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -282,39 +361,33 @@
 <td>Integer</td>
 <td>Primary Key</td>
 </tr>
-<tr class="row-odd"><td>evaluation_id</td>
-<td>UUID</td>
-<td>Used to group questions into a single
-evaulation.</td>
-</tr>
-<tr class="row-even"><td>question_order</td>
+<tr class="row-odd"><td>name</td>
 <td>Integer</td>
-<td>Position of question within an
-Evaulation</td>
+<td>Name of the Evaluation</td>
 </tr>
-<tr class="row-odd"><td>question_text</td>
-<td>Text</td>
-<td>Text of the question</td>
+<tr class="row-even"><td>active</td>
+<td>Boolean</td>
+<td>Active Flag for archiving</td>
 </tr>
-<tr class="row-even"><td>answer_one</td>
-<td>String(255)</td>
-<td>First answer choice</td>
+</tbody>
+</table>
+<p><strong>Virtuals</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
 </tr>
-<tr class="row-odd"><td>answer_two</td>
-<td>String(255)</td>
-<td>Second answer choice</td>
-</tr>
-<tr class="row-even"><td>answer_three</td>
-<td>String(255)</td>
-<td>Second answer choice</td>
-</tr>
-<tr class="row-odd"><td>answer_four</td>
-<td>String(255)</td>
-<td>Second answer choice</td>
-</tr>
-<tr class="row-even"><td>answer_custom</td>
-<td>Text</td>
-<td>Free for all answer</td>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>questions</td>
+<td>One2Many</td>
+<td>Virtual to Questions</td>
 </tr>
 </tbody>
 </table>
@@ -437,13 +510,13 @@ Evaulation</td>
 <td>Primary Key</td>
 </tr>
 <tr class="row-odd"><td>evaluation_id</td>
-<td>UUID</td>
-<td>Used to group answers into a single
+<td>Integer</td>
+<td>Used to group questions into a single
 evaulation.</td>
 </tr>
-<tr class="row-even"><td>answer</td>
+<tr class="row-even"><td>custom_answer</td>
 <td>String(255)</td>
-<td>Answer to question</td>
+<td>Free Text Answer to question</td>
 </tr>
 <tr class="row-odd"><td>active</td>
 <td>Boolean</td>
@@ -472,6 +545,10 @@ evaulation.</td>
 <tr class="row-odd"><td>patient</td>
 <td>Many2One</td>
 <td>User Answering Question</td>
+</tr>
+<tr class="row-even"><td>answer</td>
+<td>Many2One</td>
+<td>Answer Selected</td>
 </tr>
 </tbody>
 </table>
@@ -558,6 +635,65 @@ evaulation.</td>
 <tr class="row-even"><td>practitioner</td>
 <td>One2Many</td>
 <td>Virtual to User</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="question-model">
+<span id="qeustion-model-label"></span><h2>Question Model<a class="headerlink" href="#question-model" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Length)</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Integer</td>
+<td>Primary Key</td>
+</tr>
+<tr class="row-odd"><td>text</td>
+<td>String</td>
+<td>The text of the Question</td>
+</tr>
+<tr class="row-even"><td>order</td>
+<td>Integer</td>
+<td>The order of the Question in the
+Evaluation.</td>
+</tr>
+<tr class="row-odd"><td>active</td>
+<td>Boolean</td>
+<td>Active Flag for archiving</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtuals</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="21%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>evaluation</td>
+<td>Many2One</td>
+<td>Virtual to Evaluation</td>
+</tr>
+<tr class="row-odd"><td>answers</td>
+<td>One2Many</td>
+<td>Virtual to Answer</td>
 </tr>
 </tbody>
 </table>

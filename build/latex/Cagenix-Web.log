@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  31 JAN 2014 22:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 FEB 2014 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,7 +902,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.58 ...rline {8}Practitioners API}{25}{chapter.8}
+l.58 ...ne {7.4}Delete a patient}{24}{section.7.4}
                                                    [1
 
 ])
@@ -947,7 +947,7 @@ Chapter 3.
 [7] [8] [9] [10]
 Chapter 4.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 1075.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 1202.
 [11
 
 ] [12] [13] [14
@@ -968,60 +968,350 @@ Chapter 8.
 
 ] [26] [27] [28] [29] [30]
 Chapter 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3606--3606
+[]\T1/ptm/m/it/10 formdata=<class
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3606--3606
+\T1/ptm/m/it/10 flask_wtf.form._Auto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3606--3606
+\T1/ptm/m/it/10 at 0x1046440b8>\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3606--3606
+\T1/ptm/m/it/10 obj=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 pre-fix='`\T1/ptm/m/n/
+10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3606--3606
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3606--3606
+\T1/ptm/m/it/10 se-cret_key=None\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3606--3606
+\T1/ptm/m/it/10 csrf_enabled=None\T1/ptm/m/n/10 ,
+ []
+
 [31
 
-] [32]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 3625--3625
+[]\T1/ptm/m/it/10 formdata=<class
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3625--3625
+\T1/ptm/m/it/10 flask_wtf.form._Auto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3625--3625
+\T1/ptm/m/it/10 at 0x1046440b8>\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3625--3625
+\T1/ptm/m/it/10 obj=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 pre-fix='`\T1/ptm/m/n/
+10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3625--3625
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3625--3625
+\T1/ptm/m/it/10 se-cret_key=None\T1/ptm/m/n/10 ,
+ []
+
+[32] [33] [34
+
+]
 Chapter 10.
-[33
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 3848--3848
+[]\T1/ptm/m/it/10 formdata=<class
+ []
 
-] [34]
+
+Underfull \hbox (badness 10000) in paragraph at lines 3848--3848
+\T1/ptm/m/it/10 flask_wtf.form._Auto at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3848--3848
+\T1/ptm/m/it/10 0x1046440b8>\T1/ptm/m/n/10 , \T1/ptm/m/it/10 obj=None\T1/ptm/m/
+n/10 , \T1/ptm/m/it/10 pre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3848--3848
+\T1/ptm/m/it/10 fix='`\T1/ptm/m/n/10 , \T1/ptm/m/it/10 csrf_context=None\T1/ptm
+/m/n/10 , \T1/ptm/m/it/10 se-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3867--3867
+[]\T1/ptm/m/it/10 formdata=<class flask_wtf.form._Auto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3867--3867
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 se-cret_key=N
+one\T1/ptm/m/n/10 ,
+ []
+
+[36] [37] [38
+
+]
 Chapter 11.
-[35
+[39] [40
 
-] [36
+]
+Chapter 12.
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 4182--4182
+[]\T1/ptm/m/it/10 formdata=<class flask_wtf.form._Auto
+ []
 
-] [37
+
+Underfull \hbox (badness 10000) in paragraph at lines 4182--4182
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 se-cret_key=N
+one\T1/ptm/m/n/10 ,
+ []
 
 
-] (./Cagenix-Web.ind [38
+Underfull \hbox (badness 10000) in paragraph at lines 4201--4201
+[]\T1/ptm/m/it/10 formdata=<class flask_wtf.form._Auto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4201--4201
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 se-cret_key=N
+one\T1/ptm/m/n/10 ,
+ []
+
+[42]
+Chapter 13.
+[43
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 4492--4492
+[]\T1/ptm/m/it/10 formdata=<class flask_wtf.form._Auto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4492--4492
+\T1/ptm/m/it/10 at 0x1046440b8>\T1/ptm/m/n/10 , \T1/ptm/m/it/10 obj=None\T1/ptm
+/m/n/10 , \T1/ptm/m/it/10 pre-fix='`\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4492--4492
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 se-cret_key=N
+one\T1/ptm/m/n/10 ,
+ []
+
+[44]
+Underfull \hbox (badness 10000) in paragraph at lines 4513--4513
+[]\T1/ptm/m/it/10 formdata=<class flask_wtf.form._Auto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4513--4513
+\T1/ptm/m/it/10 at 0x1046440b8>\T1/ptm/m/n/10 , \T1/ptm/m/it/10 obj=None\T1/ptm
+/m/n/10 , \T1/ptm/m/it/10 pre-fix='`\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4513--4513
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 se-cret_key=N
+one\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4534--4534
+[]\T1/ptm/m/it/10 formdata=<class flask_wtf.form._Auto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4534--4534
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 se-cret_key=N
+one\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4556--4556
+[]\T1/ptm/m/it/10 formdata=<class flask_wtf.form._Auto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4556--4556
+\T1/ptm/m/it/10 at 0x1046440b8>\T1/ptm/m/n/10 , \T1/ptm/m/it/10 obj=None\T1/ptm
+/m/n/10 , \T1/ptm/m/it/10 pre-fix='`\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4556--4556
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 se-cret_key=N
+one\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4580--4580
+[]\T1/ptm/m/it/10 formdata=<class flask_wtf.form._Auto
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4580--4580
+\T1/ptm/m/it/10 at 0x1046440b8>\T1/ptm/m/n/10 , \T1/ptm/m/it/10 obj=None\T1/ptm
+/m/n/10 , \T1/ptm/m/it/10 pre-fix='`\T1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4580--4580
+\T1/ptm/m/it/10 csrf_context=None\T1/ptm/m/n/10 , \T1/ptm/m/it/10 se-cret_key=N
+one\T1/ptm/m/n/10 ,
+ []
+
+[45] [46] [47] [48
+
+]
+Chapter 14.
+[49] [50
+
+] [51
+
+
+] (./Cagenix-Web.ind [52
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+[]\T1/ptm/m/n/10 AdvertisementCreateForm (class in ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+[]\T1/ptm/m/n/10 AdvertisementEditForm (class in ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+[]\T1/ptm/m/n/10 advertisements_create() (in mod-ule ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+[]\T1/ptm/m/n/10 advertisements_delete() (in mod-ule ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
 []\T1/ptm/m/n/10 by_email() (ca-genix.patients.models.Patient class
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+[]\T1/ptm/m/n/10 by_id() (ca-genix.advertisements.models.Advertisement
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[]\T1/ptm/m/n/10 by_id() (ca-genix.evaluations.models.Answer class
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+[]\T1/ptm/m/n/10 by_id() (ca-genix.evaluations.models.Evaluation class
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+[]\T1/ptm/m/n/10 by_id() (ca-genix.evaluations.models.Question class
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
 []\T1/ptm/m/n/10 by_phone() (ca-genix.patients.models.Patient class
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+[]\T1/ptm/m/n/10 by_phone() (ca-genix.practices.models.Practice class
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 []\T1/ptm/m/n/10 by_username() (ca-genix.users.models.User class
  []
 
-[39
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+[]\T1/ptm/m/n/10 evaluations_builder() (in mod-ule ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+[]\T1/ptm/m/n/10 evaluations_create() (in mod-ule ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+[]\T1/ptm/m/n/10 evaluations_create_answer() (in mod-ule ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+[]\T1/ptm/m/n/10 evaluations_create_questions() (in mod-ule ca-
+ []
+
+[53
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+[]\T1/ptm/m/n/10 UserChangePasswordForm (class in ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+[]\T1/ptm/m/n/10 users_changepassword() (in mod-ule ca-
+ []
+
+[54
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3758.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3758.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4819.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4819.
  (./Cagenix-Web.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3758.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3758.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4819.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4819.
 
 Package rerunfilecheck Info: File `Cagenix-Web.out' has not changed.
-(rerunfilecheck)             Checksum: 169E7C386BA41B5861EF0FCB53BCF9BA;2979.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3758.
+(rerunfilecheck)             Checksum: B8CD3B9E8B38FBE97EBE5BBE9DAD7724;4018.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4819.
  ) 
 Here is how much of TeX's memory you used:
- 9350 strings out of 493315
- 132103 string characters out of 6137904
- 242968 words of memory out of 5000000
- 12414 multiletter control sequences out of 15000+600000
+ 9526 strings out of 493315
+ 137160 string characters out of 6137904
+ 241914 words of memory out of 5000000
+ 12516 multiletter control sequences out of 15000+600000
  61377 words of font info for 67 fonts, out of 8000000 for 9000
  958 hyphenation exceptions out of 8191
- 36i,12n,49p,359b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,51p,469b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2013/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2
 013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2013/texm
@@ -1031,10 +1321,10 @@ type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on Cagenix-Web.pdf (43 pages, 169458 bytes).
+Output written on Cagenix-Web.pdf (58 pages, 198518 bytes).
 PDF statistics:
- 597 PDF objects out of 1000 (max. 8388607)
- 533 compressed objects within 6 object streams
- 140 named destinations out of 1000 (max. 500000)
- 405 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 884 PDF objects out of 1000 (max. 8388607)
+ 802 compressed objects within 9 object streams
+ 214 named destinations out of 1000 (max. 500000)
+ 533 words of extra memory for PDF output out of 10000 (max. 10000000)
 

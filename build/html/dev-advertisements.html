@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Patients Blueprint Overview &mdash; Cagenix-Web 0.1a1 documentation</title>
+  <title>Advertisements Blueprint Overview &mdash; Cagenix-Web 0.1a1 documentation</title>
   
 
   
@@ -44,8 +44,8 @@
 
   
     <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
-        <link rel="next" title="Practices Blueprint Overview" href="dev-practices.html"/>
-        <link rel="prev" title="Evaluations Blueprint Overview" href="dev-evaluations.html"/> 
+        <link rel="next" title="Evaluations Blueprint Overview" href="dev-evaluations.html"/>
+        <link rel="prev" title="Practitioners API" href="dev-api-practitioners.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -129,10 +129,10 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-advertisements.html">Advertisements Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.models">Advertisements Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.views">Advertisements Views</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Advertisements Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.advertisements.models">Advertisements Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.advertisements.views">Advertisements Views</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-evaluations.html">Evaluations Blueprint Overview</a><ul>
@@ -141,8 +141,8 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.views">Evaluations Views</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Patients Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.patients.models">Patients Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-practices.html">Practices Blueprint Overview</a><ul>
@@ -178,28 +178,31 @@
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
-  <li><a href="">Patients Blueprint Overview</a></li>
+  <li><a href="">Advertisements Blueprint Overview</a></li>
   
 </ul>
 <hr/>
 
           
-  <div class="section" id="patients-blueprint-overview">
-<h1>Patients Blueprint Overview<a class="headerlink" href="#patients-blueprint-overview" title="Permalink to this headline">¶</a></h1>
-<p>The following document covers the internals of the Cagenix-Web Patients
+  <div class="section" id="advertisements-blueprint-overview">
+<h1>Advertisements Blueprint Overview<a class="headerlink" href="#advertisements-blueprint-overview" title="Permalink to this headline">¶</a></h1>
+<p>The following document covers the internals of the Cagenix-Web advertisements
 Blueprint.</p>
 <ul class="simple">
-<li><a class="reference internal" href="#patients-models-label"><em>Patients Models</em></a></li>
+<li><a class="reference internal" href="#advertisements-models-label"><em>Advertisements Models</em></a></li>
+<li><a class="reference internal" href="#advertisements-forms-label"><em>Advertisements Forms</em></a></li>
+<li><a class="reference internal" href="#advertisements-views-label"><em>Advertisements Views</em></a></li>
 </ul>
-<div class="section" id="module-cagenix.patients.models">
-<span id="patients-models"></span><span id="patients-models-label"></span><h2>Patients Models<a class="headerlink" href="#module-cagenix.patients.models" title="Permalink to this headline">¶</a></h2>
-<p>cagenix.patients.models</p>
-<p>This file is used to define all the models used by the Patients blueprint</p>
+<div class="section" id="module-cagenix.advertisements.models">
+<span id="advertisements-models"></span><span id="advertisements-models-label"></span><h2>Advertisements Models<a class="headerlink" href="#module-cagenix.advertisements.models" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.advertisements.models</p>
+<p>This file is used to define all the models used by the Advertisement blueprint</p>
 <dl class="class">
-<dt id="cagenix.patients.models.Patient">
-<em class="property">class </em><tt class="descclassname">cagenix.patients.models.</tt><tt class="descname">Patient</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Patient model defines the patient for which the practitioner is
-performing the evaluation.</p>
+<dt id="cagenix.advertisements.models.Advertisement">
+<em class="property">class </em><tt class="descclassname">cagenix.advertisements.models.</tt><tt class="descname">Advertisement</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/advertisements/models.html#Advertisement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.advertisements.models.Advertisement" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Advertisement model defines the advertisements available via the API</p>
+<p>This class defines the model attributes, a classmethod to make finding
+the advertisments by id easier.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -209,68 +212,125 @@ performing the evaluation.</p>
 </tbody>
 </table>
 <dl class="classmethod">
-<dt id="cagenix.patients.models.Patient.by_email">
-<em class="property">classmethod </em><tt class="descname">by_email</tt><big>(</big><em>email</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.by_email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.by_email" title="Permalink to this definition">¶</a></dt>
-<dd><p>by_email returns a Patient object given an email address.</p>
+<dt id="cagenix.advertisements.models.Advertisement.by_id">
+<em class="property">classmethod </em><tt class="descname">by_id</tt><big>(</big><em>advertisement_id</em><big>)</big><a class="reference internal" href="_modules/cagenix/advertisements/models.html#Advertisement.by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.advertisements.models.Advertisement.by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>by_id returns a Advertisement object given a user_id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
-<li><strong>email</strong> (<em>string</em>) &#8211; The email of the patient being searched for</li>
+<li><strong>advertisement_id</strong> (<em>int</em>) &#8211; The id of the advertisement being searched for</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of Advertisement objects</p>
 </td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="classmethod">
-<dt id="cagenix.patients.models.Patient.by_id">
-<em class="property">classmethod </em><tt class="descname">by_id</tt><big>(</big><em>user_id</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.by_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>by_id returns a Patient object given a patient_id</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cagenix.advertisements.forms">
+<span id="advertisements-forms"></span><span id="advertisements-forms-label"></span><h2>Advertisements Forms<a class="headerlink" href="#module-cagenix.advertisements.forms" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.advertisements.forms</p>
+<p>This file is used to define all the WTForms used by the Advertisements blueprint</p>
+<dl class="class">
+<dt id="cagenix.advertisements.forms.AdvertisementCreateForm">
+<em class="property">class </em><tt class="descclassname">cagenix.advertisements.forms.</tt><tt class="descname">AdvertisementCreateForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/advertisements/forms.html#AdvertisementCreateForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.advertisements.forms.AdvertisementCreateForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by Admin roles to create new Advertisements</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
-<li><strong>patient_id</strong> (<em>int</em>) &#8211; The id of the patient being searched for</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Form</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="classmethod">
-<dt id="cagenix.patients.models.Patient.by_phone">
-<em class="property">classmethod </em><tt class="descname">by_phone</tt><big>(</big><em>phone</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.by_phone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.by_phone" title="Permalink to this definition">¶</a></dt>
-<dd><p>by_phone returns a Patient object given a phone number</p>
+<dl class="class">
+<dt id="cagenix.advertisements.forms.AdvertisementEditForm">
+<em class="property">class </em><tt class="descclassname">cagenix.advertisements.forms.</tt><tt class="descname">AdvertisementEditForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/advertisements/forms.html#AdvertisementEditForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.advertisements.forms.AdvertisementEditForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by Admin roles to edit Advertisements</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
-<li><strong>phone</strong> (<em>string</em>) &#8211; The phone number of the patient being searched for</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Form</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="cagenix.patients.models.Patient.map_data">
-<tt class="descname">map_data</tt><big>(</big><em>data</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.map_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.map_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>map_data takes a dict as an argument. It then iterates
-over each key field in the fields list, if a key is
-in the supplied dict, it will then update the attribute of
-this object to reflect the value of that key in the dict.</p>
+</div>
+<div class="section" id="module-cagenix.advertisements.views">
+<span id="advertisements-views"></span><span id="advertisements-views-label"></span><h2>Advertisements Views<a class="headerlink" href="#module-cagenix.advertisements.views" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.advertisements.views</p>
+<p>This file defines the URL routes and controller logic for the advertisement blueprint.</p>
+<dl class="function">
+<dt id="cagenix.advertisements.views.advertisements_create">
+<tt class="descclassname">cagenix.advertisements.views.</tt><tt class="descname">advertisements_create</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/advertisements/views.html#advertisements_create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.advertisements.views.advertisements_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /advertisements/create endpoint for the blueprint</p>
+<p>It allows Admins to create Advertisements.  It uses the <a class="reference internal" href="#advertisements-forms-label"><em>Advertisements Forms</em></a>
+to display AdvertisementCreateForm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">users/index.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
+<dl class="function">
+<dt id="cagenix.advertisements.views.advertisements_delete">
+<tt class="descclassname">cagenix.advertisements.views.</tt><tt class="descname">advertisements_delete</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/advertisements/views.html#advertisements_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.advertisements.views.advertisements_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /advertisements/delete endpoint for the blueprint</p>
+<p>It allows Admins to delete Advertisements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">redirect to /advertisements</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">redirect</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.advertisements.views.home">
+<tt class="descclassname">cagenix.advertisements.views.</tt><tt class="descname">home</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/advertisements/views.html#home"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.advertisements.views.home" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /advertisements endpoint for the blueprint</p>
+<p>It displays a list of advertisements with the ability to edit or
+delete. It also offers the ability to add additional advertisements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">advertisements/index.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -281,10 +341,10 @@ this object to reflect the value of that key in the dict.</p>
   
     <div class="rst-footer-buttons">
       
-        <a href="dev-practices.html" class="btn btn-neutral float-right" title="Practices Blueprint Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="dev-evaluations.html" class="btn btn-neutral float-right" title="Evaluations Blueprint Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="dev-evaluations.html" class="btn btn-neutral" title="Evaluations Blueprint Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="dev-api-practitioners.html" class="btn btn-neutral" title="Practitioners API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

@@ -82,10 +82,12 @@
 <li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#activation-model">Activation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#answer-model">Answer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#evaluation-model">Evaluation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#patient-model">Patient Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#question-model">Question Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#role-model">Role Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#user-model">User Model</a></li>
 </ul>
@@ -126,12 +128,32 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-advertisements.html">Advertisements Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.models">Advertisements Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.views">Advertisements Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-evaluations.html">Evaluations Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.models">Evaluations Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.forms">Evaluations Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.views">Evaluations Views</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-practices.html">Practices Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.models">Practices Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.forms">Practices Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.views">Practices Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.forms">Users Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.views">Users Views</a></li>
 </ul>
 </li>
 </ul>
@@ -165,18 +187,53 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#B"><strong>B</strong></a>
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
+ | <a href="#E"><strong>E</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#U"><strong>U</strong></a>
  
 </div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-advertisements.html#cagenix.advertisements.models.Advertisement">Advertisement (class in cagenix.advertisements.models)</a>
+  </dt>
+
+      
+  <dt><a href="dev-advertisements.html#cagenix.advertisements.forms.AdvertisementCreateForm">AdvertisementCreateForm (class in cagenix.advertisements.forms)</a>
+  </dt>
+
+      
+  <dt><a href="dev-advertisements.html#cagenix.advertisements.forms.AdvertisementEditForm">AdvertisementEditForm (class in cagenix.advertisements.forms)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-advertisements.html#cagenix.advertisements.views.advertisements_create">advertisements_create() (in module cagenix.advertisements.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-advertisements.html#cagenix.advertisements.views.advertisements_delete">advertisements_delete() (in module cagenix.advertisements.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.models.Answer">Answer (class in cagenix.evaluations.models)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
@@ -191,10 +248,30 @@
 
       </dl></dd>
       
-  <dt><a href="dev-patients.html#cagenix.patients.models.Patient.by_id">by_id() (cagenix.patients.models.Patient class method)</a>
+  <dt><a href="dev-advertisements.html#cagenix.advertisements.models.Advertisement.by_id">by_id() (cagenix.advertisements.models.Advertisement class method)</a>
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.models.Answer.by_id">(cagenix.evaluations.models.Answer class method)</a>
+  </dt>
+
+        
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.models.Evaluation.by_id">(cagenix.evaluations.models.Evaluation class method)</a>
+  </dt>
+
+        
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.models.Question.by_id">(cagenix.evaluations.models.Question class method)</a>
+  </dt>
+
+        
+  <dt><a href="dev-patients.html#cagenix.patients.models.Patient.by_id">(cagenix.patients.models.Patient class method)</a>
+  </dt>
+
+        
+  <dt><a href="dev-practices.html#cagenix.practices.models.Practice.by_id">(cagenix.practices.models.Practice class method)</a>
+  </dt>
+
         
   <dt><a href="dev-users.html#cagenix.users.models.Role.by_id">(cagenix.users.models.Role class method)</a>
   </dt>
@@ -216,6 +293,10 @@
 
       <dd><dl>
         
+  <dt><a href="dev-practices.html#cagenix.practices.models.Practice.by_phone">(cagenix.practices.models.Practice class method)</a>
+  </dt>
+
+        
   <dt><a href="dev-users.html#cagenix.users.models.User.by_phone">(cagenix.users.models.User class method)</a>
   </dt>
 
@@ -235,17 +316,89 @@
   </dt>
 
       
+  <dt><a href="dev-advertisements.html#module-cagenix.advertisements.forms">cagenix.advertisements.forms (module)</a>
+  </dt>
+
+      
+  <dt><a href="dev-advertisements.html#module-cagenix.advertisements.models">cagenix.advertisements.models (module)</a>
+  </dt>
+
+      
+  <dt><a href="dev-advertisements.html#module-cagenix.advertisements.views">cagenix.advertisements.views (module)</a>
+  </dt>
+
+      
+  <dt><a href="dev-evaluations.html#module-cagenix.evaluations.forms">cagenix.evaluations.forms (module)</a>
+  </dt>
+
+      
+  <dt><a href="dev-evaluations.html#module-cagenix.evaluations.models">cagenix.evaluations.models (module)</a>
+  </dt>
+
+      
+  <dt><a href="dev-evaluations.html#module-cagenix.evaluations.views">cagenix.evaluations.views (module)</a>
+  </dt>
+
+      
   <dt><a href="dev-patients.html#module-cagenix.patients.models">cagenix.patients.models (module)</a>
   </dt>
 
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
+  <dt><a href="dev-practices.html#module-cagenix.practices.forms">cagenix.practices.forms (module)</a>
+  </dt>
+
+      
+  <dt><a href="dev-practices.html#module-cagenix.practices.models">cagenix.practices.models (module)</a>
+  </dt>
+
+      
+  <dt><a href="dev-practices.html#module-cagenix.practices.views">cagenix.practices.views (module)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#module-cagenix.users.forms">cagenix.users.forms (module)</a>
+  </dt>
+
+      
   <dt><a href="dev-users.html#module-cagenix.users.models">cagenix.users.models (module)</a>
   </dt>
 
       
+  <dt><a href="dev-users.html#module-cagenix.users.views">cagenix.users.views (module)</a>
+  </dt>
+
+      
   <dt><a href="dev-overview.html#cagenix.create_user">create_user() (in module cagenix)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.models.Evaluation">Evaluation (class in cagenix.evaluations.models)</a>
+  </dt>
+
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.views.evaluations_builder">evaluations_builder() (in module cagenix.evaluations.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.views.evaluations_create">evaluations_create() (in module cagenix.evaluations.views)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.views.evaluations_create_answer">evaluations_create_answer() (in module cagenix.evaluations.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.views.evaluations_create_questions">evaluations_create_questions() (in module cagenix.evaluations.views)</a>
   </dt>
 
   </dl></td>
@@ -258,8 +411,16 @@
   <dt><a href="dev-users.html#cagenix.users.models.User.gen_secret">gen_secret() (cagenix.users.models.User method)</a>
   </dt>
 
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.models.Evaluation.get_evaluations">get_evaluations() (cagenix.evaluations.models.Evaluation class method)</a>
+  </dt>
+
   </dl></td>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-practices.html#cagenix.practices.models.Practice.get_practices">get_practices() (cagenix.practices.models.Practice class method)</a>
+  </dt>
+
       
   <dt><a href="dev-users.html#cagenix.users.models.Role.get_roles">get_roles() (cagenix.users.models.Role class method)</a>
   </dt>
@@ -274,6 +435,18 @@
   <dt><a href="dev-overview.html#cagenix.handle_splash">handle_splash() (in module cagenix)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-advertisements.html#cagenix.advertisements.views.home">home() (in module cagenix.advertisements.views)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.views.home">(in module cagenix.evaluations.views)</a>
+  </dt>
+
+      </dl></dd>
   </dl></td>
 </tr></table>
 
@@ -291,9 +464,15 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
       
-  <dt><a href="dev-users.html#cagenix.users.models.User.map_data">map_data() (cagenix.users.models.User method)</a>
+  <dt><a href="dev-patients.html#cagenix.patients.models.Patient.map_data">map_data() (cagenix.patients.models.Patient method)</a>
   </dt>
 
+      <dd><dl>
+        
+  <dt><a href="dev-users.html#cagenix.users.models.User.map_data">(cagenix.users.models.User method)</a>
+  </dt>
+
+      </dl></dd>
   </dl></td>
 </tr></table>
 
@@ -314,6 +493,50 @@
   <dt><a href="dev-patients.html#cagenix.patients.models.Patient">Patient (class in cagenix.patients.models)</a>
   </dt>
 
+      
+  <dt><a href="dev-practices.html#cagenix.practices.models.Practice">Practice (class in cagenix.practices.models)</a>
+  </dt>
+
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.forms.PracticeCreateForm">PracticeCreateForm (class in cagenix.evaluations.forms)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="dev-practices.html#cagenix.practices.forms.PracticeCreateForm">(class in cagenix.practices.forms)</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.forms.PracticeEditForm">PracticeEditForm (class in cagenix.evaluations.forms)</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="dev-practices.html#cagenix.practices.forms.PracticeEditForm">(class in cagenix.practices.forms)</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="dev-practices.html#cagenix.practices.views.practices_create">practices_create() (in module cagenix.practices.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-practices.html#cagenix.practices.views.practices_delete">practices_delete() (in module cagenix.practices.views)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-evaluations.html#cagenix.evaluations.models.Question">Question (class in cagenix.evaluations.models)</a>
+  </dt>
+
   </dl></td>
 </tr></table>
 
@@ -324,6 +547,28 @@
   <dt><a href="dev-users.html#cagenix.users.models.Role">Role (class in cagenix.users.models)</a>
   </dt>
 
+      
+  <dt><a href="dev-users.html#cagenix.users.forms.RoleCreateForm">RoleCreateForm (class in cagenix.users.forms)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.forms.RoleEditForm">RoleEditForm (class in cagenix.users.forms)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-users.html#cagenix.users.views.roles_create">roles_create() (in module cagenix.users.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.views.roles_delete">roles_delete() (in module cagenix.users.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.views.roles_edit">roles_edit() (in module cagenix.users.views)</a>
+  </dt>
+
   </dl></td>
 </tr></table>
 
@@ -332,6 +577,40 @@
   <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="dev-users.html#cagenix.users.models.User">User (class in cagenix.users.models)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.forms.UserChangePasswordForm">UserChangePasswordForm (class in cagenix.users.forms)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.forms.UserCreateForm">UserCreateForm (class in cagenix.users.forms)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.forms.UserEditForm">UserEditForm (class in cagenix.users.forms)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.views.users_changepassword">users_changepassword() (in module cagenix.users.views)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="dev-users.html#cagenix.users.views.users_create">users_create() (in module cagenix.users.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.views.users_delete">users_delete() (in module cagenix.users.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.views.users_edit">users_edit() (in module cagenix.users.views)</a>
+  </dt>
+
+      
+  <dt><a href="dev-users.html#cagenix.users.views.users_home">users_home() (in module cagenix.users.views)</a>
   </dt>
 
   </dl></td>

@@ -82,10 +82,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../dev-models.html">Models Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#activation-model">Activation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#answer-model">Answer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#evaluation-model">Evaluation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#patient-model">Patient Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#question-model">Question Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#role-model">Role Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#user-model">User Model</a></li>
 </ul>
@@ -126,12 +128,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dev-users.html">Users Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-advertisements.html">Advertisements Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-advertisements.html#module-cagenix.advertisements.models">Advertisements Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-advertisements.html#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-advertisements.html#module-cagenix.advertisements.views">Advertisements Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-evaluations.html">Evaluations Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-evaluations.html#module-cagenix.evaluations.models">Evaluations Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-evaluations.html#module-cagenix.evaluations.forms">Evaluations Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-evaluations.html#module-cagenix.evaluations.views">Evaluations Views</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev-patients.html">Patients Blueprint Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-practices.html">Practices Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-practices.html#module-cagenix.practices.models">Practices Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-practices.html#module-cagenix.practices.forms">Practices Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-practices.html#module-cagenix.practices.views">Practices Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.forms">Users Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.views">Users Views</a></li>
 </ul>
 </li>
 </ul>
@@ -166,6 +188,10 @@
 
 <span class="sd">This file is used to define all the models used by the Users blueprint</span>
 <span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
 <span class="kn">from</span> <span class="nn">flask.ext.security</span> <span class="kn">import</span> <span class="n">UserMixin</span><span class="p">,</span> <span class="n">RoleMixin</span>
 
 <span class="kn">from</span> <span class="nn">cagenix</span> <span class="kn">import</span> <span class="n">db</span>
@@ -273,7 +299,10 @@
     <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span>
     <span class="n">secret</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span>
-    <span class="n">active</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Boolean</span><span class="p">())</span>
+    <span class="n">primary_color</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span>
+    <span class="n">secondary_color</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span>
+    <span class="n">active</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(),</span> <span class="n">default</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">activated</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(),</span> <span class="n">default</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
     <span class="n">confirmed_at</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">DateTime</span><span class="p">())</span>
     <span class="n">last_login_at</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">DateTime</span><span class="p">())</span>
     <span class="n">current_login_at</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">DateTime</span><span class="p">())</span>
@@ -350,7 +379,33 @@
 <span class="sd">        :param email: The email of the user being searched for</span>
 <span class="sd">        :type email: string</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">User</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">email</span> <span class="o">==</span> <span class="n">email</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span></div></div>
+        <span class="k">return</span> <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">User</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">email</span> <span class="o">==</span> <span class="n">email</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="User.map_data"><a class="viewcode-back" href="../../../dev-users.html#cagenix.users.models.User.map_data">[docs]</a>    <span class="k">def</span> <span class="nf">map_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; map_data takes a dict as an argument. It then iterates</span>
+<span class="sd">        over each key field in the fields list, if a key is</span>
+<span class="sd">        in the supplied dict, it will then update the attribute of</span>
+<span class="sd">        this object to reflect the value of that key in the dict.</span>
+
+<span class="sd">        The User implementation of map_data skips password to avoid plaintext</span>
+<span class="sd">        compromises and security issues.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s">&#39;first_name&#39;</span><span class="p">,</span> <span class="s">&#39;last_name&#39;</span><span class="p">,</span> <span class="s">&#39;address_one&#39;</span><span class="p">,</span> <span class="s">&#39;address_two&#39;</span><span class="p">,</span> <span class="s">&#39;city&#39;</span><span class="p">,</span>
+            <span class="s">&#39;state&#39;</span><span class="p">,</span> <span class="s">&#39;zip_code&#39;</span><span class="p">,</span> <span class="s">&#39;email&#39;</span><span class="p">,</span> <span class="s">&#39;primary_color&#39;</span><span class="p">,</span> <span class="s">&#39;secondary_color&#39;</span><span class="p">,</span>
+            <span class="s">&#39;practice&#39;</span><span class="p">,</span>
+        <span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">field</span><span class="p">])</span>
+</div>
+<div class="viewcode-block" id="User.gen_secret"><a class="viewcode-back" href="../../../dev-users.html#cagenix.users.models.User.gen_secret">[docs]</a>    <span class="k">def</span> <span class="nf">gen_secret</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; gen_secret creates a secret for the user.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">secret</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()[:</span><span class="mi">32</span><span class="p">]</span></div></div>
 </pre></div>
 
           <footer>

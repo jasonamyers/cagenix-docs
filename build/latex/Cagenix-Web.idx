@@ -3,20 +3,74 @@
 \indexentry{handle\_splash() (in module cagenix)|hyperpage}{5}
 \indexentry{logout() (in module cagenix)|hyperpage}{5}
 \indexentry{not\_found() (in module cagenix)|hyperpage}{5}
-\indexentry{cagenix.users.models (module)|hyperpage}{31}
-\indexentry{Role (class in cagenix.users.models)|hyperpage}{31}
-\indexentry{by\_id() (cagenix.users.models.Role class method)|hyperpage}{31}
-\indexentry{by\_name() (cagenix.users.models.Role class method)|hyperpage}{31}
-\indexentry{get\_roles() (cagenix.users.models.Role class method)|hyperpage}{31}
-\indexentry{User (class in cagenix.users.models)|hyperpage}{31}
-\indexentry{by\_email() (cagenix.users.models.User class method)|hyperpage}{32}
-\indexentry{by\_id() (cagenix.users.models.User class method)|hyperpage}{32}
-\indexentry{by\_phone() (cagenix.users.models.User class method)|hyperpage}{32}
-\indexentry{by\_username() (cagenix.users.models.User class method)|hyperpage}{32}
-\indexentry{gen\_secret() (cagenix.users.models.User method)|hyperpage}{32}
-\indexentry{map\_data() (cagenix.users.models.User method)|hyperpage}{32}
-\indexentry{cagenix.patients.models (module)|hyperpage}{33}
-\indexentry{Patient (class in cagenix.patients.models)|hyperpage}{33}
-\indexentry{by\_email() (cagenix.patients.models.Patient class method)|hyperpage}{33}
-\indexentry{by\_id() (cagenix.patients.models.Patient class method)|hyperpage}{33}
-\indexentry{by\_phone() (cagenix.patients.models.Patient class method)|hyperpage}{33}
+\indexentry{cagenix.advertisements.models (module)|hyperpage}{31}
+\indexentry{Advertisement (class in cagenix.advertisements.models)|hyperpage}{31}
+\indexentry{by\_id() (cagenix.advertisements.models.Advertisement class method)|hyperpage}{31}
+\indexentry{cagenix.advertisements.forms (module)|hyperpage}{31}
+\indexentry{AdvertisementCreateForm (class in cagenix.advertisements.forms)|hyperpage}{31}
+\indexentry{AdvertisementEditForm (class in cagenix.advertisements.forms)|hyperpage}{32}
+\indexentry{cagenix.advertisements.views (module)|hyperpage}{32}
+\indexentry{advertisements\_create() (in module cagenix.advertisements.views)|hyperpage}{32}
+\indexentry{advertisements\_delete() (in module cagenix.advertisements.views)|hyperpage}{32}
+\indexentry{home() (in module cagenix.advertisements.views)|hyperpage}{32}
+\indexentry{cagenix.evaluations.models (module)|hyperpage}{35}
+\indexentry{Answer (class in cagenix.evaluations.models)|hyperpage}{35}
+\indexentry{by\_id() (cagenix.evaluations.models.Answer class method)|hyperpage}{35}
+\indexentry{Evaluation (class in cagenix.evaluations.models)|hyperpage}{35}
+\indexentry{by\_id() (cagenix.evaluations.models.Evaluation class method)|hyperpage}{35}
+\indexentry{get\_evaluations() (cagenix.evaluations.models.Evaluation class method)|hyperpage}{35}
+\indexentry{Question (class in cagenix.evaluations.models)|hyperpage}{35}
+\indexentry{by\_id() (cagenix.evaluations.models.Question class method)|hyperpage}{36}
+\indexentry{cagenix.evaluations.forms (module)|hyperpage}{36}
+\indexentry{PracticeCreateForm (class in cagenix.evaluations.forms)|hyperpage}{36}
+\indexentry{PracticeEditForm (class in cagenix.evaluations.forms)|hyperpage}{36}
+\indexentry{cagenix.evaluations.views (module)|hyperpage}{36}
+\indexentry{evaluations\_builder() (in module cagenix.evaluations.views)|hyperpage}{36}
+\indexentry{evaluations\_create() (in module cagenix.evaluations.views)|hyperpage}{36}
+\indexentry{evaluations\_create\_answer() (in module cagenix.evaluations.views)|hyperpage}{37}
+\indexentry{evaluations\_create\_questions() (in module cagenix.evaluations.views)|hyperpage}{37}
+\indexentry{home() (in module cagenix.evaluations.views)|hyperpage}{37}
+\indexentry{cagenix.patients.models (module)|hyperpage}{39}
+\indexentry{Patient (class in cagenix.patients.models)|hyperpage}{39}
+\indexentry{by\_email() (cagenix.patients.models.Patient class method)|hyperpage}{39}
+\indexentry{by\_id() (cagenix.patients.models.Patient class method)|hyperpage}{39}
+\indexentry{by\_phone() (cagenix.patients.models.Patient class method)|hyperpage}{39}
+\indexentry{map\_data() (cagenix.patients.models.Patient method)|hyperpage}{39}
+\indexentry{cagenix.practices.models (module)|hyperpage}{41}
+\indexentry{Practice (class in cagenix.practices.models)|hyperpage}{41}
+\indexentry{by\_id() (cagenix.practices.models.Practice class method)|hyperpage}{41}
+\indexentry{by\_phone() (cagenix.practices.models.Practice class method)|hyperpage}{41}
+\indexentry{get\_practices() (cagenix.practices.models.Practice class method)|hyperpage}{41}
+\indexentry{cagenix.practices.forms (module)|hyperpage}{41}
+\indexentry{PracticeCreateForm (class in cagenix.practices.forms)|hyperpage}{42}
+\indexentry{PracticeEditForm (class in cagenix.practices.forms)|hyperpage}{42}
+\indexentry{cagenix.practices.views (module)|hyperpage}{42}
+\indexentry{practices\_create() (in module cagenix.practices.views)|hyperpage}{42}
+\indexentry{practices\_delete() (in module cagenix.practices.views)|hyperpage}{42}
+\indexentry{cagenix.users.models (module)|hyperpage}{43}
+\indexentry{Role (class in cagenix.users.models)|hyperpage}{43}
+\indexentry{by\_id() (cagenix.users.models.Role class method)|hyperpage}{43}
+\indexentry{by\_name() (cagenix.users.models.Role class method)|hyperpage}{43}
+\indexentry{get\_roles() (cagenix.users.models.Role class method)|hyperpage}{43}
+\indexentry{User (class in cagenix.users.models)|hyperpage}{43}
+\indexentry{by\_email() (cagenix.users.models.User class method)|hyperpage}{44}
+\indexentry{by\_id() (cagenix.users.models.User class method)|hyperpage}{44}
+\indexentry{by\_phone() (cagenix.users.models.User class method)|hyperpage}{44}
+\indexentry{by\_username() (cagenix.users.models.User class method)|hyperpage}{44}
+\indexentry{gen\_secret() (cagenix.users.models.User method)|hyperpage}{44}
+\indexentry{map\_data() (cagenix.users.models.User method)|hyperpage}{44}
+\indexentry{cagenix.users.forms (module)|hyperpage}{44}
+\indexentry{RoleCreateForm (class in cagenix.users.forms)|hyperpage}{44}
+\indexentry{RoleEditForm (class in cagenix.users.forms)|hyperpage}{45}
+\indexentry{UserChangePasswordForm (class in cagenix.users.forms)|hyperpage}{45}
+\indexentry{UserCreateForm (class in cagenix.users.forms)|hyperpage}{45}
+\indexentry{UserEditForm (class in cagenix.users.forms)|hyperpage}{45}
+\indexentry{cagenix.users.views (module)|hyperpage}{46}
+\indexentry{roles\_create() (in module cagenix.users.views)|hyperpage}{46}
+\indexentry{roles\_delete() (in module cagenix.users.views)|hyperpage}{46}
+\indexentry{roles\_edit() (in module cagenix.users.views)|hyperpage}{46}
+\indexentry{users\_changepassword() (in module cagenix.users.views)|hyperpage}{46}
+\indexentry{users\_create() (in module cagenix.users.views)|hyperpage}{46}
+\indexentry{users\_delete() (in module cagenix.users.views)|hyperpage}{47}
+\indexentry{users\_edit() (in module cagenix.users.views)|hyperpage}{47}
+\indexentry{users\_home() (in module cagenix.users.views)|hyperpage}{47}

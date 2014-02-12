@@ -44,8 +44,8 @@
 
   
     <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
-        <link rel="next" title="Users Blueprint Overview" href="dev-users.html"/>
-        <link rel="prev" title="Patients API" href="dev-api-patients.html"/> 
+        <link rel="next" title="Patients API" href="dev-api-patients.html"/>
+        <link rel="prev" title="Advertisements API" href="dev-api-advertisements.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -83,10 +83,12 @@
 <li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#activation-model">Activation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#answer-model">Answer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#evaluation-model">Evaluation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#patient-model">Patient Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#question-model">Question Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#role-model">Role Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#user-model">User Model</a></li>
 </ul>
@@ -100,11 +102,9 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#response-codes">Response Codes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-advertisements.html">Advertisements API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#retrieve-advertisement-details">Retrieve Advertisement details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#id1">Retrieve Advertisement details</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Evaluations API</a><ul>
@@ -114,12 +114,47 @@
 <li class="toctree-l2"><a class="reference internal" href="#delete-a-patient">Delete a patient</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-practitioners.html">Practitioners API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#create-a-practitioner">Create a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#retrieve-practitioner-details">Retrieve Practitioner details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#update-a-practitioner">Update a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#delete-a-practitioner">Delete a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-advertisements.html">Advertisements Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.models">Advertisements Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.views">Advertisements Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-evaluations.html">Evaluations Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.models">Evaluations Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.forms">Evaluations Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.views">Evaluations Views</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-practices.html">Practices Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.models">Practices Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.forms">Practices Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.views">Practices Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.forms">Users Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.views">Users Views</a></li>
 </ul>
 </li>
 </ul>
@@ -544,10 +579,10 @@ opperation (EX: Success, Failed)</td>
   
     <div class="rst-footer-buttons">
       
-        <a href="dev-users.html" class="btn btn-neutral float-right" title="Users Blueprint Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="dev-api-patients.html" class="btn btn-neutral float-right" title="Patients API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="dev-api-patients.html" class="btn btn-neutral" title="Patients API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="dev-api-advertisements.html" class="btn btn-neutral" title="Advertisements API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

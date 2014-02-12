@@ -1,0 +1,32 @@
+#################################
+Advertisements Blueprint Overview
+#################################
+
+The following document covers the internals of the Cagenix-Web advertisements
+Blueprint.
+
+* :ref:`advertisements-models-label`
+* :ref:`advertisements-forms-label`
+* :ref:`advertisements-views-label`
+
+.. _advertisements-models-label:
+
+Advertisements Models
+---------------------
+.. automodule:: cagenix.advertisements.models
+    :members:
+
+
+.. _advertisements-forms-label:
+
+Advertisements Forms
+--------------------
+.. automodule:: cagenix.advertisements.forms
+    :members:
+
+.. _advertisements-views-label:
+
+Advertisements Views
+--------------------
+.. automodule:: cagenix.advertisements.views
+    :members:

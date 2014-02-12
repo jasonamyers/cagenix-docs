@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Patients Blueprint Overview &mdash; Cagenix-Web 0.1a1 documentation</title>
+  <title>Practices Blueprint Overview &mdash; Cagenix-Web 0.1a1 documentation</title>
   
 
   
@@ -44,8 +44,8 @@
 
   
     <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
-        <link rel="next" title="Practices Blueprint Overview" href="dev-practices.html"/>
-        <link rel="prev" title="Evaluations Blueprint Overview" href="dev-evaluations.html"/> 
+        <link rel="next" title="Users Blueprint Overview" href="dev-users.html"/>
+        <link rel="prev" title="Patients Blueprint Overview" href="dev-patients.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -141,14 +141,14 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.views">Evaluations Views</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Patients Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.patients.models">Patients Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dev-practices.html">Practices Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.models">Practices Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.forms">Practices Forms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.views">Practices Views</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Practices Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.practices.models">Practices Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.practices.forms">Practices Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.practices.views">Practices Views</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
@@ -178,28 +178,29 @@
         <div class="rst-content">
           <ul class="wy-breadcrumbs">
   <li><a href="index.html">Docs</a> &raquo;</li>
-  <li><a href="">Patients Blueprint Overview</a></li>
+  <li><a href="">Practices Blueprint Overview</a></li>
   
 </ul>
 <hr/>
 
           
-  <div class="section" id="patients-blueprint-overview">
-<h1>Patients Blueprint Overview<a class="headerlink" href="#patients-blueprint-overview" title="Permalink to this headline">¶</a></h1>
-<p>The following document covers the internals of the Cagenix-Web Patients
+  <div class="section" id="practices-blueprint-overview">
+<h1>Practices Blueprint Overview<a class="headerlink" href="#practices-blueprint-overview" title="Permalink to this headline">¶</a></h1>
+<p>The following document covers the internals of the Cagenix-Web practices
 Blueprint.</p>
 <ul class="simple">
-<li><a class="reference internal" href="#patients-models-label"><em>Patients Models</em></a></li>
+<li><a class="reference internal" href="#practices-models-label"><em>Practices Models</em></a></li>
+<li><a class="reference internal" href="#practices-forms-label"><em>Practices Forms</em></a></li>
+<li><a class="reference internal" href="#practices-views-label"><em>Practices Views</em></a></li>
 </ul>
-<div class="section" id="module-cagenix.patients.models">
-<span id="patients-models"></span><span id="patients-models-label"></span><h2>Patients Models<a class="headerlink" href="#module-cagenix.patients.models" title="Permalink to this headline">¶</a></h2>
-<p>cagenix.patients.models</p>
-<p>This file is used to define all the models used by the Patients blueprint</p>
+<div class="section" id="module-cagenix.practices.models">
+<span id="practices-models"></span><span id="practices-models-label"></span><h2>Practices Models<a class="headerlink" href="#module-cagenix.practices.models" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.practices.models</p>
+<p>This file is used to define all the models used by the Practices blueprint</p>
 <dl class="class">
-<dt id="cagenix.patients.models.Patient">
-<em class="property">class </em><tt class="descclassname">cagenix.patients.models.</tt><tt class="descname">Patient</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Patient model defines the patient for which the practitioner is
-performing the evaluation.</p>
+<dt id="cagenix.practices.models.Practice">
+<em class="property">class </em><tt class="descclassname">cagenix.practices.models.</tt><tt class="descname">Practice</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/practices/models.html#Practice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.practices.models.Practice" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Practice model defines the authentication users used by Flask-Security</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -209,16 +210,16 @@ performing the evaluation.</p>
 </tbody>
 </table>
 <dl class="classmethod">
-<dt id="cagenix.patients.models.Patient.by_email">
-<em class="property">classmethod </em><tt class="descname">by_email</tt><big>(</big><em>email</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.by_email"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.by_email" title="Permalink to this definition">¶</a></dt>
-<dd><p>by_email returns a Patient object given an email address.</p>
+<dt id="cagenix.practices.models.Practice.by_id">
+<em class="property">classmethod </em><tt class="descname">by_id</tt><big>(</big><em>practice_id</em><big>)</big><a class="reference internal" href="_modules/cagenix/practices/models.html#Practice.by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.practices.models.Practice.by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>by_id returns a User object given a user_id</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
-<li><strong>email</strong> (<em>string</em>) &#8211; The email of the patient being searched for</li>
+<li><strong>user_id</strong> (<em>int</em>) &#8211; The id of the user being searched for</li>
 </ul>
 </td>
 </tr>
@@ -227,16 +228,16 @@ performing the evaluation.</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="cagenix.patients.models.Patient.by_id">
-<em class="property">classmethod </em><tt class="descname">by_id</tt><big>(</big><em>user_id</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.by_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>by_id returns a Patient object given a patient_id</p>
+<dt id="cagenix.practices.models.Practice.by_phone">
+<em class="property">classmethod </em><tt class="descname">by_phone</tt><big>(</big><em>phone</em><big>)</big><a class="reference internal" href="_modules/cagenix/practices/models.html#Practice.by_phone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.practices.models.Practice.by_phone" title="Permalink to this definition">¶</a></dt>
+<dd><p>by_phone returns a User object given a phone number</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
-<li><strong>patient_id</strong> (<em>int</em>) &#8211; The id of the patient being searched for</li>
+<li><strong>phone</strong> (<em>string</em>) &#8211; The phone number of the user being searched for</li>
 </ul>
 </td>
 </tr>
@@ -245,32 +246,101 @@ performing the evaluation.</p>
 </dd></dl>
 
 <dl class="classmethod">
-<dt id="cagenix.patients.models.Patient.by_phone">
-<em class="property">classmethod </em><tt class="descname">by_phone</tt><big>(</big><em>phone</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.by_phone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.by_phone" title="Permalink to this definition">¶</a></dt>
-<dd><p>by_phone returns a Patient object given a phone number</p>
+<dt id="cagenix.practices.models.Practice.get_practices">
+<em class="property">classmethod </em><tt class="descname">get_practices</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/cagenix/practices/models.html#Practice.get_practices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.practices.models.Practice.get_practices" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_practices returns a list of Practice objects</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
-<li><strong>phone</strong> (<em>string</em>) &#8211; The phone number of the patient being searched for</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cls</strong> (<em>class</em>) &#8211; The calling class</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="cagenix.patients.models.Patient.map_data">
-<tt class="descname">map_data</tt><big>(</big><em>data</em><big>)</big><a class="reference internal" href="_modules/cagenix/patients/models.html#Patient.map_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.patients.models.Patient.map_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>map_data takes a dict as an argument. It then iterates
-over each key field in the fields list, if a key is
-in the supplied dict, it will then update the attribute of
-this object to reflect the value of that key in the dict.</p>
 </dd></dl>
 
+</div>
+<div class="section" id="module-cagenix.practices.forms">
+<span id="practices-forms"></span><span id="practices-forms-label"></span><h2>Practices Forms<a class="headerlink" href="#module-cagenix.practices.forms" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.practices.forms</p>
+<p>This file is used to define all the WTForms used by the Practices blueprint</p>
+<dl class="class">
+<dt id="cagenix.practices.forms.PracticeCreateForm">
+<em class="property">class </em><tt class="descclassname">cagenix.practices.forms.</tt><tt class="descname">PracticeCreateForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/practices/forms.html#PracticeCreateForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.practices.forms.PracticeCreateForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by Admin roles to create new Practices</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Form</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="cagenix.practices.forms.PracticeEditForm">
+<em class="property">class </em><tt class="descclassname">cagenix.practices.forms.</tt><tt class="descname">PracticeEditForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/practices/forms.html#PracticeEditForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.practices.forms.PracticeEditForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by Admin roles to edit Practices</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Form</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cagenix.practices.views">
+<span id="practices-views"></span><span id="practices-views-label"></span><h2>Practices Views<a class="headerlink" href="#module-cagenix.practices.views" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.practices.views</p>
+<p>This file defines the URL routes and controller logic for the practices blueprint.</p>
+<dl class="function">
+<dt id="cagenix.practices.views.practices_create">
+<tt class="descclassname">cagenix.practices.views.</tt><tt class="descname">practices_create</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/practices/views.html#practices_create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.practices.views.practices_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /practices/create endpoint for the blueprint</p>
+<p>It allows Admins to create Practices.  It uses the <a class="reference internal" href="#practices-forms-label"><em>Practices Forms</em></a>
+to display PracticesCreateForm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">practices/create.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.practices.views.practices_delete">
+<tt class="descclassname">cagenix.practices.views.</tt><tt class="descname">practices_delete</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/practices/views.html#practices_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.practices.views.practices_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /users/create endpoint for the blueprint</p>
+<p>It allows PNT-Admins to create users.  It uses the <a class="reference internal" href="dev-users.html#users-forms-label"><em>Users Forms</em></a>
+to display UsersCreateForm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">users/index.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -281,10 +351,10 @@ this object to reflect the value of that key in the dict.</p>
   
     <div class="rst-footer-buttons">
       
-        <a href="dev-practices.html" class="btn btn-neutral float-right" title="Practices Blueprint Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="dev-users.html" class="btn btn-neutral float-right" title="Users Blueprint Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="dev-evaluations.html" class="btn btn-neutral" title="Evaluations Blueprint Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="dev-patients.html" class="btn btn-neutral" title="Patients Blueprint Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

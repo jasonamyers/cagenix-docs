@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cagenix.users.forms &mdash; Cagenix-Web 0.1a1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../',
+        VERSION:'0.1a1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="../../../index.html"/>
+        <link rel="up" title="cagenix" href="../../cagenix.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../index.html" class="icon icon-home"> Cagenix-Web</a>
+        <form class="wy-form" action="../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-bid.html">Bid Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-bid.html#backend">Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-bid.html#frontend">Frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-overview.html">Developer Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-overview.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-models.html">Models Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#activation-model">Activation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#answer-model">Answer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#evaluation-model">Evaluation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#patient-model">Patient Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#question-model">Question Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#role-model">Role Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#user-model">User Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-overview.html">API Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#base-url-https-and-versioning">Base URL, HTTPS, and Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#get-requests">GET Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#headers">Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#header-formulas">Header Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#response-codes">Response Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-advertisements.html">Advertisements API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-advertisements.html#retrieve-advertisement-details">Retrieve Advertisement details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-advertisements.html#id1">Retrieve Advertisement details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-practitioners.html">Practitioners API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#create-a-practitioner">Create a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#retrieve-practitioner-details">Retrieve Practitioner details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#update-a-practitioner">Update a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#delete-a-practitioner">Delete a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-advertisements.html">Advertisements Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-advertisements.html#module-cagenix.advertisements.models">Advertisements Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-advertisements.html#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-advertisements.html#module-cagenix.advertisements.views">Advertisements Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-evaluations.html">Evaluations Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-evaluations.html#module-cagenix.evaluations.models">Evaluations Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-evaluations.html#module-cagenix.evaluations.forms">Evaluations Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-evaluations.html#module-cagenix.evaluations.views">Evaluations Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-practices.html">Practices Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-practices.html#module-cagenix.practices.models">Practices Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-practices.html#module-cagenix.practices.forms">Practices Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-practices.html#module-cagenix.practices.views">Practices Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.forms">Users Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.views">Users Views</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Cagenix-Web</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../../../index.html">Docs</a> &raquo;</li>
+  <li><a href="">cagenix.users.forms</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <h1>Source code for cagenix.users.forms</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;cornerstone.users.forms</span>
+
+<span class="sd">This file is used to define all the WTForms used by the Users blueprint</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">flask_wtf</span> <span class="kn">import</span> <span class="n">Form</span>
+<span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">TextField</span><span class="p">,</span> <span class="n">validators</span><span class="p">,</span> <span class="n">HiddenField</span><span class="p">,</span> <span class="n">PasswordField</span><span class="p">,</span> <span class="n">BooleanField</span>
+<span class="kn">from</span> <span class="nn">wtforms.ext.sqlalchemy.fields</span> <span class="kn">import</span> <span class="n">QuerySelectMultipleField</span><span class="p">,</span> <span class="n">QuerySelectField</span>
+<span class="kn">from</span> <span class="nn">flask.ext.security</span> <span class="kn">import</span> <span class="n">current_user</span>
+<span class="kn">from</span> <span class="nn">cagenix.users.models</span> <span class="kn">import</span> <span class="n">Role</span>
+<span class="kn">from</span> <span class="nn">cagenix.practices.models</span> <span class="kn">import</span> <span class="n">Practice</span>
+
+
+<span class="n">strip_filter</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span> <span class="k">else</span> <span class="bp">None</span>
+
+
+<div class="viewcode-block" id="UserCreateForm"><a class="viewcode-back" href="../../../dev-users.html#cagenix.users.forms.UserCreateForm">[docs]</a><span class="k">class</span> <span class="nc">UserCreateForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This form is used by CS-Admin roles to create new users</span>
+
+<span class="sd">    Users require an email and a password. This form uses a QuerySelectField to</span>
+<span class="sd">    produce a list of Merchants that can optionally be associationed to a user.</span>
+<span class="sd">    A QuerySelectMulipleField for Roles can also optionally be associated with</span>
+<span class="sd">    a client. A client can have as many roles as needed.</span>
+
+<span class="sd">    :param Form: The WTForms base class</span>
+<span class="sd">    :type value: object</span>
+<span class="sd">    :returns: WTForm</span>
+<span class="sd">    :rtype: object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Email Address&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Email</span><span class="p">()],</span> <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">strip_filter</span><span class="p">])</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;First Name&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">255</span><span class="p">)],</span> <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">strip_filter</span><span class="p">])</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Last Name&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">255</span><span class="p">)],</span> <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">strip_filter</span><span class="p">])</span>
+    <span class="n">practice</span> <span class="o">=</span> <span class="n">QuerySelectField</span><span class="p">(</span><span class="n">get_pk</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">get_label</span><span class="o">=</span><span class="s">&#39;practice_name&#39;</span><span class="p">,</span> <span class="n">query_factory</span><span class="o">=</span><span class="n">Practice</span><span class="o">.</span><span class="n">get_practices</span><span class="p">,</span> <span class="n">allow_blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank_text</span><span class="o">=</span><span class="s">u&#39;&#39;</span><span class="p">)</span>
+    <span class="n">roles</span> <span class="o">=</span> <span class="n">QuerySelectMultipleField</span><span class="p">(</span><span class="n">get_label</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="n">query_factory</span><span class="o">=</span><span class="n">Role</span><span class="o">.</span><span class="n">get_roles</span><span class="p">,</span> <span class="n">allow_blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank_text</span><span class="o">=</span><span class="s">u&#39;&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="UserEditForm"><a class="viewcode-back" href="../../../dev-users.html#cagenix.users.forms.UserEditForm">[docs]</a><span class="k">class</span> <span class="nc">UserEditForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This form is used by CS-Admin roles to edit users</span>
+
+<span class="sd">    Admins can change the email, active state of the user, associated Merchants,</span>
+<span class="sd">    and assigned Roles. This form uses a QuerySelectField to produce a list of</span>
+<span class="sd">    Merchants that can optionally be associationed to a user. A</span>
+<span class="sd">    QuerySelectMulipleField for Roles can also optionally be associated with</span>
+<span class="sd">    a client. A client can have as many roles as needed.</span>
+
+<span class="sd">    :param Form: The WTForms base class</span>
+<span class="sd">    :type value: object</span>
+<span class="sd">    :returns: WTForm</span>
+<span class="sd">    :rtype: object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">HiddenField</span><span class="p">()</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Email Address&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Email</span><span class="p">()],</span> <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">strip_filter</span><span class="p">])</span>
+    <span class="c">#merchant = QuerySelectField(get_pk=lambda x: x.merchant_id, get_label=&#39;company_name&#39;, query_factory=Merchants.get_merchants, allow_blank=True, blank_text=u&#39;&#39;)</span>
+    <span class="n">roles</span> <span class="o">=</span> <span class="n">QuerySelectMultipleField</span><span class="p">(</span><span class="n">get_label</span><span class="o">=</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="n">query_factory</span><span class="o">=</span><span class="n">Role</span><span class="o">.</span><span class="n">get_roles</span><span class="p">,</span> <span class="n">allow_blank</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank_text</span><span class="o">=</span><span class="s">u&#39;&#39;</span><span class="p">)</span>
+    <span class="n">active</span> <span class="o">=</span> <span class="n">BooleanField</span><span class="p">(</span><span class="s">&#39;Active&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="UserChangePasswordForm"><a class="viewcode-back" href="../../../dev-users.html#cagenix.users.forms.UserChangePasswordForm">[docs]</a><span class="k">class</span> <span class="nc">UserChangePasswordForm</span><span class="p">(</span><span class="n">UserCreateForm</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This form is used by CS-Admin roles to change a users password</span>
+
+<span class="sd">    This form is used due to the handling of the change password process by</span>
+<span class="sd">    Flask-Security.</span>
+
+<span class="sd">    :param UserCreateForm: The same form used by the Create User process</span>
+<span class="sd">    :type value: object</span>
+<span class="sd">    :returns: WTForm</span>
+<span class="sd">    :rtype: object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+</div>
+<div class="viewcode-block" id="RoleCreateForm"><a class="viewcode-back" href="../../../dev-users.html#cagenix.users.forms.RoleCreateForm">[docs]</a><span class="k">class</span> <span class="nc">RoleCreateForm</span><span class="p">(</span><span class="n">Form</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This form is used by CS-Admin roles to create a new role</span>
+
+<span class="sd">    This form is used to create new roles with a name and description.</span>
+
+<span class="sd">    :param Form: The WTForms base class</span>
+<span class="sd">    :type value: object</span>
+<span class="sd">    :returns: WTForm</span>
+<span class="sd">    :rtype: object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Role Name&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">255</span><span class="p">)],</span>
+        <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">strip_filter</span><span class="p">])</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">TextField</span><span class="p">(</span><span class="s">&#39;Description&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">validators</span><span class="o">.</span><span class="n">Length</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">255</span><span class="p">)],</span>
+        <span class="n">filters</span><span class="o">=</span><span class="p">[</span><span class="n">strip_filter</span><span class="p">])</span>
+
+</div>
+<div class="viewcode-block" id="RoleEditForm"><a class="viewcode-back" href="../../../dev-users.html#cagenix.users.forms.RoleEditForm">[docs]</a><span class="k">class</span> <span class="nc">RoleEditForm</span><span class="p">(</span><span class="n">RoleCreateForm</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This form is used by CS-Admin roles to edit a role</span>
+
+<span class="sd">    This form is used to change the name or description of a role.</span>
+
+<span class="sd">    :param RoleCreateForm: The WTForms base class</span>
+<span class="sd">    :type value: object</span>
+<span class="sd">    :returns: WTForm</span>
+<span class="sd">    :rtype: object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">HiddenField</span><span class="p">()</span></div>
+</pre></div>
+
+          <footer>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Jason Myers for Prime Notion Technologies.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

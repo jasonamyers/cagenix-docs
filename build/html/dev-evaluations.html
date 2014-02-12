@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Evaluations Blueprint Overview &mdash; Cagenix-Web 0.1a1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'0.1a1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
+        <link rel="next" title="Patients Blueprint Overview" href="dev-patients.html"/>
+        <link rel="prev" title="Advertisements Blueprint Overview" href="dev-advertisements.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Cagenix-Web</a>
+        <form class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dev-bid.html">Bid Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#backend">Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-bid.html#frontend">Frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-overview.html">Developer Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#activation-model">Activation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#answer-model">Answer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#evaluation-model">Evaluation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patient-model">Patient Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#question-model">Question Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#role-model">Role Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#user-model">User Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-overview.html">API Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#base-url-https-and-versioning">Base URL, HTTPS, and Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#get-requests">GET Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#headers">Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#header-formulas">Header Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-overview.html#response-codes">Response Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-advertisements.html">Advertisements API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#retrieve-advertisement-details">Retrieve Advertisement details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-advertisements.html#id1">Retrieve Advertisement details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-api-practitioners.html">Practitioners API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#create-a-practitioner">Create a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#retrieve-practitioner-details">Retrieve Practitioner details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#update-a-practitioner">Update a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#delete-a-practitioner">Delete a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-advertisements.html">Advertisements Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.models">Advertisements Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.views">Advertisements Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Evaluations Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.evaluations.models">Evaluations Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.evaluations.forms">Evaluations Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.evaluations.views">Evaluations Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-practices.html">Practices Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.models">Practices Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.forms">Practices Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.views">Practices Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.forms">Users Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-users.html#module-cagenix.users.views">Users Views</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Cagenix-Web</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <li><a href="">Evaluations Blueprint Overview</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="evaluations-blueprint-overview">
+<h1>Evaluations Blueprint Overview<a class="headerlink" href="#evaluations-blueprint-overview" title="Permalink to this headline">¶</a></h1>
+<p>The following document covers the internals of the Cagenix-Web Evaluations
+Blueprint.</p>
+<ul class="simple">
+<li><a class="reference internal" href="#evaluations-models-label"><em>Evaluations Models</em></a></li>
+<li><a class="reference internal" href="#evaluations-forms-label"><em>Evaluations Forms</em></a></li>
+<li><a class="reference internal" href="#evaluations-views-label"><em>Evaluations Views</em></a></li>
+</ul>
+<div class="section" id="module-cagenix.evaluations.models">
+<span id="evaluations-models"></span><span id="evaluations-models-label"></span><h2>Evaluations Models<a class="headerlink" href="#module-cagenix.evaluations.models" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.evaluations.models</p>
+<p>This file is used to define all the models used by the Evaluations blueprint</p>
+<dl class="class">
+<dt id="cagenix.evaluations.models.Answer">
+<em class="property">class </em><tt class="descclassname">cagenix.evaluations.models.</tt><tt class="descname">Answer</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/models.html#Answer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.models.Answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Answer model defines the pre-set answers for a question.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db.Model</strong> (<em>object</em>) &#8211; The SQLAlchemy base database model</td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="cagenix.evaluations.models.Answer.by_id">
+<em class="property">classmethod </em><tt class="descname">by_id</tt><big>(</big><em>answer_id</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/models.html#Answer.by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.models.Answer.by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>by_id returns an Answer object given a answer_id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
+<li><strong>answer_id</strong> (<em>int</em>) &#8211; The id of the answer being searched for</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cagenix.evaluations.models.Evaluation">
+<em class="property">class </em><tt class="descclassname">cagenix.evaluations.models.</tt><tt class="descname">Evaluation</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/models.html#Evaluation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.models.Evaluation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Evaluation model defines the questionaires that the Practitioners
+give to patients.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db.Model</strong> (<em>object</em>) &#8211; The SQLAlchemy base database model</td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="cagenix.evaluations.models.Evaluation.by_id">
+<em class="property">classmethod </em><tt class="descname">by_id</tt><big>(</big><em>evaluation_id</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/models.html#Evaluation.by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.models.Evaluation.by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>by_id returns an Evaluation object given a evaluation_id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
+<li><strong>evaluation_id</strong> (<em>int</em>) &#8211; The id of the evaluation being searched for</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="cagenix.evaluations.models.Evaluation.get_evaluations">
+<em class="property">classmethod </em><tt class="descname">get_evaluations</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/models.html#Evaluation.get_evaluations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.models.Evaluation.get_evaluations" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_evaluations returns a list of Evaluation objects</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cls</strong> (<em>class</em>) &#8211; The calling class</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cagenix.evaluations.models.Question">
+<em class="property">class </em><tt class="descclassname">cagenix.evaluations.models.</tt><tt class="descname">Question</tt><big>(</big><em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/models.html#Question"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.models.Question" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Question model defines the questions that are in the questionaires.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>db.Model</strong> (<em>object</em>) &#8211; The SQLAlchemy base database model</td>
+</tr>
+</tbody>
+</table>
+<dl class="classmethod">
+<dt id="cagenix.evaluations.models.Question.by_id">
+<em class="property">classmethod </em><tt class="descname">by_id</tt><big>(</big><em>question_id</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/models.html#Question.by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.models.Question.by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>by_id returns a Question object given a question_id</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>cls</strong> (<em>class</em>) &#8211; The calling class</li>
+<li><strong>question_id</strong> (<em>int</em>) &#8211; The id of the question being searched for</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cagenix.evaluations.forms">
+<span id="evaluations-forms"></span><span id="evaluations-forms-label"></span><h2>Evaluations Forms<a class="headerlink" href="#module-cagenix.evaluations.forms" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.practices.forms</p>
+<p>This file is used to define all the WTForms used by the Practices blueprint</p>
+<dl class="class">
+<dt id="cagenix.evaluations.forms.PracticeCreateForm">
+<em class="property">class </em><tt class="descclassname">cagenix.evaluations.forms.</tt><tt class="descname">PracticeCreateForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#cagenix.evaluations.forms.PracticeCreateForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by Admin roles to create new Practices</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Form</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="cagenix.evaluations.forms.PracticeEditForm">
+<em class="property">class </em><tt class="descclassname">cagenix.evaluations.forms.</tt><tt class="descname">PracticeEditForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#cagenix.evaluations.forms.PracticeEditForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by Admin roles to edit Practices</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Form</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cagenix.evaluations.views">
+<span id="evaluations-views"></span><span id="evaluations-views-label"></span><h2>Evaluations Views<a class="headerlink" href="#module-cagenix.evaluations.views" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.evaluations.views</p>
+<p>This file defines the URL routes and controller logic for the evaluations blueprint.</p>
+<dl class="function">
+<dt id="cagenix.evaluations.views.evaluations_builder">
+<tt class="descclassname">cagenix.evaluations.views.</tt><tt class="descname">evaluations_builder</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/views.html#evaluations_builder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.views.evaluations_builder" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /evaluations/&lt;ID&gt;/builder endpoint for the blueprint</p>
+<p>It allows Admins to build Evaluations.  It uses the :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>evaluations-builder-label
+to build them.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">evaluations/create.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.evaluations.views.evaluations_create">
+<tt class="descclassname">cagenix.evaluations.views.</tt><tt class="descname">evaluations_create</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/views.html#evaluations_create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.views.evaluations_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /evaluations/create endpoint for the blueprint</p>
+<p>It allows Admins to start creating Evaluations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">redirect to /evaluations/&lt;ID&gt;/builder</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">redirect</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.evaluations.views.evaluations_create_answer">
+<tt class="descclassname">cagenix.evaluations.views.</tt><tt class="descname">evaluations_create_answer</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/views.html#evaluations_create_answer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.views.evaluations_create_answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /builder/&lt;ID&gt;/answer endpoint for the blueprint</p>
+<p>It allows provides and API for the builder to access answer information for a given
+question.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Answer(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">JSON Objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.evaluations.views.evaluations_create_questions">
+<tt class="descclassname">cagenix.evaluations.views.</tt><tt class="descname">evaluations_create_questions</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/views.html#evaluations_create_questions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.views.evaluations_create_questions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /builder/&lt;ID&gt;/question endpoint for the blueprint</p>
+<p>It allows provides and API for the builder to access question information for a given
+evaluation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Question(s)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">JSON Objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.evaluations.views.home">
+<tt class="descclassname">cagenix.evaluations.views.</tt><tt class="descname">home</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/evaluations/views.html#home"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.evaluations.views.home" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /evaluations endpoint for the blueprint</p>
+<p>It displays a list of evaluations with the ability to edit or
+delete. It also offers the ability to add additional evaluations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">evaluations/index.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="dev-patients.html" class="btn btn-neutral float-right" title="Patients Blueprint Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="dev-advertisements.html" class="btn btn-neutral" title="Advertisements Blueprint Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Jason Myers for Prime Notion Technologies.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

@@ -44,8 +44,7 @@
 
   
     <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="index.html"/>
-        <link rel="next" title="Patients Blueprint Overview" href="dev-patients.html"/>
-        <link rel="prev" title="Practitioners API" href="dev-api-practitioners.html"/> 
+        <link rel="prev" title="Practices Blueprint Overview" href="dev-practices.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -83,10 +82,12 @@
 <li class="toctree-l1"><a class="reference internal" href="dev-models.html">Models Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#activation-model">Activation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#answer-model">Answer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#evaluation-model">Evaluation Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#patient-model">Patient Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-models.html#question-model">Question Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#role-model">Role Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dev-models.html#user-model">User Model</a></li>
 </ul>
@@ -127,12 +128,32 @@
 <li class="toctree-l2"><a class="reference internal" href="dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Users Blueprint Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-advertisements.html">Advertisements Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.models">Advertisements Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-advertisements.html#module-cagenix.advertisements.views">Advertisements Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-evaluations.html">Evaluations Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.models">Evaluations Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.forms">Evaluations Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-evaluations.html#module-cagenix.evaluations.views">Evaluations Views</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dev-patients.html">Patients Blueprint Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-practices.html">Practices Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.models">Practices Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.forms">Practices Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dev-practices.html#module-cagenix.practices.views">Practices Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.users.forms">Users Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-cagenix.users.views">Users Views</a></li>
 </ul>
 </li>
 </ul>
@@ -168,8 +189,8 @@
 Blueprint.</p>
 <ul class="simple">
 <li><a class="reference internal" href="#users-models-label"><em>Users Models</em></a></li>
-<li><em class="xref std std-ref">users-forms-label</em></li>
-<li><em class="xref std std-ref">users-views-label</em></li>
+<li><a class="reference internal" href="#users-forms-label"><em>Users Forms</em></a></li>
+<li><a class="reference internal" href="#users-views-label"><em>Users Views</em></a></li>
 </ul>
 <div class="section" id="module-cagenix.users.models">
 <span id="users-models"></span><span id="users-models-label"></span><h2>Users Models<a class="headerlink" href="#module-cagenix.users.models" title="Permalink to this headline">¶</a></h2>
@@ -339,13 +360,13 @@ fields are used to track user logins and access IPs.</p>
 
 <dl class="method">
 <dt id="cagenix.users.models.User.gen_secret">
-<tt class="descname">gen_secret</tt><big>(</big><big>)</big><a class="headerlink" href="#cagenix.users.models.User.gen_secret" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">gen_secret</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/cagenix/users/models.html#User.gen_secret"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.models.User.gen_secret" title="Permalink to this definition">¶</a></dt>
 <dd><p>gen_secret creates a secret for the user.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cagenix.users.models.User.map_data">
-<tt class="descname">map_data</tt><big>(</big><em>data</em><big>)</big><a class="headerlink" href="#cagenix.users.models.User.map_data" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">map_data</tt><big>(</big><em>data</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/models.html#User.map_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.models.User.map_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>map_data takes a dict as an argument. It then iterates
 over each key field in the fields list, if a key is
 in the supplied dict, it will then update the attribute of
@@ -357,6 +378,278 @@ compromises and security issues.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-cagenix.users.forms">
+<span id="users-forms"></span><span id="users-forms-label"></span><h2>Users Forms<a class="headerlink" href="#module-cagenix.users.forms" title="Permalink to this headline">¶</a></h2>
+<p>cornerstone.users.forms</p>
+<p>This file is used to define all the WTForms used by the Users blueprint</p>
+<dl class="class">
+<dt id="cagenix.users.forms.RoleCreateForm">
+<em class="property">class </em><tt class="descclassname">cagenix.users.forms.</tt><tt class="descname">RoleCreateForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/forms.html#RoleCreateForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.forms.RoleCreateForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by CS-Admin roles to create a new role</p>
+<p>This form is used to create new roles with a name and description.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Form</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="cagenix.users.forms.RoleEditForm">
+<em class="property">class </em><tt class="descclassname">cagenix.users.forms.</tt><tt class="descname">RoleEditForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/forms.html#RoleEditForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.forms.RoleEditForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by CS-Admin roles to edit a role</p>
+<p>This form is used to change the name or description of a role.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>RoleCreateForm</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="cagenix.users.forms.UserChangePasswordForm">
+<em class="property">class </em><tt class="descclassname">cagenix.users.forms.</tt><tt class="descname">UserChangePasswordForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/forms.html#UserChangePasswordForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.forms.UserChangePasswordForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by CS-Admin roles to change a users password</p>
+<p>This form is used due to the handling of the change password process by
+Flask-Security.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>UserCreateForm</strong> &#8211; The same form used by the Create User process</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="cagenix.users.forms.UserCreateForm">
+<em class="property">class </em><tt class="descclassname">cagenix.users.forms.</tt><tt class="descname">UserCreateForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/forms.html#UserCreateForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.forms.UserCreateForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by CS-Admin roles to create new users</p>
+<p>Users require an email and a password. This form uses a QuerySelectField to
+produce a list of Merchants that can optionally be associationed to a user.
+A QuerySelectMulipleField for Roles can also optionally be associated with
+a client. A client can have as many roles as needed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Form</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="cagenix.users.forms.UserEditForm">
+<em class="property">class </em><tt class="descclassname">cagenix.users.forms.</tt><tt class="descname">UserEditForm</tt><big>(</big><em>formdata=&lt;class flask_wtf.form._Auto at 0x1046440b8&gt;</em>, <em>obj=None</em>, <em>prefix=''</em>, <em>csrf_context=None</em>, <em>secret_key=None</em>, <em>csrf_enabled=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/forms.html#UserEditForm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.forms.UserEditForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This form is used by CS-Admin roles to edit users</p>
+<p>Admins can change the email, active state of the user, associated Merchants,
+and assigned Roles. This form uses a QuerySelectField to produce a list of
+Merchants that can optionally be associationed to a user. A
+QuerySelectMulipleField for Roles can also optionally be associated with
+a client. A client can have as many roles as needed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>Form</strong> &#8211; The WTForms base class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WTForm</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cagenix.users.views">
+<span id="users-views"></span><span id="users-views-label"></span><h2>Users Views<a class="headerlink" href="#module-cagenix.users.views" title="Permalink to this headline">¶</a></h2>
+<p>cagenix.users.views</p>
+<p>This file defines the URL routes and controller logic for the users blueprint.
+PNT-Admins and App-Admins are the only uses that can access this blueprint.
+The Flask-Security roles_accepted decorator is used to require both
+authentication and authorization.</p>
+<dl class="function">
+<dt id="cagenix.users.views.roles_create">
+<tt class="descclassname">cagenix.users.views.</tt><tt class="descname">roles_create</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/views.html#roles_create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.views.roles_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /users/roles/create endpoint for the blueprint</p>
+<p>It allows PNT-Admins to create roles.  It uses the <a class="reference internal" href="#users-forms-label"><em>Users Forms</em></a>
+to display RolesCreateForm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">users/roles/create.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.users.views.roles_delete">
+<tt class="descclassname">cagenix.users.views.</tt><tt class="descname">roles_delete</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/views.html#roles_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.views.roles_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /users/roles/delete endpoint for the blueprint</p>
+<p>It allows PNT-Admins to delete a role.  It is called via a button on the
+<tt class="docutils literal"><span class="pre">users/roles/edit.html</span></tt> template</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) &#8211; The id of the role being edited</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">users.users_home</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">redirect</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.users.views.roles_edit">
+<tt class="descclassname">cagenix.users.views.</tt><tt class="descname">roles_edit</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/views.html#roles_edit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.views.roles_edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /roles/edit endpoint for the blueprint</p>
+<p>It allows PNT-Admins to edit roles.  It uses the <a class="reference internal" href="#users-forms-label"><em>Users Forms</em></a>
+to display RolesEditForm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) &#8211; The id of the role being edited</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">users/roles/edit.html</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.users.views.users_changepassword">
+<tt class="descclassname">cagenix.users.views.</tt><tt class="descname">users_changepassword</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/views.html#users_changepassword"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.views.users_changepassword" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /users/changepassword endpoint for the blueprint</p>
+<p>It allows PNT-Admins to change a users password.  It uses the
+<a class="reference internal" href="#users-forms-label"><em>Users Forms</em></a> to display UsersChangePasswordForm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) &#8211; The id of the user being edited</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">users/change_password.html</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.users.views.users_create">
+<tt class="descclassname">cagenix.users.views.</tt><tt class="descname">users_create</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/views.html#users_create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.views.users_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /users/create endpoint for the blueprint</p>
+<p>It allows PNT-Admins to create users.  It uses the <a class="reference internal" href="#users-forms-label"><em>Users Forms</em></a>
+to display UsersCreateForm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">users/index.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.users.views.users_delete">
+<tt class="descclassname">cagenix.users.views.</tt><tt class="descname">users_delete</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/views.html#users_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.views.users_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /users/delete endpoint for the blueprint</p>
+<p>It allows PNT-Admins to delete a user.  It is called via a button on
+the <tt class="docutils literal"><span class="pre">users/edit.html</span></tt> template</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) &#8211; The id of the user being deleted</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">users.users_home</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">redirect</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.users.views.users_edit">
+<tt class="descclassname">cagenix.users.views.</tt><tt class="descname">users_edit</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/views.html#users_edit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.views.users_edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /users/edit endpoint for the bcornerstone/users/views.py</p>
+<p>It allows PNT-Admins to edit users.  It uses the <a class="reference internal" href="#users-forms-label"><em>Users Forms</em></a>
+to display UsersEditForm</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) &#8211; The id of the user being edited</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">users/edit.html</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cagenix.users.views.users_home">
+<tt class="descclassname">cagenix.users.views.</tt><tt class="descname">users_home</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/cagenix/users/views.html#users_home"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cagenix.users.views.users_home" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function handles the /users endpoint for the blueprint</p>
+<p>It displays a list of users and their roles with the ability to edit or
+change passwords. It also displays a list of roles and descriptions with
+the ability to edit them.  It also offers the ability to add additional
+users and roles.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">users/index.html</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">template</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -364,10 +657,8 @@ compromises and security issues.</p>
   
     <div class="rst-footer-buttons">
       
-        <a href="dev-patients.html" class="btn btn-neutral float-right" title="Patients Blueprint Overview"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="dev-api-practitioners.html" class="btn btn-neutral" title="Practitioners API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="dev-practices.html" class="btn btn-neutral" title="Practices Blueprint Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

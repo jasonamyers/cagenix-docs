@@ -14,7 +14,7 @@
 
 
 \title{Cagenix-Web Documentation}
-\date{January 31, 2014}
+\date{February 12, 2014}
 \release{0.1a1}
 \author{Jason Myers for Prime Notion Technologies}
 \newcommand{\sphinxlogo}{}
@@ -275,6 +275,9 @@ The following document covers the models used in the Cagenix-Web application.
 {\hyperref[dev-models:advertisement-model-label]{\emph{Advertisement Model}}}
 
 \item {} 
+{\hyperref[dev-models:answer-model-label]{\emph{Answer Model}}}
+
+\item {} 
 {\hyperref[dev-models:evaluation-model-label]{\emph{Evaluation Model}}}
 
 \item {} 
@@ -285,6 +288,9 @@ The following document covers the models used in the Cagenix-Web application.
 
 \item {} 
 {\hyperref[dev-models:practice-model-label]{\emph{Practice Model}}}
+
+\item {} 
+\emph{question-model-label}
 
 \item {} 
 {\hyperref[dev-models:role-model-label]{\emph{Role Model}}}
@@ -402,6 +408,71 @@ Active Flag for archiving
 
 
 
+\section{Answer Model}
+\label{dev-models:answer-model}\label{dev-models:answer-model-label}
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Field Name
+} & \textsf{\relax 
+Type (Length)
+} & \textsf{\relax 
+Description
+}\\
+\hline
+id
+ & 
+Integer
+ & 
+Primary Key
+\\
+
+text
+ & 
+String
+ & 
+The text of the Question
+\\
+
+order
+ & 
+Integer
+ & 
+The order of the Question in the
+Evaluation.
+\\
+
+active
+ & 
+Boolean
+ & 
+Active Flag for archiving
+\\
+\hline\end{tabulary}
+
+
+\textbf{Virtuals}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Field Name
+} & \textsf{\relax 
+Type
+} & \textsf{\relax 
+Description
+}\\
+\hline
+question
+ & 
+Many2One
+ & 
+Virtual to question
+\\
+\hline\end{tabulary}
+
+
+
 \section{Evaluation Model}
 \label{dev-models:evaluation-model-label}\label{dev-models:evaluation-model}
 \begin{tabulary}{\linewidth}{|L|L|L|}
@@ -421,62 +492,39 @@ Integer
 Primary Key
 \\
 
-evaluation\_id
- & 
-UUID
- & 
-Used to group questions into a single
-evaulation.
-\\
-
-question\_order
+name
  & 
 Integer
  & 
-Position of question within an
-Evaulation
+Name of the Evaluation
 \\
 
-question\_text
+active
  & 
-Text
+Boolean
  & 
-Text of the question
+Active Flag for archiving
 \\
+\hline\end{tabulary}
 
-answer\_one
- & 
-String(255)
- & 
-First answer choice
-\\
 
-answer\_two
- & 
-String(255)
- & 
-Second answer choice
-\\
+\textbf{Virtuals}
 
-answer\_three
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Field Name
+} & \textsf{\relax 
+Type
+} & \textsf{\relax 
+Description
+}\\
+\hline
+questions
  & 
-String(255)
+One2Many
  & 
-Second answer choice
-\\
-
-answer\_four
- & 
-String(255)
- & 
-Second answer choice
-\\
-
-answer\_custom
- & 
-Text
- & 
-Free for all answer
+Virtual to Questions
 \\
 \hline\end{tabulary}
 
@@ -644,17 +692,17 @@ Primary Key
 
 evaluation\_id
  & 
-UUID
+Integer
  & 
-Used to group answers into a single
+Used to group questions into a single
 evaulation.
 \\
 
-answer
+custom\_answer
  & 
 String(255)
  & 
-Answer to question
+Free Text Answer to question
 \\
 
 active
@@ -690,6 +738,13 @@ patient
 Many2One
  & 
 User Answering Question
+\\
+
+answer
+ & 
+Many2One
+ & 
+Answer Selected
 \\
 \hline\end{tabulary}
 
@@ -810,6 +865,78 @@ practitioner
 One2Many
  & 
 Virtual to User
+\\
+\hline\end{tabulary}
+
+
+
+\section{Question Model}
+\label{dev-models:qeustion-model-label}\label{dev-models:question-model}
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Field Name
+} & \textsf{\relax 
+Type (Length)
+} & \textsf{\relax 
+Description
+}\\
+\hline
+id
+ & 
+Integer
+ & 
+Primary Key
+\\
+
+text
+ & 
+String
+ & 
+The text of the Question
+\\
+
+order
+ & 
+Integer
+ & 
+The order of the Question in the
+Evaluation.
+\\
+
+active
+ & 
+Boolean
+ & 
+Active Flag for archiving
+\\
+\hline\end{tabulary}
+
+
+\textbf{Virtuals}
+
+\begin{tabulary}{\linewidth}{|L|L|L|}
+\hline
+\textsf{\relax 
+Field Name
+} & \textsf{\relax 
+Type
+} & \textsf{\relax 
+Description
+}\\
+\hline
+evaluation
+ & 
+Many2One
+ & 
+Virtual to Evaluation
+\\
+
+answers
+ & 
+One2Many
+ & 
+Virtual to Answer
 \\
 \hline\end{tabulary}
 
@@ -3406,6 +3533,734 @@ String
 
 
 
+\chapter{Advertisements Blueprint Overview}
+\label{dev-advertisements::doc}\label{dev-advertisements:advertisements-blueprint-overview}
+The following document covers the internals of the Cagenix-Web advertisements
+Blueprint.
+\begin{itemize}
+\item {} 
+{\hyperref[dev-advertisements:advertisements-models-label]{\emph{Advertisements Models}}}
+
+\item {} 
+{\hyperref[dev-advertisements:advertisements-forms-label]{\emph{Advertisements Forms}}}
+
+\item {} 
+{\hyperref[dev-advertisements:advertisements-views-label]{\emph{Advertisements Views}}}
+
+\end{itemize}
+
+
+\section{Advertisements Models}
+\label{dev-advertisements:advertisements-models}\label{dev-advertisements:module-cagenix.advertisements.models}\label{dev-advertisements:advertisements-models-label}\index{cagenix.advertisements.models (module)}
+cagenix.advertisements.models
+
+This file is used to define all the models used by the Advertisement blueprint
+\index{Advertisement (class in cagenix.advertisements.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-advertisements:cagenix.advertisements.models.Advertisement}\pysiglinewithargsret{\strong{class }\code{cagenix.advertisements.models.}\bfcode{Advertisement}}{\emph{**kwargs}}{}
+The Advertisement model defines the advertisements available via the API
+
+This class defines the model attributes, a classmethod to make finding
+the advertisments by id easier.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{db.Model} (\emph{object}) -- The SQLAlchemy base database model
+
+\end{description}\end{quote}
+\index{by\_id() (cagenix.advertisements.models.Advertisement class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-advertisements:cagenix.advertisements.models.Advertisement.by_id}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_id}}{\emph{advertisement\_id}}{}
+by\_id returns a Advertisement object given a user\_id
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{cls} (\emph{class}) -- The calling class
+
+\item {} 
+\textbf{advertisement\_id} (\emph{int}) -- The id of the advertisement being searched for
+
+\end{itemize}
+
+\item[{Return type}] \leavevmode
+list of Advertisement objects
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Advertisements Forms}
+\label{dev-advertisements:module-cagenix.advertisements.forms}\label{dev-advertisements:advertisements-forms}\label{dev-advertisements:advertisements-forms-label}\index{cagenix.advertisements.forms (module)}
+cagenix.advertisements.forms
+
+This file is used to define all the WTForms used by the Advertisements blueprint
+\index{AdvertisementCreateForm (class in cagenix.advertisements.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-advertisements:cagenix.advertisements.forms.AdvertisementCreateForm}\pysiglinewithargsret{\strong{class }\code{cagenix.advertisements.forms.}\bfcode{AdvertisementCreateForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by Admin roles to create new Advertisements
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{Form} -- The WTForms base class
+
+\item[{Returns}] \leavevmode
+WTForm
+
+\item[{Return type}] \leavevmode
+object
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{AdvertisementEditForm (class in cagenix.advertisements.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-advertisements:cagenix.advertisements.forms.AdvertisementEditForm}\pysiglinewithargsret{\strong{class }\code{cagenix.advertisements.forms.}\bfcode{AdvertisementEditForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by Admin roles to edit Advertisements
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{Form} -- The WTForms base class
+
+\item[{Returns}] \leavevmode
+WTForm
+
+\item[{Return type}] \leavevmode
+object
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\section{Advertisements Views}
+\label{dev-advertisements:advertisements-views-label}\label{dev-advertisements:advertisements-views}\label{dev-advertisements:module-cagenix.advertisements.views}\index{cagenix.advertisements.views (module)}
+cagenix.advertisements.views
+
+This file defines the URL routes and controller logic for the advertisement blueprint.
+\index{advertisements\_create() (in module cagenix.advertisements.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-advertisements:cagenix.advertisements.views.advertisements_create}\pysiglinewithargsret{\code{cagenix.advertisements.views.}\bfcode{advertisements\_create}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /advertisements/create endpoint for the blueprint
+
+It allows Admins to create Advertisements.  It uses the {\hyperref[dev-advertisements:advertisements-forms-label]{\emph{Advertisements Forms}}}
+to display AdvertisementCreateForm
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+users/index.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{advertisements\_delete() (in module cagenix.advertisements.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-advertisements:cagenix.advertisements.views.advertisements_delete}\pysiglinewithargsret{\code{cagenix.advertisements.views.}\bfcode{advertisements\_delete}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /advertisements/delete endpoint for the blueprint
+
+It allows Admins to delete Advertisements.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+redirect to /advertisements
+
+\item[{Return type}] \leavevmode
+redirect
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{home() (in module cagenix.advertisements.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-advertisements:cagenix.advertisements.views.home}\pysiglinewithargsret{\code{cagenix.advertisements.views.}\bfcode{home}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /advertisements endpoint for the blueprint
+
+It displays a list of advertisements with the ability to edit or
+delete. It also offers the ability to add additional advertisements.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+advertisements/index.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\chapter{Evaluations Blueprint Overview}
+\label{dev-evaluations::doc}\label{dev-evaluations:evaluations-blueprint-overview}
+The following document covers the internals of the Cagenix-Web Evaluations
+Blueprint.
+\begin{itemize}
+\item {} 
+{\hyperref[dev-evaluations:evaluations-models-label]{\emph{Evaluations Models}}}
+
+\item {} 
+{\hyperref[dev-evaluations:evaluations-forms-label]{\emph{Evaluations Forms}}}
+
+\item {} 
+{\hyperref[dev-evaluations:evaluations-views-label]{\emph{Evaluations Views}}}
+
+\end{itemize}
+
+
+\section{Evaluations Models}
+\label{dev-evaluations:evaluations-models-label}\label{dev-evaluations:module-cagenix.evaluations.models}\label{dev-evaluations:evaluations-models}\index{cagenix.evaluations.models (module)}
+cagenix.evaluations.models
+
+This file is used to define all the models used by the Evaluations blueprint
+\index{Answer (class in cagenix.evaluations.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.models.Answer}\pysiglinewithargsret{\strong{class }\code{cagenix.evaluations.models.}\bfcode{Answer}}{\emph{**kwargs}}{}
+The Answer model defines the pre-set answers for a question.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{db.Model} (\emph{object}) -- The SQLAlchemy base database model
+
+\end{description}\end{quote}
+\index{by\_id() (cagenix.evaluations.models.Answer class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.models.Answer.by_id}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_id}}{\emph{answer\_id}}{}
+by\_id returns an Answer object given a answer\_id
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{cls} (\emph{class}) -- The calling class
+
+\item {} 
+\textbf{answer\_id} (\emph{int}) -- The id of the answer being searched for
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Evaluation (class in cagenix.evaluations.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.models.Evaluation}\pysiglinewithargsret{\strong{class }\code{cagenix.evaluations.models.}\bfcode{Evaluation}}{\emph{**kwargs}}{}
+The Evaluation model defines the questionaires that the Practitioners
+give to patients.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{db.Model} (\emph{object}) -- The SQLAlchemy base database model
+
+\end{description}\end{quote}
+\index{by\_id() (cagenix.evaluations.models.Evaluation class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.models.Evaluation.by_id}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_id}}{\emph{evaluation\_id}}{}
+by\_id returns an Evaluation object given a evaluation\_id
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{cls} (\emph{class}) -- The calling class
+
+\item {} 
+\textbf{evaluation\_id} (\emph{int}) -- The id of the evaluation being searched for
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{get\_evaluations() (cagenix.evaluations.models.Evaluation class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.models.Evaluation.get_evaluations}\pysiglinewithargsret{\strong{classmethod }\bfcode{get\_evaluations}}{}{}
+get\_evaluations returns a list of Evaluation objects
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{cls} (\emph{class}) -- The calling class
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+\index{Question (class in cagenix.evaluations.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.models.Question}\pysiglinewithargsret{\strong{class }\code{cagenix.evaluations.models.}\bfcode{Question}}{\emph{**kwargs}}{}
+The Question model defines the questions that are in the questionaires.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{db.Model} (\emph{object}) -- The SQLAlchemy base database model
+
+\end{description}\end{quote}
+\index{by\_id() (cagenix.evaluations.models.Question class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.models.Question.by_id}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_id}}{\emph{question\_id}}{}
+by\_id returns a Question object given a question\_id
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{cls} (\emph{class}) -- The calling class
+
+\item {} 
+\textbf{question\_id} (\emph{int}) -- The id of the question being searched for
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Evaluations Forms}
+\label{dev-evaluations:module-cagenix.evaluations.forms}\label{dev-evaluations:evaluations-forms-label}\label{dev-evaluations:evaluations-forms}\index{cagenix.evaluations.forms (module)}
+cagenix.practices.forms
+
+This file is used to define all the WTForms used by the Practices blueprint
+\index{PracticeCreateForm (class in cagenix.evaluations.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.forms.PracticeCreateForm}\pysiglinewithargsret{\strong{class }\code{cagenix.evaluations.forms.}\bfcode{PracticeCreateForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by Admin roles to create new Practices
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{Form} -- The WTForms base class
+
+\item[{Returns}] \leavevmode
+WTForm
+
+\item[{Return type}] \leavevmode
+object
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{PracticeEditForm (class in cagenix.evaluations.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.forms.PracticeEditForm}\pysiglinewithargsret{\strong{class }\code{cagenix.evaluations.forms.}\bfcode{PracticeEditForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by Admin roles to edit Practices
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{Form} -- The WTForms base class
+
+\item[{Returns}] \leavevmode
+WTForm
+
+\item[{Return type}] \leavevmode
+object
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\section{Evaluations Views}
+\label{dev-evaluations:evaluations-views}\label{dev-evaluations:evaluations-views-label}\label{dev-evaluations:module-cagenix.evaluations.views}\index{cagenix.evaluations.views (module)}
+cagenix.evaluations.views
+
+This file defines the URL routes and controller logic for the evaluations blueprint.
+\index{evaluations\_builder() (in module cagenix.evaluations.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.views.evaluations_builder}\pysiglinewithargsret{\code{cagenix.evaluations.views.}\bfcode{evaluations\_builder}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /evaluations/\textless{}ID\textgreater{}/builder endpoint for the blueprint
+
+It allows Admins to build Evaluations.  It uses the :ref:{\color{red}\bfseries{}{}`}evaluations-builder-label
+to build them.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+evaluations/create.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{evaluations\_create() (in module cagenix.evaluations.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.views.evaluations_create}\pysiglinewithargsret{\code{cagenix.evaluations.views.}\bfcode{evaluations\_create}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /evaluations/create endpoint for the blueprint
+
+It allows Admins to start creating Evaluations.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+redirect to /evaluations/\textless{}ID\textgreater{}/builder
+
+\item[{Return type}] \leavevmode
+redirect
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{evaluations\_create\_answer() (in module cagenix.evaluations.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.views.evaluations_create_answer}\pysiglinewithargsret{\code{cagenix.evaluations.views.}\bfcode{evaluations\_create\_answer}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /builder/\textless{}ID\textgreater{}/answer endpoint for the blueprint
+
+It allows provides and API for the builder to access answer information for a given
+question.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+Answer(s)
+
+\item[{Return type}] \leavevmode
+JSON Objects
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{evaluations\_create\_questions() (in module cagenix.evaluations.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.views.evaluations_create_questions}\pysiglinewithargsret{\code{cagenix.evaluations.views.}\bfcode{evaluations\_create\_questions}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /builder/\textless{}ID\textgreater{}/question endpoint for the blueprint
+
+It allows provides and API for the builder to access question information for a given
+evaluation.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+Question(s)
+
+\item[{Return type}] \leavevmode
+JSON Objects
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{home() (in module cagenix.evaluations.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-evaluations:cagenix.evaluations.views.home}\pysiglinewithargsret{\code{cagenix.evaluations.views.}\bfcode{home}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /evaluations endpoint for the blueprint
+
+It displays a list of evaluations with the ability to edit or
+delete. It also offers the ability to add additional evaluations.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+evaluations/index.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\chapter{Patients Blueprint Overview}
+\label{dev-patients::doc}\label{dev-patients:patients-blueprint-overview}
+The following document covers the internals of the Cagenix-Web Patients
+Blueprint.
+\begin{itemize}
+\item {} 
+{\hyperref[dev-patients:patients-models-label]{\emph{Patients Models}}}
+
+\end{itemize}
+
+
+\section{Patients Models}
+\label{dev-patients:patients-models-label}\label{dev-patients:patients-models}\label{dev-patients:module-cagenix.patients.models}\index{cagenix.patients.models (module)}
+cagenix.patients.models
+
+This file is used to define all the models used by the Patients blueprint
+\index{Patient (class in cagenix.patients.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-patients:cagenix.patients.models.Patient}\pysiglinewithargsret{\strong{class }\code{cagenix.patients.models.}\bfcode{Patient}}{\emph{**kwargs}}{}
+The Patient model defines the patient for which the practitioner is
+performing the evaluation.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{db.Model} (\emph{object}) -- The SQLAlchemy base database model
+
+\end{description}\end{quote}
+\index{by\_email() (cagenix.patients.models.Patient class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-patients:cagenix.patients.models.Patient.by_email}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_email}}{\emph{email}}{}
+by\_email returns a Patient object given an email address.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{cls} (\emph{class}) -- The calling class
+
+\item {} 
+\textbf{email} (\emph{string}) -- The email of the patient being searched for
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{by\_id() (cagenix.patients.models.Patient class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-patients:cagenix.patients.models.Patient.by_id}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_id}}{\emph{user\_id}}{}
+by\_id returns a Patient object given a patient\_id
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{cls} (\emph{class}) -- The calling class
+
+\item {} 
+\textbf{patient\_id} (\emph{int}) -- The id of the patient being searched for
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{by\_phone() (cagenix.patients.models.Patient class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-patients:cagenix.patients.models.Patient.by_phone}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_phone}}{\emph{phone}}{}
+by\_phone returns a Patient object given a phone number
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{cls} (\emph{class}) -- The calling class
+
+\item {} 
+\textbf{phone} (\emph{string}) -- The phone number of the patient being searched for
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{map\_data() (cagenix.patients.models.Patient method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-patients:cagenix.patients.models.Patient.map_data}\pysiglinewithargsret{\bfcode{map\_data}}{\emph{data}}{}
+map\_data takes a dict as an argument. It then iterates
+over each key field in the fields list, if a key is
+in the supplied dict, it will then update the attribute of
+this object to reflect the value of that key in the dict.
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\chapter{Practices Blueprint Overview}
+\label{dev-practices:practices-blueprint-overview}\label{dev-practices::doc}
+The following document covers the internals of the Cagenix-Web practices
+Blueprint.
+\begin{itemize}
+\item {} 
+{\hyperref[dev-practices:practices-models-label]{\emph{Practices Models}}}
+
+\item {} 
+{\hyperref[dev-practices:practices-forms-label]{\emph{Practices Forms}}}
+
+\item {} 
+{\hyperref[dev-practices:practices-views-label]{\emph{Practices Views}}}
+
+\end{itemize}
+
+
+\section{Practices Models}
+\label{dev-practices:practices-models-label}\label{dev-practices:module-cagenix.practices.models}\label{dev-practices:practices-models}\index{cagenix.practices.models (module)}
+cagenix.practices.models
+
+This file is used to define all the models used by the Practices blueprint
+\index{Practice (class in cagenix.practices.models)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-practices:cagenix.practices.models.Practice}\pysiglinewithargsret{\strong{class }\code{cagenix.practices.models.}\bfcode{Practice}}{\emph{**kwargs}}{}
+The Practice model defines the authentication users used by Flask-Security
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{db.Model} (\emph{object}) -- The SQLAlchemy base database model
+
+\end{description}\end{quote}
+\index{by\_id() (cagenix.practices.models.Practice class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-practices:cagenix.practices.models.Practice.by_id}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_id}}{\emph{practice\_id}}{}
+by\_id returns a User object given a user\_id
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{cls} (\emph{class}) -- The calling class
+
+\item {} 
+\textbf{user\_id} (\emph{int}) -- The id of the user being searched for
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{by\_phone() (cagenix.practices.models.Practice class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-practices:cagenix.practices.models.Practice.by_phone}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_phone}}{\emph{phone}}{}
+by\_phone returns a User object given a phone number
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{cls} (\emph{class}) -- The calling class
+
+\item {} 
+\textbf{phone} (\emph{string}) -- The phone number of the user being searched for
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{get\_practices() (cagenix.practices.models.Practice class method)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-practices:cagenix.practices.models.Practice.get_practices}\pysiglinewithargsret{\strong{classmethod }\bfcode{get\_practices}}{}{}
+get\_practices returns a list of Practice objects
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{cls} (\emph{class}) -- The calling class
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+\end{fulllineitems}
+
+
+
+\section{Practices Forms}
+\label{dev-practices:practices-forms-label}\label{dev-practices:practices-forms}\label{dev-practices:module-cagenix.practices.forms}\index{cagenix.practices.forms (module)}
+cagenix.practices.forms
+
+This file is used to define all the WTForms used by the Practices blueprint
+\index{PracticeCreateForm (class in cagenix.practices.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-practices:cagenix.practices.forms.PracticeCreateForm}\pysiglinewithargsret{\strong{class }\code{cagenix.practices.forms.}\bfcode{PracticeCreateForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by Admin roles to create new Practices
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{Form} -- The WTForms base class
+
+\item[{Returns}] \leavevmode
+WTForm
+
+\item[{Return type}] \leavevmode
+object
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{PracticeEditForm (class in cagenix.practices.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-practices:cagenix.practices.forms.PracticeEditForm}\pysiglinewithargsret{\strong{class }\code{cagenix.practices.forms.}\bfcode{PracticeEditForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by Admin roles to edit Practices
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{Form} -- The WTForms base class
+
+\item[{Returns}] \leavevmode
+WTForm
+
+\item[{Return type}] \leavevmode
+object
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\section{Practices Views}
+\label{dev-practices:module-cagenix.practices.views}\label{dev-practices:practices-views}\label{dev-practices:practices-views-label}\index{cagenix.practices.views (module)}
+cagenix.practices.views
+
+This file defines the URL routes and controller logic for the practices blueprint.
+\index{practices\_create() (in module cagenix.practices.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-practices:cagenix.practices.views.practices_create}\pysiglinewithargsret{\code{cagenix.practices.views.}\bfcode{practices\_create}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /practices/create endpoint for the blueprint
+
+It allows Admins to create Practices.  It uses the {\hyperref[dev-practices:practices-forms-label]{\emph{Practices Forms}}}
+to display PracticesCreateForm
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+practices/create.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{practices\_delete() (in module cagenix.practices.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-practices:cagenix.practices.views.practices_delete}\pysiglinewithargsret{\code{cagenix.practices.views.}\bfcode{practices\_delete}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /users/create endpoint for the blueprint
+
+It allows PNT-Admins to create users.  It uses the {\hyperref[dev-users:users-forms-label]{\emph{Users Forms}}}
+to display UsersCreateForm
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+users/index.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
 \chapter{Users Blueprint Overview}
 \label{dev-users::doc}\label{dev-users:users-blueprint-overview}
 The following document covers the internals of the Cagenix-Web Users
@@ -3415,10 +4270,10 @@ Blueprint.
 {\hyperref[dev-users:users-models-label]{\emph{Users Models}}}
 
 \item {} 
-\emph{users-forms-label}
+{\hyperref[dev-users:users-forms-label]{\emph{Users Forms}}}
 
 \item {} 
-\emph{users-views-label}
+{\hyperref[dev-users:users-views-label]{\emph{Users Views}}}
 
 \end{itemize}
 
@@ -3626,105 +4481,300 @@ compromises and security issues.
 
 
 
-\chapter{Patients Blueprint Overview}
-\label{dev-patients::doc}\label{dev-patients:patients-blueprint-overview}
-The following document covers the internals of the Cagenix-Web Patients
-Blueprint.
-\begin{itemize}
-\item {} 
-{\hyperref[dev-patients:patients-models-label]{\emph{Patients Models}}}
+\section{Users Forms}
+\label{dev-users:module-cagenix.users.forms}\label{dev-users:users-forms}\label{dev-users:users-forms-label}\index{cagenix.users.forms (module)}
+cornerstone.users.forms
 
-\item {} 
-\emph{patients-forms-label}
-
-\item {} 
-\emph{patients-views-label}
-
-\end{itemize}
-
-
-\section{Patients Models}
-\label{dev-patients:patients-models-label}\label{dev-patients:patients-models}\label{dev-patients:module-cagenix.patients.models}\index{cagenix.patients.models (module)}
-cagenix.users.models
-
-This file is used to define all the models used by the Users blueprint
-\index{Patient (class in cagenix.patients.models)}
+This file is used to define all the WTForms used by the Users blueprint
+\index{RoleCreateForm (class in cagenix.users.forms)}
 
 \begin{fulllineitems}
-\phantomsection\label{dev-patients:cagenix.patients.models.Patient}\pysiglinewithargsret{\strong{class }\code{cagenix.patients.models.}\bfcode{Patient}}{\emph{first\_name=None}, \emph{last\_name=None}}{}
-The User model defines the authentication users used by Flask-Security
+\phantomsection\label{dev-users:cagenix.users.forms.RoleCreateForm}\pysiglinewithargsret{\strong{class }\code{cagenix.users.forms.}\bfcode{RoleCreateForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by CS-Admin roles to create a new role
 
-This Role class defines the model attributes, a classmethod to make finding
-the users easier. It also contains several fields unexposed by the UI. Those
-fields are used to track user logins and access IPs.
+This form is used to create new roles with a name and description.
 \begin{quote}\begin{description}
-\item[{Parameters}] \leavevmode\begin{itemize}
-\item {} 
-\textbf{db.Model} (\emph{object}) -- The SQLAlchemy base database model
+\item[{Parameters}] \leavevmode
+\textbf{Form} -- The WTForms base class
 
-\item {} 
-\textbf{UserMixin} (\emph{object}) -- The UserMixin base provided by Flask-Security
+\item[{Returns}] \leavevmode
+WTForm
 
-\end{itemize}
-
-\end{description}\end{quote}
-\index{by\_email() (cagenix.patients.models.Patient class method)}
-
-\begin{fulllineitems}
-\phantomsection\label{dev-patients:cagenix.patients.models.Patient.by_email}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_email}}{\emph{email}}{}
-by\_email returns a User object given an email address.
-\begin{quote}\begin{description}
-\item[{Parameters}] \leavevmode\begin{itemize}
-\item {} 
-\textbf{cls} (\emph{class}) -- The calling class
-
-\item {} 
-\textbf{email} (\emph{string}) -- The email of the user being searched for
-
-\end{itemize}
+\item[{Return type}] \leavevmode
+object
 
 \end{description}\end{quote}
 
 \end{fulllineitems}
 
-\index{by\_id() (cagenix.patients.models.Patient class method)}
+\index{RoleEditForm (class in cagenix.users.forms)}
 
 \begin{fulllineitems}
-\phantomsection\label{dev-patients:cagenix.patients.models.Patient.by_id}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_id}}{\emph{user\_id}}{}
-by\_id returns a User object given a user\_id
+\phantomsection\label{dev-users:cagenix.users.forms.RoleEditForm}\pysiglinewithargsret{\strong{class }\code{cagenix.users.forms.}\bfcode{RoleEditForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by CS-Admin roles to edit a role
+
+This form is used to change the name or description of a role.
 \begin{quote}\begin{description}
-\item[{Parameters}] \leavevmode\begin{itemize}
-\item {} 
-\textbf{cls} (\emph{class}) -- The calling class
+\item[{Parameters}] \leavevmode
+\textbf{RoleCreateForm} -- The WTForms base class
 
-\item {} 
-\textbf{user\_id} (\emph{int}) -- The id of the user being searched for
+\item[{Returns}] \leavevmode
+WTForm
 
-\end{itemize}
+\item[{Return type}] \leavevmode
+object
 
 \end{description}\end{quote}
 
 \end{fulllineitems}
 
-\index{by\_phone() (cagenix.patients.models.Patient class method)}
+\index{UserChangePasswordForm (class in cagenix.users.forms)}
 
 \begin{fulllineitems}
-\phantomsection\label{dev-patients:cagenix.patients.models.Patient.by_phone}\pysiglinewithargsret{\strong{classmethod }\bfcode{by\_phone}}{\emph{phone}}{}
-by\_phone returns a User object given a phone number
+\phantomsection\label{dev-users:cagenix.users.forms.UserChangePasswordForm}\pysiglinewithargsret{\strong{class }\code{cagenix.users.forms.}\bfcode{UserChangePasswordForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by CS-Admin roles to change a users password
+
+This form is used due to the handling of the change password process by
+Flask-Security.
 \begin{quote}\begin{description}
-\item[{Parameters}] \leavevmode\begin{itemize}
-\item {} 
-\textbf{cls} (\emph{class}) -- The calling class
+\item[{Parameters}] \leavevmode
+\textbf{UserCreateForm} -- The same form used by the Create User process
 
-\item {} 
-\textbf{phone} (\emph{string}) -- The phone number of the user being searched for
+\item[{Returns}] \leavevmode
+WTForm
 
-\end{itemize}
+\item[{Return type}] \leavevmode
+object
 
 \end{description}\end{quote}
 
 \end{fulllineitems}
 
+\index{UserCreateForm (class in cagenix.users.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.forms.UserCreateForm}\pysiglinewithargsret{\strong{class }\code{cagenix.users.forms.}\bfcode{UserCreateForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by CS-Admin roles to create new users
+
+Users require an email and a password. This form uses a QuerySelectField to
+produce a list of Merchants that can optionally be associationed to a user.
+A QuerySelectMulipleField for Roles can also optionally be associated with
+a client. A client can have as many roles as needed.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{Form} -- The WTForms base class
+
+\item[{Returns}] \leavevmode
+WTForm
+
+\item[{Return type}] \leavevmode
+object
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{UserEditForm (class in cagenix.users.forms)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.forms.UserEditForm}\pysiglinewithargsret{\strong{class }\code{cagenix.users.forms.}\bfcode{UserEditForm}}{\emph{formdata=\textless{}class flask\_wtf.form.\_Auto at 0x1046440b8\textgreater{}}, \emph{obj=None}, \emph{prefix='`}, \emph{csrf\_context=None}, \emph{secret\_key=None}, \emph{csrf\_enabled=None}, \emph{*args}, \emph{**kwargs}}{}
+This form is used by CS-Admin roles to edit users
+
+Admins can change the email, active state of the user, associated Merchants,
+and assigned Roles. This form uses a QuerySelectField to produce a list of
+Merchants that can optionally be associationed to a user. A
+QuerySelectMulipleField for Roles can also optionally be associated with
+a client. A client can have as many roles as needed.
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{Form} -- The WTForms base class
+
+\item[{Returns}] \leavevmode
+WTForm
+
+\item[{Return type}] \leavevmode
+object
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\section{Users Views}
+\label{dev-users:users-views-label}\label{dev-users:users-views}\label{dev-users:module-cagenix.users.views}\index{cagenix.users.views (module)}
+cagenix.users.views
+
+This file defines the URL routes and controller logic for the users blueprint.
+PNT-Admins and App-Admins are the only uses that can access this blueprint.
+The Flask-Security roles\_accepted decorator is used to require both
+authentication and authorization.
+\index{roles\_create() (in module cagenix.users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.views.roles_create}\pysiglinewithargsret{\code{cagenix.users.views.}\bfcode{roles\_create}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /users/roles/create endpoint for the blueprint
+
+It allows PNT-Admins to create roles.  It uses the {\hyperref[dev-users:users-forms-label]{\emph{Users Forms}}}
+to display RolesCreateForm
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+users/roles/create.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{roles\_delete() (in module cagenix.users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.views.roles_delete}\pysiglinewithargsret{\code{cagenix.users.views.}\bfcode{roles\_delete}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /users/roles/delete endpoint for the blueprint
+
+It allows PNT-Admins to delete a role.  It is called via a button on the
+\code{users/roles/edit.html} template
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{id} (\emph{int}) -- The id of the role being edited
+
+\item[{Returns}] \leavevmode
+users.users\_home
+
+\item[{Return type}] \leavevmode
+redirect
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{roles\_edit() (in module cagenix.users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.views.roles_edit}\pysiglinewithargsret{\code{cagenix.users.views.}\bfcode{roles\_edit}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /roles/edit endpoint for the blueprint
+
+It allows PNT-Admins to edit roles.  It uses the {\hyperref[dev-users:users-forms-label]{\emph{Users Forms}}}
+to display RolesEditForm
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{id} (\emph{int}) -- The id of the role being edited
+
+\item[{Returns}] \leavevmode
+users/roles/edit.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{users\_changepassword() (in module cagenix.users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.views.users_changepassword}\pysiglinewithargsret{\code{cagenix.users.views.}\bfcode{users\_changepassword}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /users/changepassword endpoint for the blueprint
+
+It allows PNT-Admins to change a users password.  It uses the
+{\hyperref[dev-users:users-forms-label]{\emph{Users Forms}}} to display UsersChangePasswordForm
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{id} (\emph{int}) -- The id of the user being edited
+
+\item[{Returns}] \leavevmode
+users/change\_password.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{users\_create() (in module cagenix.users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.views.users_create}\pysiglinewithargsret{\code{cagenix.users.views.}\bfcode{users\_create}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /users/create endpoint for the blueprint
+
+It allows PNT-Admins to create users.  It uses the {\hyperref[dev-users:users-forms-label]{\emph{Users Forms}}}
+to display UsersCreateForm
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+users/index.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{users\_delete() (in module cagenix.users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.views.users_delete}\pysiglinewithargsret{\code{cagenix.users.views.}\bfcode{users\_delete}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /users/delete endpoint for the blueprint
+
+It allows PNT-Admins to delete a user.  It is called via a button on
+the \code{users/edit.html} template
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{id} (\emph{int}) -- The id of the user being deleted
+
+\item[{Returns}] \leavevmode
+users.users\_home
+
+\item[{Return type}] \leavevmode
+redirect
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{users\_edit() (in module cagenix.users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.views.users_edit}\pysiglinewithargsret{\code{cagenix.users.views.}\bfcode{users\_edit}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /users/edit endpoint for the bcornerstone/users/views.py
+
+It allows PNT-Admins to edit users.  It uses the {\hyperref[dev-users:users-forms-label]{\emph{Users Forms}}}
+to display UsersEditForm
+\begin{quote}\begin{description}
+\item[{Parameters}] \leavevmode
+\textbf{id} (\emph{int}) -- The id of the user being edited
+
+\item[{Returns}] \leavevmode
+users/edit.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+\index{users\_home() (in module cagenix.users.views)}
+
+\begin{fulllineitems}
+\phantomsection\label{dev-users:cagenix.users.views.users_home}\pysiglinewithargsret{\code{cagenix.users.views.}\bfcode{users\_home}}{\emph{*args}, \emph{**kwargs}}{}
+This function handles the /users endpoint for the blueprint
+
+It displays a list of users and their roles with the ability to edit or
+change passwords. It also displays a list of roles and descriptions with
+the ability to edit them.  It also offers the ability to add additional
+users and roles.
+\begin{quote}\begin{description}
+\item[{Returns}] \leavevmode
+users/index.html
+
+\item[{Return type}] \leavevmode
+template
+
+\end{description}\end{quote}
 
 \end{fulllineitems}
 
@@ -3749,8 +4799,19 @@ by\_phone returns a User object given a phone number
 \def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
 \bigletter{c}
 \item {\texttt{cagenix}}, \pageref{dev-overview:module-cagenix}
+\item {\texttt{cagenix.advertisements.forms}}, \pageref{dev-advertisements:module-cagenix.advertisements.forms}
+\item {\texttt{cagenix.advertisements.models}}, \pageref{dev-advertisements:module-cagenix.advertisements.models}
+\item {\texttt{cagenix.advertisements.views}}, \pageref{dev-advertisements:module-cagenix.advertisements.views}
+\item {\texttt{cagenix.evaluations.forms}}, \pageref{dev-evaluations:module-cagenix.evaluations.forms}
+\item {\texttt{cagenix.evaluations.models}}, \pageref{dev-evaluations:module-cagenix.evaluations.models}
+\item {\texttt{cagenix.evaluations.views}}, \pageref{dev-evaluations:module-cagenix.evaluations.views}
 \item {\texttt{cagenix.patients.models}}, \pageref{dev-patients:module-cagenix.patients.models}
+\item {\texttt{cagenix.practices.forms}}, \pageref{dev-practices:module-cagenix.practices.forms}
+\item {\texttt{cagenix.practices.models}}, \pageref{dev-practices:module-cagenix.practices.models}
+\item {\texttt{cagenix.practices.views}}, \pageref{dev-practices:module-cagenix.practices.views}
+\item {\texttt{cagenix.users.forms}}, \pageref{dev-users:module-cagenix.users.forms}
 \item {\texttt{cagenix.users.models}}, \pageref{dev-users:module-cagenix.users.models}
+\item {\texttt{cagenix.users.views}}, \pageref{dev-users:module-cagenix.users.views}
 \end{theindex}
 
 \renewcommand{\indexname}{Index}

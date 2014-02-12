@@ -6,10 +6,12 @@ The following document covers the models used in the Cagenix-Web application.
 
 * :ref:`activation-model-label`
 * :ref:`advertisement-model-label`
+* :ref:`answer-model-label`
 * :ref:`evaluation-model-label`
 * :ref:`patient-model-label`
 * :ref:`patientevaluationanswer-model-label`
 * :ref:`practice-model-label`
+* :ref:`question-model-label`
 * :ref:`role-model-label`
 * :ref:`user-model-label`
 
@@ -55,6 +57,32 @@ Advertisement Model
 | active          | Boolean       | Active Flag for archiving              |
 +-----------------+---------------+----------------------------------------+
 
+.. _answer-model-label:
+
+Answer Model
+------------
+
++-----------------+---------------+----------------------------------------+
+| Field Name      | Type (Length) | Description                            |
++=================+===============+========================================+
+| id              | Integer       | Primary Key                            |
++-----------------+---------------+----------------------------------------+
+| text            | String        | The text of the Question               |
++-----------------+---------------+----------------------------------------+
+| order           | Integer       | The order of the Question in the       |
+|                 |               | Evaluation.                            |
++-----------------+---------------+----------------------------------------+
+| active          | Boolean       | Active Flag for archiving              |
++-----------------+---------------+----------------------------------------+
+
+**Virtuals**
+
++-----------------+---------------+----------------------------------------+
+| Field Name      | Type          | Description                            |
++=================+===============+========================================+
+| question        | Many2One      | Virtual to question                    |
++-----------------+---------------+----------------------------------------+
+
 .. _evaluation-model-label:
 
 Evaluation Model
@@ -65,23 +93,17 @@ Evaluation Model
 +=================+===============+========================================+
 | id              | Integer       | Primary Key                            |
 +-----------------+---------------+----------------------------------------+
-| evaluation_id   | UUID          | Used to group questions into a single  |
-|                 |               | evaulation.                            |
+| name            | Integer       | Name of the Evaluation                 |
 +-----------------+---------------+----------------------------------------+
-| question_order  | Integer       | Position of question within an         |
-|                 |               | Evaulation                             |
+| active          | Boolean       | Active Flag for archiving              |
 +-----------------+---------------+----------------------------------------+
-| question_text   | Text          | Text of the question                   |
+
+**Virtuals**
+
 +-----------------+---------------+----------------------------------------+
-| answer_one      | String(255)   | First answer choice                    |
-+-----------------+---------------+----------------------------------------+
-| answer_two      | String(255)   | Second answer choice                   |
-+-----------------+---------------+----------------------------------------+
-| answer_three    | String(255)   | Second answer choice                   |
-+-----------------+---------------+----------------------------------------+
-| answer_four     | String(255)   | Second answer choice                   |
-+-----------------+---------------+----------------------------------------+
-| answer_custom   | Text          | Free for all answer                    |
+| Field Name      | Type          | Description                            |
++=================+===============+========================================+
+| questions       | One2Many      | Virtual to Questions                   |
 +-----------------+---------------+----------------------------------------+
 
 .. _patient-model-label:
@@ -141,10 +163,10 @@ PatientEvaluationAnswer Model
 +=================+===============+========================================+
 | id              | Integer       | Primary Key                            |
 +-----------------+---------------+----------------------------------------+
-| evaluation_id   | UUID          | Used to group answers into a single    |
+| evaluation_id   | Integer       | Used to group questions into a single  |
 |                 |               | evaulation.                            |
 +-----------------+---------------+----------------------------------------+
-| answer          | String(255)   | Answer to question                     |
+| custom_answer   | String(255)   | Free Text Answer to question           |
 +-----------------+---------------+----------------------------------------+
 | active          | Boolean       | Active Flag for archiving              |
 +-----------------+---------------+----------------------------------------+
@@ -157,6 +179,8 @@ PatientEvaluationAnswer Model
 | question        | Many2One      | Question Asked                         |
 +-----------------+---------------+----------------------------------------+
 | patient         | Many2One      | User Answering Question                |
++-----------------+---------------+----------------------------------------+
+| answer          | Many2One      | Answer Selected                        |
 +-----------------+---------------+----------------------------------------+
 
 .. _practice-model-label:
@@ -199,6 +223,34 @@ Practice Model
 | Field Name      | Type          | Description                            |
 +=================+===============+========================================+
 | practitioner    | One2Many      | Virtual to User                        |
++-----------------+---------------+----------------------------------------+
+
+.. _qeustion-model-label:
+
+Question Model
+--------------
+
++-----------------+---------------+----------------------------------------+
+| Field Name      | Type (Length) | Description                            |
++=================+===============+========================================+
+| id              | Integer       | Primary Key                            |
++-----------------+---------------+----------------------------------------+
+| text            | String        | The text of the Question               |
++-----------------+---------------+----------------------------------------+
+| order           | Integer       | The order of the Question in the       |
+|                 |               | Evaluation.                            |
++-----------------+---------------+----------------------------------------+
+| active          | Boolean       | Active Flag for archiving              |
++-----------------+---------------+----------------------------------------+
+
+**Virtuals**
+
++-----------------+---------------+----------------------------------------+
+| Field Name      | Type          | Description                            |
++=================+===============+========================================+
+| evaluation      | Many2One      | Virtual to Evaluation                  |
++-----------------+---------------+----------------------------------------+
+| answers         | One2Many      | Virtual to Answer                      |
 +-----------------+---------------+----------------------------------------+
 
 .. _role-model-label:

@@ -1,0 +1,32 @@
+############################
+Practices Blueprint Overview
+############################
+
+The following document covers the internals of the Cagenix-Web practices
+Blueprint.
+
+* :ref:`practices-models-label`
+* :ref:`practices-forms-label`
+* :ref:`practices-views-label`
+
+.. _practices-models-label:
+
+Practices Models
+----------------
+.. automodule:: cagenix.practices.models
+    :members:
+
+
+.. _practices-forms-label:
+
+Practices Forms
+---------------
+.. automodule:: cagenix.practices.forms
+    :members:
+
+.. _practices-views-label:
+
+Practices Views
+---------------
+.. automodule:: cagenix.practices.views
+    :members:

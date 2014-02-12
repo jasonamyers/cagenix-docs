@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cagenix.evaluations.views &mdash; Cagenix-Web 0.1a1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../../',
+        VERSION:'0.1a1',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="Cagenix-Web 0.1a1 documentation" href="../../../index.html"/>
+        <link rel="up" title="cagenix" href="../../cagenix.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../../../index.html" class="icon icon-home"> Cagenix-Web</a>
+        <form class="wy-form" action="../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-bid.html">Bid Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-bid.html#backend">Backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-bid.html#frontend">Frontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-overview.html">Developer Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-overview.html#libraries">Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-overview.html#module-cagenix">General Application Setup (__init__.py)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-models.html">Models Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#activation-model">Activation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#advertisement-model">Advertisement Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#answer-model">Answer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#evaluation-model">Evaluation Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#patient-model">Patient Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#patientevaluationanswer-model">PatientEvaluationAnswer Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#practice-model">Practice Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#question-model">Question Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#role-model">Role Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-models.html#user-model">User Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-overview.html">API Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#base-url-https-and-versioning">Base URL, HTTPS, and Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#credentials">Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#get-requests">GET Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#headers">Headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#header-formulas">Header Formulas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-overview.html#response-codes">Response Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-advertisements.html">Advertisements API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-advertisements.html#retrieve-advertisement-details">Retrieve Advertisement details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-advertisements.html#id1">Retrieve Advertisement details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-evaluations.html">Evaluations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-evaluations.html#create-an-evaluation">Create an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-evaluations.html#retrieve-evaluation-details">Retrieve Evaluation details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-evaluations.html#update-an-evaluation">Update an Evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-evaluations.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-patients.html">Patients API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-patients.html#create-a-patient">Create a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-patients.html#retrieve-patient-details">Retrieve Patient details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-patients.html#update-a-patient">Update a patient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-patients.html#delete-a-patient">Delete a patient</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-api-practitioners.html">Practitioners API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#create-a-practitioner">Create a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#retrieve-practitioner-details">Retrieve Practitioner details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#update-a-practitioner">Update a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#delete-a-practitioner">Delete a Practitioner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-api-practitioners.html#authenticate-a-practitioner">Authenticate a Practitioner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-advertisements.html">Advertisements Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-advertisements.html#module-cagenix.advertisements.models">Advertisements Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-advertisements.html#module-cagenix.advertisements.forms">Advertisements Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-advertisements.html#module-cagenix.advertisements.views">Advertisements Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-evaluations.html">Evaluations Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-evaluations.html#module-cagenix.evaluations.models">Evaluations Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-evaluations.html#module-cagenix.evaluations.forms">Evaluations Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-evaluations.html#module-cagenix.evaluations.views">Evaluations Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-patients.html">Patients Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-patients.html#module-cagenix.patients.models">Patients Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-practices.html">Practices Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-practices.html#module-cagenix.practices.models">Practices Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-practices.html#module-cagenix.practices.forms">Practices Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-practices.html#module-cagenix.practices.views">Practices Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev-users.html">Users Blueprint Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.models">Users Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.forms">Users Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dev-users.html#module-cagenix.users.views">Users Views</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">Cagenix-Web</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../../../index.html">Docs</a> &raquo;</li>
+  <li><a href="">cagenix.evaluations.views</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <h1>Source code for cagenix.evaluations.views</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;cagenix.evaluations.views</span>
+
+<span class="sd">This file defines the URL routes and controller logic for the evaluations blueprint.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span><span class="p">,</span> <span class="n">jsonify</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span>
+
+<span class="kn">from</span> <span class="nn">flask.ext.security.decorators</span> <span class="kn">import</span> <span class="n">roles_accepted</span>
+<span class="kn">from</span> <span class="nn">cagenix</span> <span class="kn">import</span> <span class="n">db</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Evaluation</span><span class="p">,</span> <span class="n">Question</span><span class="p">,</span> <span class="n">Answer</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s">&#39;evaluations&#39;</span><span class="p">,</span> <span class="n">__name__</span><span class="p">,</span> <span class="n">url_prefix</span><span class="o">=</span><span class="s">&#39;/evaluations&#39;</span><span class="p">)</span>
+
+
+<span class="nd">@mod.route</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">])</span>
+<span class="nd">@roles_accepted</span><span class="p">(</span><span class="s">&#39;PNT-Admin&#39;</span><span class="p">,</span> <span class="s">&#39;App-Admin&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="home"><a class="viewcode-back" href="../../../dev-evaluations.html#cagenix.evaluations.views.home">[docs]</a><span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This function handles the /evaluations endpoint for the blueprint</span>
+
+<span class="sd">    It displays a list of evaluations with the ability to edit or</span>
+<span class="sd">    delete. It also offers the ability to add additional evaluations.</span>
+
+<span class="sd">    :returns: evaluations/index.html</span>
+<span class="sd">    :rtype: template</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">evaluations</span> <span class="o">=</span> <span class="n">Evaluation</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;evaluations/index.html&#39;</span><span class="p">,</span> <span class="n">evaluations</span><span class="o">=</span><span class="n">evaluations</span><span class="p">)</span>
+
+</div>
+<span class="nd">@mod.route</span><span class="p">(</span><span class="s">&#39;/create&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
+<span class="nd">@roles_accepted</span><span class="p">(</span><span class="s">&#39;PNT-Admin&#39;</span><span class="p">,</span> <span class="s">&#39;App-Admin&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="evaluations_create"><a class="viewcode-back" href="../../../dev-evaluations.html#cagenix.evaluations.views.evaluations_create">[docs]</a><span class="k">def</span> <span class="nf">evaluations_create</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This function handles the /evaluations/create endpoint for the blueprint</span>
+
+<span class="sd">    It allows Admins to start creating Evaluations.</span>
+
+<span class="sd">    :returns: redirect to /evaluations/&lt;ID&gt;/builder</span>
+<span class="sd">    :rtype: redirect</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">evaluation</span> <span class="o">=</span> <span class="n">Evaluation</span><span class="p">()</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">evaluation</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s">&#39;evaluations.evaluations_builder&#39;</span><span class="p">,</span> <span class="n">evaluation_id</span><span class="o">=</span><span class="n">evaluation</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+
+</div>
+<span class="nd">@mod.route</span><span class="p">(</span><span class="s">&#39;/builder/&lt;evaluation_id&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
+<span class="nd">@roles_accepted</span><span class="p">(</span><span class="s">&#39;PNT-Admin&#39;</span><span class="p">,</span> <span class="s">&#39;App-Admin&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="evaluations_builder"><a class="viewcode-back" href="../../../dev-evaluations.html#cagenix.evaluations.views.evaluations_builder">[docs]</a><span class="k">def</span> <span class="nf">evaluations_builder</span><span class="p">(</span><span class="n">evaluation_id</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This function handles the /evaluations/&lt;ID&gt;/builder endpoint for the blueprint</span>
+
+<span class="sd">    It allows Admins to build Evaluations.  It uses the :ref:`evaluations-builder-label</span>
+<span class="sd">    to build them.</span>
+
+<span class="sd">    :returns: evaluations/create.html</span>
+<span class="sd">    :rtype: template</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">&#39;evaluations/create.html&#39;</span><span class="p">)</span>
+
+</div>
+<span class="nd">@mod.route</span><span class="p">(</span><span class="s">&#39;/builder/&lt;evaluation_id&gt;/question&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
+<span class="nd">@mod.route</span><span class="p">(</span><span class="s">&#39;/builder/&lt;evaluation_id&gt;/question/&lt;question_id&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
+<span class="nd">@roles_accepted</span><span class="p">(</span><span class="s">&#39;PNT-Admin&#39;</span><span class="p">,</span> <span class="s">&#39;App-Admin&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="evaluations_create_questions"><a class="viewcode-back" href="../../../dev-evaluations.html#cagenix.evaluations.views.evaluations_create_questions">[docs]</a><span class="k">def</span> <span class="nf">evaluations_create_questions</span><span class="p">(</span><span class="n">evaluation_id</span><span class="p">,</span> <span class="n">question_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This function handles the /builder/&lt;ID&gt;/question endpoint for the blueprint</span>
+
+<span class="sd">    It allows provides and API for the builder to access question information for a given</span>
+<span class="sd">    evaluation.</span>
+
+<span class="sd">    :returns: Question(s)</span>
+<span class="sd">    :rtype: JSON Objects</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">question_id</span><span class="p">:</span>
+            <span class="n">question</span> <span class="o">=</span> <span class="n">Question</span><span class="o">.</span><span class="n">by_id</span><span class="p">(</span><span class="n">question_id</span><span class="p">)</span>
+            <span class="n">question_dict</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+                <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+                <span class="s">&#39;order&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">order</span><span class="p">,</span>
+                <span class="s">&#39;answers&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="p">),</span> <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s">&#39;order&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">order</span><span class="p">)}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">question</span><span class="o">.</span><span class="n">answers</span><span class="o">.</span><span class="n">all</span><span class="p">()],</span>
+            <span class="p">}</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">Response</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">question_dict</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">None</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">is_xhr</span> <span class="k">else</span> <span class="mi">2</span><span class="p">),</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">&#39;application/json&#39;</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="mi">200</span>
+            <span class="k">return</span> <span class="n">response</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">evaluation</span> <span class="o">=</span> <span class="n">Evaluation</span><span class="o">.</span><span class="n">by_id</span><span class="p">(</span><span class="n">evaluation_id</span><span class="p">)</span>
+            <span class="n">questions</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">evaluation</span><span class="o">.</span><span class="n">questions</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+                <span class="n">question_dict</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+                    <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+                    <span class="s">&#39;order&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">order</span><span class="p">,</span>
+                    <span class="s">&#39;answers&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s">&#39;order&#39;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">order</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">question</span><span class="o">.</span><span class="n">answers</span><span class="o">.</span><span class="n">all</span><span class="p">()],</span>
+                    <span class="c">#&#39;answers&#39;: [x.id for x in question.answers.all()],</span>
+                <span class="p">}</span>
+                <span class="n">questions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">question_dict</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">Response</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">None</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">is_xhr</span> <span class="k">else</span> <span class="mi">2</span><span class="p">),</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">&#39;application/json&#39;</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="mi">200</span>
+            <span class="k">return</span> <span class="n">response</span>
+
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">print</span> <span class="n">data</span>
+        <span class="n">question</span> <span class="o">=</span> <span class="n">Question</span><span class="p">(</span><span class="n">evaluation_id</span><span class="o">=</span><span class="n">evaluation_id</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;text&#39;</span><span class="p">],</span> <span class="nb">type</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;type&#39;</span><span class="p">],</span> <span class="n">order</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;order&#39;</span><span class="p">])</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">({</span>
+            <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+            <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+            <span class="s">&#39;order&#39;</span><span class="p">:</span> <span class="n">question</span><span class="o">.</span><span class="n">order</span><span class="p">,</span>
+            <span class="s">&#39;answers&#39;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="mi">200</span>
+        <span class="k">return</span> <span class="n">response</span>
+
+</div>
+<span class="nd">@mod.route</span><span class="p">(</span><span class="s">&#39;/builder/&lt;evaluation_id&gt;/answer&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="s">&#39;POST&#39;</span><span class="p">])</span>
+<span class="nd">@mod.route</span><span class="p">(</span><span class="s">&#39;/builder/&lt;evaluation_id&gt;/answer/&lt;answer_id&gt;&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;GET&#39;</span><span class="p">,</span> <span class="p">])</span>
+<span class="nd">@roles_accepted</span><span class="p">(</span><span class="s">&#39;PNT-Admin&#39;</span><span class="p">,</span> <span class="s">&#39;App-Admin&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="evaluations_create_answer"><a class="viewcode-back" href="../../../dev-evaluations.html#cagenix.evaluations.views.evaluations_create_answer">[docs]</a><span class="k">def</span> <span class="nf">evaluations_create_answer</span><span class="p">(</span><span class="n">evaluation_id</span><span class="p">,</span> <span class="n">answer_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This function handles the /builder/&lt;ID&gt;/answer endpoint for the blueprint</span>
+
+<span class="sd">    It allows provides and API for the builder to access answer information for a given</span>
+<span class="sd">    question.</span>
+
+<span class="sd">    :returns: Answer(s)</span>
+<span class="sd">    :rtype: JSON Objects</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">answer_id</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">Answer</span><span class="o">.</span><span class="n">by_id</span><span class="p">(</span><span class="n">answer_id</span><span class="p">)</span>
+            <span class="n">answer_dict</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+                <span class="s">&#39;order&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">order</span><span class="p">,</span>
+                <span class="s">&#39;question&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">question</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">Response</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">answer_dict</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">None</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">is_xhr</span> <span class="k">else</span> <span class="mi">2</span><span class="p">),</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">&#39;application/json&#39;</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="mi">200</span>
+            <span class="k">return</span> <span class="n">response</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c">#question = Question.by_id(question_id)</span>
+            <span class="n">answers</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">Answer</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+                <span class="n">answer_dict</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+                    <span class="s">&#39;order&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">order</span><span class="p">,</span>
+                    <span class="s">&#39;question&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">question</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="p">}</span>
+                <span class="n">answers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">answer_dict</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">Response</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">answers</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">None</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">is_xhr</span> <span class="k">else</span> <span class="mi">2</span><span class="p">),</span> <span class="n">mimetype</span><span class="o">=</span><span class="s">&#39;application/json&#39;</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="mi">200</span>
+            <span class="k">return</span> <span class="n">response</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">print</span> <span class="n">data</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">Answer</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;text&#39;</span><span class="p">],</span> <span class="n">question_id</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;question&#39;</span><span class="p">],</span> <span class="n">order</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s">&#39;order&#39;</span><span class="p">])</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">({</span>
+            <span class="s">&#39;id&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+            <span class="s">&#39;order&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">order</span><span class="p">,</span>
+            <span class="s">&#39;question&#39;</span><span class="p">:</span> <span class="n">answer</span><span class="o">.</span><span class="n">question</span><span class="o">.</span><span class="n">id</span>
+        <span class="p">})</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="mi">200</span>
+        <span class="k">return</span> <span class="n">response</span></div>
+</pre></div>
+
+          <footer>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2014, Jason Myers for Prime Notion Technologies.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

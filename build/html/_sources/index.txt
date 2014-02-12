@@ -19,8 +19,11 @@ Contents:
    dev-api-evaluations
    dev-api-patients
    dev-api-practitioners
-   dev-users
+   dev-advertisements
+   dev-evaluations
    dev-patients
+   dev-practices
+   dev-users
 
 
 

@@ -15,3 +15,18 @@ Users Models
 ------------
 .. automodule:: cagenix.users.models
     :members:
+
+.. _users-forms-label:
+
+Users Forms
+-----------
+.. automodule:: cagenix.users.forms
+    :members:
+
+.. _users-views-label:
+
+Users Views
+-----------
+.. automodule:: cagenix.users.views
+    :members:
+
